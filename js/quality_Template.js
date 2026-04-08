@@ -20,7 +20,7 @@
 
     function getclients() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -39,7 +39,7 @@
     }
     function getEmployees() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -59,7 +59,7 @@
     function getJObID() {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/ListforJobID?AdminID=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Quality_Template/ListforJobID?AdminID=" + ADMIN_AUTH,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -132,7 +132,7 @@
     function Getlistofalltables(gettemplateid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -203,7 +203,7 @@
 
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -290,7 +290,7 @@
 
 
         //$.ajax({
-        //    url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+        //    url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
         //    type: "GET",
         //    async: false,
         //    contentType: false, // Not to set any content header
@@ -355,7 +355,7 @@
         //tableAunalTraining()
 
         //$.ajax({
-        //    url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+        //    url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
         //    type: "GET",
         //    async: false,
         //    contentType: false, // Not to set any content header
@@ -450,7 +450,7 @@
         //tableTraining()
 
         //$.ajax({
-        //    url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+        //    url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
         //    type: "GET",
         //    async: false,
         //    contentType: false, // Not to set any content header
@@ -528,7 +528,7 @@
         //tableskill()
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -612,7 +612,7 @@
 
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -702,7 +702,7 @@
         tableaudit();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -770,7 +770,7 @@
         tableauditor();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -853,7 +853,7 @@
         tableauditmeet();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -935,7 +935,7 @@
         tablestandardTemplate();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -1058,7 +1058,7 @@
         tablecaDetails();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -1153,7 +1153,7 @@
         tableReviewMeeting();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -1223,7 +1223,7 @@
         tableauditrec()
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -1375,7 +1375,7 @@
                     }
 
                     $.ajax({
-                        url: "https://api.pioneerfoods.in/Quality_Template/Create_QualityTemplate",
+                        url: "https://api.pdca.in/Quality_Template/Create_QualityTemplate",
                         type: "POST",
                         data: postdata,
                         dataType: "json",
@@ -1461,7 +1461,7 @@
 
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_QualityStandard",
+                    url: "https://api.pdca.in/Quality_Template/Create_QualityStandard",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1539,7 +1539,7 @@
                 postdata.append('clause', ClauseNo);
                 postdata.append('authorid', ADMIN_AUTH);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_QualityTemplate_Document",
+                    url: "https://api.pdca.in/Quality_Template/Create_QualityTemplate_Document",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1611,7 +1611,7 @@
     //            postdata.append('TemplateID', TemplateID)
     //            postdata.append('authorid', ADMIN_AUTH);
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Create_QualityTemplate_Annual",
+    //                url: "https://api.pdca.in/Quality_Template/Create_QualityTemplate_Annual",
     //                type: "POST",
     //                data: postdata,
     //                async: false,
@@ -1697,7 +1697,7 @@
 
 
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Create_QualityTemplate_Monthly",
+    //                url: "https://api.pdca.in/Quality_Template/Create_QualityTemplate_Monthly",
     //                type: "POST",
     //                data: postdata,
     //                async: false,
@@ -1783,7 +1783,7 @@
     //            postdata.append('authorid', ADMIN_AUTH);
 
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_SkillMatrix",
+    //                url: "https://api.pdca.in/Quality_Template/Create_Template_SkillMatrix",
     //                type: "POST",
     //                data: postdata,
     //                async: false,
@@ -1858,7 +1858,7 @@
 
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_Execution",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_Execution",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1939,7 +1939,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_AuditSchedule",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_AuditSchedule",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2020,7 +2020,7 @@
 
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_Auditordetails",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_Auditordetails",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2088,7 +2088,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_AuditorMeeting",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_AuditorMeeting",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2149,7 +2149,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_AuditChecklist",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_AuditChecklist",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2219,7 +2219,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_NCC",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_NCC",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2315,7 +2315,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_MRM",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_MRM",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2361,7 +2361,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_AuditorRecommendation",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_AuditorRecommendation",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2423,7 +2423,7 @@
                 postdata.append('authorid', AdminID);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Create_Template_Certification",
+                    url: "https://api.pdca.in/Quality_Template/Create_Template_Certification",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -2455,7 +2455,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_QualityStandard?Adminid=" + ADMIN_AUTH + "&id=" + id + "",
+                    url: "https://api.pdca.in/Quality_Template/Delete_QualityStandard?Adminid=" + ADMIN_AUTH + "&id=" + id + "",
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -2481,7 +2481,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_QualityTemplate_Document?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Quality_Template/Delete_QualityTemplate_Document?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -2507,7 +2507,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Delete_QualityTemplate_Annual?AdminID=" + ADMIN_AUTH + "&Id=" + id + "",
+    //                url: "https://api.pdca.in/Quality_Template/Delete_QualityTemplate_Annual?AdminID=" + ADMIN_AUTH + "&Id=" + id + "",
     //type: POST,
     //contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -2533,7 +2533,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Delete_QualityTemplate_Monthly?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Quality_Template/Delete_QualityTemplate_Monthly?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
     //                type: "POST",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -2559,7 +2559,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_SkillMatrix?AdminID=" + ADMIN_AUTH + "&Id=" + id + "",
+    //                url: "https://api.pdca.in/Quality_Template/Delete_Template_SkillMatrix?AdminID=" + ADMIN_AUTH + "&Id=" + id + "",
     //                type: "POST",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -2585,7 +2585,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_Execution?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_Execution?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -2611,7 +2611,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_AuditSchedule?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_AuditSchedule?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "POST",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -2641,7 +2641,7 @@
            
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_Auditordetails",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_Auditordetails",
                     type: "POST",
                     data: postdata,
                     contentType: false, // Not to set any content header
@@ -2668,7 +2668,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_AuditorMeeting",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_AuditorMeeting",
                     type: "POST",
                     data: { "authorid": ADMIN_AUTH, "ID": id },
                     contentType: false, // Not to set any content header
@@ -2695,7 +2695,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_AuditChecklist",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_AuditChecklist",
                     type: "POST",
                     data: { "authorid": ADMIN_AUTH, "ID": id },
                     contentType: false, // Not to set any content header
@@ -2722,7 +2722,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_NCC?AdminId",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_NCC?AdminId",
                     type: "POST",
                     data: { "authorid": ADMIN_AUTH, "ID": id },
                     contentType: false, // Not to set any content header
@@ -2752,7 +2752,7 @@
             postdata.append('authorid', ADMIN_AUTH);
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_MRM",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_MRM",
                     type: "POST",
                     data: postdata,
                     contentType: false, // Not to set any content header
@@ -2779,7 +2779,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_AuditorRecommendation",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_AuditorRecommendation",
                     type: "POST",
                     data: { "authorid": ADMIN_AUTH, "ID": id },
                     contentType: false, // Not to set any content header
@@ -2806,7 +2806,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template_Certification",
+                    url: "https://api.pdca.in/Quality_Template/Delete_Template_Certification",
                     type: "POST",
                     data: { "authorid": ADMIN_AUTH, "ID": id },
                     contentType: false, // Not to set any content header

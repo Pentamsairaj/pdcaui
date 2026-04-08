@@ -20,7 +20,7 @@
 
     function getclients() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -42,7 +42,7 @@
     }
     function getEmployees() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -118,7 +118,7 @@
     function getProcess_JobID() {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + false,
+            url: "https://api.pdca.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + false,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -149,7 +149,7 @@
     function Getlistofalltables(getjoballocationid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ServicereqformList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ServicereqformList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -242,7 +242,7 @@
         tableiddoc1();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ServicereqformreviewList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ServicereqformreviewList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -327,7 +327,7 @@
         tableiddoc2();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/RegistrationList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/RegistrationList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -444,7 +444,7 @@
        
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/RawDataList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/RawDataList?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -586,7 +586,7 @@
                 };
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/Create_SheetAllocation",
+                    url: "https://api.pdca.in/Process/Create_SheetAllocation",
                     type: "POST",
                     data: postdata,
                     dataType: "json",
@@ -696,7 +696,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/Createservicereqform",
+                    url: "https://api.pdca.in/Process/Createservicereqform",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -744,7 +744,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateServiceReqFormReview",
+                    url: "https://api.pdca.in/Process/CreateServiceReqFormReview",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -809,7 +809,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateRegistration",
+                    url: "https://api.pdca.in/Process/CreateRegistration",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -871,7 +871,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateRawdata",
+                    url: "https://api.pdca.in/Process/CreateRawdata",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -900,7 +900,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteServicereqform?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteServicereqform?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -926,7 +926,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteServiceReqFormReview?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteServiceReqFormReview?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -952,7 +952,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteRegistration?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteRegistration?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -978,7 +978,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteRawData?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteRawData?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

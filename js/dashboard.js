@@ -39,7 +39,7 @@ $(() => {
     let startDate = "";
     let endDate = "";
     $.ajax({
-        url: "https://api.pioneerfoods.in/Dashboard/AdminDashboard?AdminID=" + ADMIN_AUTH,
+        url: "https://api.pdca.in/Dashboard/AdminDashboard?AdminID=" + ADMIN_AUTH,
         type: "GET",
         contentType: false, // Not to set any content header                      
         processData: false, // Not to process data
@@ -93,7 +93,7 @@ $(() => {
         endDate = $("#enddate").val();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Dashboard/AdminDashboard?AdminID=" + ADMIN_AUTH + "&fromdate=" + startDate + "&todate=" + endDate,
+            url: "https://api.pdca.in/Dashboard/AdminDashboard?AdminID=" + ADMIN_AUTH + "&fromdate=" + startDate + "&todate=" + endDate,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

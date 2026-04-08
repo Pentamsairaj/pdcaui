@@ -16,7 +16,7 @@ $(() => {
 
 
     const AUTHOR_ID = localStorage.getItem("Admin_auth");
-    const BASE_URL = "https://api.pioneerfoods.in/" /*BASEURL*/;
+    const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
     const TEMPLATE_LIST_FOR_GROUP_LIST = `${BASE_URL}Group/GroupList`;
     // ----------------------------------- GLOBAL DECLARATIONS  END ---------------------------------------//
 

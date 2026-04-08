@@ -22,7 +22,7 @@
     getDetails();
     function Categorylist(ADMIN_AUTH) {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/CategoryList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/CategoryList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -45,7 +45,7 @@
 
     function Actegorylist(ADMIN_AUTH) {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/ClientActivityList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/ClientActivityList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -66,7 +66,7 @@
     }
     function getDetails() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetDetailsData?AdminId=" + ADMIN_AUTH + "&ClientId=" + ClientID,
+            url: "https://api.pdca.in/Client/GetDetailsData?AdminId=" + ADMIN_AUTH + "&ClientId=" + ClientID,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -130,7 +130,7 @@
                 }
                 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Client/GetDetailsClienttype?AdminId=" + ADMIN_AUTH + "&ClientId=" + ClientID,
+                    url: "https://api.pdca.in/Client/GetDetailsClienttype?AdminId=" + ADMIN_AUTH + "&ClientId=" + ClientID,
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

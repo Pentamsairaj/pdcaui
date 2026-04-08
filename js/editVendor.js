@@ -23,7 +23,7 @@
 
     function getDetails() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/VendorGetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
+            url: "https://api.pdca.in/Vendor/VendorGetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -83,7 +83,7 @@
                 }
                 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Vendor/GetDetailsClienttype?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
+                    url: "https://api.pdca.in/Vendor/GetDetailsClienttype?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -133,7 +133,7 @@
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         var catname = $("#txtCategory").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/CreateCategory",
+            url: "https://api.pdca.in/Vendor/CreateCategory",
             type: "POST",
             data: { "AdminId": ADMIN_AUTH, "name": catname },
             dataType: "json",
@@ -155,7 +155,7 @@
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/DeleteCategory",
+            url: "https://api.pdca.in/Vendor/DeleteCategory",
             type: "POST",
             data: { "AdminId": ADMIN_AUTH, "Id": Id },
             dataType: "json",
@@ -176,7 +176,7 @@
         const AdminId = localStorage.getItem("Admin_auth");
         var catname = $("#txtactivity").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/VendorActivityCreate",
+            url: "https://api.pdca.in/Vendor/VendorActivityCreate",
             type: "POST",
             data: { "AdminId": AdminId, "name": catname },
             dataType: "json",
@@ -196,7 +196,7 @@
         var Id = $(this).attr("id");
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/DeleteVendorActivity",
+            url: "https://api.pdca.in/Vendor/DeleteVendorActivity",
             type: "POST",
             data: { "AdminId": ADMIN_AUTH, "Id": Id },
             dataType: "json",
@@ -215,7 +215,7 @@
 
     function Categorylist(ADMIN_AUTH) {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/CategoryList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Vendor/CategoryList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -238,7 +238,7 @@
 
     function Actegorylist(ADMIN_AUTH) {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/VendorActivityList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Vendor/VendorActivityList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -452,7 +452,7 @@
         };
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/Update",
+            url: "https://api.pdca.in/Vendor/Update",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -497,7 +497,7 @@
 
                     // 🔁 SECOND API CALL
                     $.ajax({
-                        url: "https://api.pioneerfoods.in/Vendor/TypeUpdate",
+                        url: "https://api.pdca.in/Vendor/TypeUpdate",
                         type: "POST",
                         data: PostDataClienttype,
                         dataType: "json",

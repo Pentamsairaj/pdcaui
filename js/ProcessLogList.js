@@ -21,7 +21,7 @@ $(() => {
     function getServiceLogList() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforLogProcess?AuthorId=" + ADMIN_AUTH + "&Requesttype=" + Service,
+            url: "https://api.pdca.in/Process/ListforLogProcess?AuthorId=" + ADMIN_AUTH + "&Requesttype=" + Service,
             type: "GET",
             async: false,
             dataType: "JSON",
@@ -57,7 +57,7 @@ $(() => {
     function getProductLogList() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforLogProcess?AuthorId=" + ADMIN_AUTH + "&Requesttype=" + Product,
+            url: "https://api.pdca.in/Process/ListforLogProcess?AuthorId=" + ADMIN_AUTH + "&Requesttype=" + Product,
             type: "GET",
             async: false,
             dataType: "JSON",
@@ -228,7 +228,7 @@ $(() => {
     $("#btnexportService").click(() => {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforLogProcessexport?AuthorId=" + ADMIN_AUTH + "&downloadCsv=" + true + "&Requesttype=" + Service,
+            url: "https://api.pdca.in/Process/ListforLogProcessexport?AuthorId=" + ADMIN_AUTH + "&downloadCsv=" + true + "&Requesttype=" + Service,
             type: "GET",
             dataType: "JSON",
             async: true,
@@ -249,7 +249,7 @@ $(() => {
     $("#btnexportproduct").click(() => {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforLogProcessexport?AuthorId=" + ADMIN_AUTH + "&downloadCsv=" + true + "&Requesttype=" + Product,
+            url: "https://api.pdca.in/Process/ListforLogProcessexport?AuthorId=" + ADMIN_AUTH + "&downloadCsv=" + true + "&Requesttype=" + Product,
             type: "GET",
             dataType: "JSON",
             async: true,

@@ -5,7 +5,7 @@
     getEmployees()
     function getlist() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetcheckList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Regulation/GetcheckList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -24,7 +24,7 @@
     }
     function getclients() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -43,7 +43,7 @@
     }
     function getEmployees() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -102,7 +102,7 @@
                         }
 
                         $.ajax({
-                            url: "https://api.pioneerfoods.in/Job/Jobdocument_create",
+                            url: "https://api.pdca.in/Job/Jobdocument_create",
                             type: "POST",
                             data: postdata,
                             async: false,
@@ -141,7 +141,7 @@
                         "statusgreenred": status
                     }
                     $.ajax({
-                        url: "https://api.pioneerfoods.in/Job/Jobdocument_create",
+                        url: "https://api.pdca.in/Job/Jobdocument_create",
                         type: "POST",
                         data: postdata,
                         async: false,
@@ -166,7 +166,7 @@
         localStorage.setItem("GetId", getid);
         var gettitle = $('#ddlchecklist :selected').text();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetcheckListDocs?AdminId=" + ADMIN_AUTH + "&Id=" + getid,
+            url: "https://api.pdca.in/Regulation/GetcheckListDocs?AdminId=" + ADMIN_AUTH + "&Id=" + getid,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -213,7 +213,7 @@
         submitButton.prop("disabled", true);
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Job/Job_Create",
+            url: "https://api.pdca.in/Job/Job_Create",
             type: "POST",
             data: postdata,
             dataType: "json",

@@ -7,7 +7,7 @@
 
         var customer_email = $("#txtusername").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/Changepassword",
+            url: "https://api.pdca.in/Admin/Changepassword",
             type: "POST",
             data: { "id": ADMIN_AUTH, "email": customer_email },
             dataType: "JSON",

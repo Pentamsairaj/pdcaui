@@ -62,7 +62,7 @@
     function getProcess_JobID() {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientProcess/ListforProcessJobID?ClientID=" + CLIENT_AUTH + "&type=" + false,
+            url: "https://api.pdca.in/ClientProcess/ListforProcessJobID?ClientID=" + CLIENT_AUTH + "&type=" + false,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -93,7 +93,7 @@
     function Getlistofalltables(getjoballocationid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientProcess/ServicereqformList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/ClientProcess/ServicereqformList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -168,7 +168,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientProcess/ServicereqformreviewList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/ClientProcess/ServicereqformreviewList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -236,7 +236,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientProcess/RegistrationList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/ClientProcess/RegistrationList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -338,7 +338,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientProcess/RawDataList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/ClientProcess/RawDataList?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -453,7 +453,7 @@
 
             }
             $.ajax({
-                url: "https://api.pioneerfoods.in/ClientProcess/Create_SheetAllocation",
+                url: "https://api.pdca.in/ClientProcess/Create_SheetAllocation",
                 type: "POST",
                 data: postdata,
                 dataType: "json",
@@ -538,7 +538,7 @@
                 postdata.append('ClientID', CLIENT_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientProcess/Updateservicereqform",
+                    url: "https://api.pdca.in/ClientProcess/Updateservicereqform",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -586,7 +586,7 @@
                 postdata.append('ClientID', CLIENT_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientProcess/UpdateServiceReqFormReview",
+                    url: "https://api.pdca.in/ClientProcess/UpdateServiceReqFormReview",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -651,7 +651,7 @@
                 postdata.append('ClientID', CLIENT_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientProcess/UpdateRegistration",
+                    url: "https://api.pdca.in/ClientProcess/UpdateRegistration",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -713,7 +713,7 @@
                 postdata.append('ClientID', CLIENT_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientProcess/UpdateRawdata",
+                    url: "https://api.pdca.in/ClientProcess/UpdateRawdata",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -742,7 +742,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Process/DeleteServicereqform?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Process/DeleteServicereqform?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
     //                type: "GET",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -768,7 +768,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Process/DeleteServiceReqFormReview?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Process/DeleteServiceReqFormReview?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
     //                type: "GET",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -794,7 +794,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Process/DeleteRegistration?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Process/DeleteRegistration?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
     //                type: "GET",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data
@@ -820,7 +820,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Process/DeleteRawData?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Process/DeleteRawData?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
     //                type: "GET",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data

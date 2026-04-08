@@ -4,7 +4,7 @@
     let startDate = $("#startdate").val();
     let endDate = $("#enddate").val();
     $.ajax({
-        url: "https://api.pioneerfoods.in/Dashboard/ClientDashboard?ClientID=" + CLIENT_AUTH,
+        url: "https://api.pdca.in/Dashboard/ClientDashboard?ClientID=" + CLIENT_AUTH,
         type: "GET",
         contentType: false, // Not to set any content header                      
         processData: false, // Not to process data
@@ -46,7 +46,7 @@
         let startDate = $("#startdate").val();
         let endDate = $("#enddate").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Dashboard/ClientDashboard?ClientID=" + ADMIN_AUTH + "&fromdate=" + startDate + "&todate=" + endDate,
+            url: "https://api.pdca.in/Dashboard/ClientDashboard?ClientID=" + ADMIN_AUTH + "&fromdate=" + startDate + "&todate=" + endDate,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

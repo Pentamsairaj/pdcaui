@@ -34,7 +34,7 @@ $(() => {
         getlist();
         function getlist() {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Client/getData?AdminId=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/Client/getData?AdminId=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -83,7 +83,7 @@ $(() => {
             var result = confirm("Are you Sure? You Want to Delete this Client");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Client/Delete?AdminId=" + ADMIN_AUTH + "&Id=" + id + "",
+                    url: "https://api.pdca.in/Client/Delete?AdminId=" + ADMIN_AUTH + "&Id=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

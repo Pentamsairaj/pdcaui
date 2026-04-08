@@ -12,7 +12,7 @@ const CLIENT_USERNAME = localStorage.getItem('Client_UserName');
 const CLIENT_PHONE = localStorage.getItem('Client_Phone');
 const EMPLOYEECHK = localStorage.getItem('TypeInfo');
 const PAGE_REDIRECTION = reUsableFunctions.pageReDirection;
-const BASE_URL = "https://api.pioneerfoods.in/" /*BASEURL*/;
+const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
 // ----------------------------------- GLOBAL DECLARATIONS  END ---------------------------------------//
 
 

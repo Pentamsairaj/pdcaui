@@ -174,7 +174,7 @@ $(() => {
         CLEAR_STORAGE();
         if (client_ID) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Client/GetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + client_ID,
+                url: "https://api.pdca.in/Client/GetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + client_ID,
                 type: "GET",
                 async: false,
                 dataType: "JSON",

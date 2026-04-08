@@ -38,7 +38,7 @@ $(() => {
         debugger;
         if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1" || ADMIN_AUTH =="8d12f95b-e288-40f0-862d-035ba875162b")  {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Quality/QualityJobsList?AdminId=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/Quality/QualityJobsList?AdminId=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -205,7 +205,7 @@ $(() => {
         } else {
             debugger;
             $.ajax({
-                url: "https://api.pioneerfoods.in/EmpQuality/Emp_Quality_list?EmpID=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/EmpQuality/Emp_Quality_list?EmpID=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -420,7 +420,7 @@ $(() => {
         }
         // AJAX request to update status
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/updateQuality_status?AdminId=" + ADMIN_AUTH + "&jobID=" + id + "&status=" + status,
+            url: "https://api.pdca.in/NewQualityManagement/updateQuality_status?AdminId=" + ADMIN_AUTH + "&jobID=" + id + "&status=" + status,
             type: "POST",
             //data: postdata,
             dataType: "json",
@@ -514,7 +514,7 @@ $(() => {
         var result = confirm("Are you Sure? You Want to Delete");
         if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
+                url: "https://api.pdca.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -547,7 +547,7 @@ $(() => {
             return false;
         } else {
             $.ajax({
-                url: "https://api.pioneerfoods.in/EmpQuality/EmpQuality_list?EmpID=" + ADMIN_AUTH + "&downloadCsv=" + true,
+                url: "https://api.pdca.in/EmpQuality/EmpQuality_list?EmpID=" + ADMIN_AUTH + "&downloadCsv=" + true,
                 type: "GET",
                 dataType: "JSON",
                 async: true,
@@ -623,7 +623,7 @@ $(() => {
 //
 //        var id = $(this).attr("id");
 //        $.ajax({
-//            url: "https://api.pioneerfoods.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
+//            url: "https://api.pdca.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
 //            type: "GET",
 //            contentType: false, // Not to set any content header
 //            processData: false, // Not to process data

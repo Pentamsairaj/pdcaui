@@ -20,7 +20,7 @@
 
     function getclients() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -39,7 +39,7 @@
     }
     function getEmployees() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Admin/EmployeeList?id=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -61,7 +61,7 @@
     function getProcess_JobID() {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + true,
+            url: "https://api.pdca.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + true,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -139,7 +139,7 @@
     function Getlistofalltables(getjoballocationid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/PrototypeList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/PrototypeList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -204,7 +204,7 @@
         });
         tableiddoc();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/MaterialstockList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/MaterialstockList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -294,7 +294,7 @@
         });
         tablequality();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ProcessflowList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ProcessflowList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -358,7 +358,7 @@
         });
         tableAunalTraining();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ProductFinalizedList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ProductFinalizedList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -412,7 +412,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/FinalizedPackingList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/FinalizedPackingList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -459,7 +459,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ShelflifestudyList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ShelflifestudyList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -533,7 +533,7 @@
         });
         tableTraining();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ManufacturingMaterialstockList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/ManufacturingMaterialstockList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -624,7 +624,7 @@
         });
         tableskill();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/BatchSheetList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/BatchSheetList?AdminID=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -700,7 +700,7 @@
         });
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/DispatchdetailsList?AdminId=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Process/DispatchdetailsList?AdminId=" + ADMIN_AUTH + "&product_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -825,7 +825,7 @@
                     }
 
                     $.ajax({
-                        url: "https://api.pioneerfoods.in/Process/Create_SheetAllocation",
+                        url: "https://api.pdca.in/Process/Create_SheetAllocation",
                         type: "POST",
                         data: postdata,
                         dataType: "json",
@@ -911,7 +911,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreatePrototype",
+                    url: "https://api.pdca.in/Process/CreatePrototype",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -963,7 +963,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateMaterialStock",
+                    url: "https://api.pdca.in/Process/CreateMaterialStock",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1031,7 +1031,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateProcessflow",
+                    url: "https://api.pdca.in/Process/CreateProcessflow",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1099,7 +1099,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateProductFinalized",
+                    url: "https://api.pdca.in/Process/CreateProductFinalized",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1167,7 +1167,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateFinalizedPacking",
+                    url: "https://api.pdca.in/Process/CreateFinalizedPacking",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1239,7 +1239,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateShelflifestudy",
+                    url: "https://api.pdca.in/Process/CreateShelflifestudy",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1289,7 +1289,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateManufacturingMaterialstock",
+                    url: "https://api.pdca.in/Process/CreateManufacturingMaterialstock",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1383,7 +1383,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateBatchSheet",
+                    url: "https://api.pdca.in/Process/CreateBatchSheet",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1433,7 +1433,7 @@
                 postdata.append('AdminID', ADMIN_AUTH);
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateDispatchDetails",
+                    url: "https://api.pdca.in/Process/CreateDispatchDetails",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1461,7 +1461,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeletePrototype?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeletePrototype?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1487,7 +1487,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteMaterialstock?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteMaterialstock?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1513,7 +1513,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteProcessflow?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteProcessflow?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1539,7 +1539,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteShelflifestudy?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteShelflifestudy?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1565,7 +1565,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteManufacturingMaterialstock?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteManufacturingMaterialstock?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1591,7 +1591,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteBatchSheet?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteBatchSheet?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data
@@ -1617,7 +1617,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteDispatchdetails?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteDispatchdetails?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

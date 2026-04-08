@@ -17,7 +17,7 @@
     }
     function getJObID() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientQuality/ListforJobID?ClientID=" + CLIENT_AUTH,
+            url: "https://api.pdca.in/ClientQuality/ListforJobID?ClientID=" + CLIENT_AUTH,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -44,7 +44,7 @@
     function getlist(getjoballocationid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientQuality/QualityExecutionList?ClientID=" + CLIENT_AUTH + "&joballocation_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/ClientQuality/QualityExecutionList?ClientID=" + CLIENT_AUTH + "&joballocation_ID=" + getjoballocationid,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -163,7 +163,7 @@
 
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientQuality/Update_QualityExecution",
+                    url: "https://api.pdca.in/ClientQuality/Update_QualityExecution",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -193,7 +193,7 @@
     //        var result = confirm("Are you Sure? You Want to Delete");
     //        if (result) {
     //            $.ajax({
-    //                url: "https://api.pioneerfoods.in/Quality/Delete_QualityExecution?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+    //                url: "https://api.pdca.in/Quality/Delete_QualityExecution?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
     //                type: "GET",
     //                contentType: false, // Not to set any content header
     //                processData: false, // Not to process data

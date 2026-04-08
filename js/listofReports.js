@@ -149,7 +149,7 @@ $(() => {
                                 postdata.append('Service_ID', Service_ID);
                                 postdata.append('AdminID', ADMIN_AUTH);
                                 $.ajax({
-                                    url: "https://api.pioneerfoods.in/Process/UpdateReport_FromList",
+                                    url: "https://api.pdca.in/Process/UpdateReport_FromList",
                                     type: "POST",
                                     data: postdata,
                                     async: false,
@@ -269,7 +269,7 @@ $(() => {
                                 postdata.append('Service_ID', Service_ID);
                                 postdata.append('AdminID', ADMIN_AUTH);
                                 $.ajax({
-                                    url: "https://api.pioneerfoods.in/Process/UpdateReport_FromList",
+                                    url: "https://api.pdca.in/Process/UpdateReport_FromList",
                                     type: "POST",
                                     data: postdata,
                                     async: false,
@@ -388,7 +388,7 @@ $(() => {
                                 postdata.append('Service_ID', Service_ID);
                                 postdata.append('AdminID', ADMIN_AUTH);
                                 $.ajax({
-                                    url: "https://api.pioneerfoods.in/Process/UpdateReport_FromList",
+                                    url: "https://api.pdca.in/Process/UpdateReport_FromList",
                                     type: "POST",
                                     data: postdata,
                                     async: false,
@@ -462,7 +462,7 @@ $(() => {
         var result = confirm("Are you Sure? You Want to Delete");
         if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
+                url: "https://api.pdca.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
                 /*data: fileData,*/

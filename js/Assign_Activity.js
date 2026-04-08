@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     const AUTHOR_ID = localStorage.getItem("Admin_auth");
-    const BASE_URL = "https://api.pioneerfoods.in/" /*BASEURL*/;
+    const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
  
     var ProjectAuth = AUTHOR_ID;
     var url = window.location.search;

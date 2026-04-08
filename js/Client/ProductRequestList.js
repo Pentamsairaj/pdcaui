@@ -16,7 +16,7 @@ $(() => {
     function getProductRequestList() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/ClientRequestlist?AuthorId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/ClientRequestlist?AuthorId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false,
             processData: false,

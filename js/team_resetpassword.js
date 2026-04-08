@@ -48,7 +48,7 @@ $(() => {
 
         // ✅ API call
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/ResetPassword",
+            url: "https://api.pdca.in/Admin/ResetPassword",
             type: "POST",
             data: {
                 email: teamemail,

@@ -7,7 +7,7 @@ $(() => {
     const PAGE_RELOAD = reUsableFunctions.pageReload;
     $("#btnUpdate").hide();
     const ADMIN_AUTH = localStorage.getItem("Admin_auth");
-    const BASE_URL = "https://api.pioneerfoods.in/" /*BASEURL*/;
+    const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
 
     if (ADMIN_AUTH == null) {
         window.location = "../teamlogin.html";

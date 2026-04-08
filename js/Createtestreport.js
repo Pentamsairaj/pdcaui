@@ -36,7 +36,7 @@ $(() => {
     function getProcess_JobID() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + false,
+            url: "https://api.pdca.in/Process/ListforProcessJobID?AdminID=" + ADMIN_AUTH + "&type=" + false,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -65,7 +65,7 @@ $(() => {
 
     function getlist(getProcess_JobID) {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/Testreportpreview?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getProcess_JobID,
+            url: "https://api.pdca.in/Process/Testreportpreview?AdminID=" + ADMIN_AUTH + "&Service_ID=" + getProcess_JobID,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -310,7 +310,7 @@ $(() => {
         }
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/CreateTestReport",
+            url: "https://api.pdca.in/Process/CreateTestReport",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -356,7 +356,7 @@ $(() => {
                 postdata.append('AdminID', AdminID);
                 postdata.append('Unit', unit);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateTestResult",
+                    url: "https://api.pdca.in/Process/CreateTestResult",
                     type: "POST",
                     data: postdata,
                     dataType: "json",
@@ -382,7 +382,7 @@ $(() => {
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/DeleteTestResult?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Process/DeleteTestResult?AdminID=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

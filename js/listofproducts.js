@@ -170,7 +170,7 @@ $(() => {
         }
         // AJAX request to update status
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/update_status?AdminId=" + ADMIN_AUTH + "&id=" + id + "&status=" + status,
+            url: "https://api.pdca.in/Process/update_status?AdminId=" + ADMIN_AUTH + "&id=" + id + "&status=" + status,
             type: "POST",
             //data: postdata,
             dataType: "json",
@@ -282,7 +282,7 @@ $(() => {
         var result = confirm("Are you Sure? You Want to Delete");
         if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
+                url: "https://api.pdca.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
                 /*data: fileData,*/

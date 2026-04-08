@@ -20,7 +20,7 @@ $(document).ready(function () {
         var Id = $(this).attr("id");
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Checklist_Delete",
+            url: "https://api.pdca.in/Regulation/Checklist_Delete",
             type: "POST",
             data: { "AdminId": ADMIN_AUTH, "Id": Id },
             dataType: "json",
@@ -48,7 +48,7 @@ $(document).ready(function () {
         var Id = $(this).attr("id");
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetcheckListDetails?AdminId=" + ADMIN_AUTH + "&Id=" + Id,
+            url: "https://api.pdca.in/Regulation/GetcheckListDetails?AdminId=" + ADMIN_AUTH + "&Id=" + Id,
             type: "Get",
             dataType: "json",
             traditional: true,
@@ -89,7 +89,7 @@ $(document).ready(function () {
                 fileData.append('checklisttitle', checklisttitle);
                 fileData.append('AdminId', ADMIN_AUTH);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Regulation/ChecklistDoc_Create",
+                    url: "https://api.pdca.in/Regulation/ChecklistDoc_Create",
                     type: "POST",
                     data: fileData,
                     async: false,
@@ -121,7 +121,7 @@ $(document).ready(function () {
             "AdminId": ADMIN_AUTH
         }
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Checklist_Create",
+            url: "https://api.pdca.in/Regulation/Checklist_Create",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -174,7 +174,7 @@ $(document).ready(function () {
 
         }
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Update",
+            url: "https://api.pdca.in/Regulation/Update",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -201,7 +201,7 @@ $(document).ready(function () {
     });
     function GetList() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetcheckList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Regulation/GetcheckList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             dataType: "JSON",
             async: false,

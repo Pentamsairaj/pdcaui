@@ -7,7 +7,7 @@
 
         var team_email = $("#txtusername").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/Forgotpassword",
+            url: "https://api.pdca.in/Admin/Forgotpassword",
             type: "POST",
             data: { "email": team_email },
             dataType: "JSON",

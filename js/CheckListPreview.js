@@ -15,7 +15,7 @@ $(document).ready(function () {
     const title = params.get("title");
     $("#lblname").text(title);
     $.ajax({
-        url: "https://api.pioneerfoods.in/Regulation/GetcheckListDocs?AdminId=" + ADMIN_AUTH + "&Id=" + TemplateId,
+        url: "https://api.pdca.in/Regulation/GetcheckListDocs?AdminId=" + ADMIN_AUTH + "&Id=" + TemplateId,
         type: "GET",
         contentType: false, // Not to set any content header
         processData: false, // Not to process data

@@ -146,7 +146,7 @@ $(() => {
                     AuthorId: ADMIN_AUTH,
                 }
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Process/CreateProcessLog",
+                    url: "https://api.pdca.in/Process/CreateProcessLog",
                     type: "POST",
                     data: requestData,
                     dataType: "json",
@@ -181,7 +181,7 @@ $(() => {
     // -----------------------------------   Processlog GET START ---------------------------------------//
     function getProcessbyID() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Process/getLogProcessbyID?AuthorId=" + ADMIN_AUTH + "&ID=" + ID,
+            url: "https://api.pdca.in/Process/getLogProcessbyID?AuthorId=" + ADMIN_AUTH + "&ID=" + ID,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

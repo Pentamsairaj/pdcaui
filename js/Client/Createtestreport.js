@@ -41,7 +41,7 @@ $(() => {
         function getProcess_JobID() {
             debugger;
             $.ajax({
-                url: "https://api.pioneerfoods.in/ClientProcess/ListforProcessJobID?ClientID=" + CLIENT_AUTH + "&type=" + false,
+                url: "https://api.pdca.in/ClientProcess/ListforProcessJobID?ClientID=" + CLIENT_AUTH + "&type=" + false,
                 type: "GET",
                 async: false,
                 contentType: false, // Not to set any content header
@@ -70,7 +70,7 @@ $(() => {
 
         function getlist(getProcess_JobID) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/ClientProcess/Testreportpreview?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getProcess_JobID,
+                url: "https://api.pdca.in/ClientProcess/Testreportpreview?ClientID=" + CLIENT_AUTH + "&Service_ID=" + getProcess_JobID,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -362,7 +362,7 @@ $(() => {
 
             }
             $.ajax({
-                url: "https://api.pioneerfoods.in/ClientProcess/UpdateTestreport",
+                url: "https://api.pdca.in/ClientProcess/UpdateTestreport",
                 type: "POST",
                 data: postdata,
                 dataType: "json",
@@ -407,7 +407,7 @@ $(() => {
                 };
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/ClientProcess/UpdateTestresult",
+                    url: "https://api.pdca.in/ClientProcess/UpdateTestresult",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -434,7 +434,7 @@ $(() => {
         //        var result = confirm("Are you Sure? You Want to Delete");
         //        if (result) {
         //            $.ajax({
-        //                url: "https://api.pioneerfoods.in/Process/DeleteTestResult?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
+        //                url: "https://api.pdca.in/Process/DeleteTestResult?ClientID=" + CLIENT_AUTH + "&ID=" + id + "",
         //                type: "GET",
         //                contentType: false, // Not to set any content header
         //                processData: false, // Not to process data
@@ -468,7 +468,7 @@ $(() => {
     //        var ClientID = CLIENT_AUTH;
     //        var Service_ID = Service_ID;
     //        $.ajax({
-    //            url: 'https://api.pioneerfoods.in/Process/UpdateReport_FromList',
+    //            url: 'https://api.pdca.in/Process/UpdateReport_FromList',
     //            data: { "testreport": htmlcontent, "Service_ID": Service_ID, "ClientID": ClientID },
     //            type: 'POST',
     //            success: function (data) {

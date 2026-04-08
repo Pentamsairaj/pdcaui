@@ -512,7 +512,7 @@ $(() => {
     function vendordata(VendorId) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/VendorGetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
+            url: "https://api.pdca.in/Vendor/VendorGetDetails?AdminId=" + ADMIN_AUTH + "&ClientId=" + VendorId,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false,
@@ -874,7 +874,7 @@ $(() => {
         var result = confirm("Are you Sure? You Want to Delete");
         if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/PurchaseOrder/Delete_PurchaseOrder?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
+                url: "https://api.pdca.in/PurchaseOrder/Delete_PurchaseOrder?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
                 /*data: fileData,*/

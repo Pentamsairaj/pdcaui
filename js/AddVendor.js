@@ -1,7 +1,7 @@
 ﻿$(() => {
     $("#dvService").hide();
     $("#dvProduct").hide();
-    const BASE_URL = "https://api.pioneerfoods.in/Vendor" /*BASEURL*/;
+    const BASE_URL = "https://api.pdca.in/Vendor" /*BASEURL*/;
 
     const ADMIN_AUTH = localStorage.getItem("Admin_auth");
     Actegorylist(ADMIN_AUTH);

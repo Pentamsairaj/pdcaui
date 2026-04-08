@@ -65,7 +65,7 @@ $(() => {
         
         var jobID = $("#ddjobid").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/DocID?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&type=" + 0,
+            url: "https://api.pdca.in/NewQualityManagement/DocID?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&type=" + 0,
             type: "get",
             contenttype: false,
             async: false,
@@ -91,7 +91,7 @@ $(() => {
         
         var jobID = $("#ddjobid").val();
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/DocID?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&type=" + 4,
+            url: "https://api.pdca.in/NewQualityManagement/DocID?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&type=" + 4,
             type: "get",
             contenttype: false,
             async: false,
@@ -151,7 +151,7 @@ $(() => {
             docIdData.push($(this).closest("tr").find(".DocId").val())
             var id = $(this).closest("tr").attr("data-row-id")
             $.ajax({
-                url: "https://api.pioneerfoods.in/NewQualityManagement/DeleteQualityDoc?AdminId=" + ADMIN_AUTH + "&ID=" + id,
+                url: "https://api.pdca.in/NewQualityManagement/DeleteQualityDoc?AdminId=" + ADMIN_AUTH + "&ID=" + id,
                 type: "POST",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -211,7 +211,7 @@ $(() => {
     //    formData.append("ID", ID);
 
     //    $.ajax({
-    //        url: "https://api.pioneerfoods.in/NewQualityManagement/ConvertToPdf",
+    //        url: "https://api.pdca.in/NewQualityManagement/ConvertToPdf",
     //        type: "POST",
     //        data: formData,
     //        contentType: false,
@@ -243,7 +243,7 @@ $(() => {
         var jobID = $("#ddjobid").val();
         $("#view_approv_document").empty();
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
+            url: "https://api.pdca.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
             type: "get",
             contenttype: false,
             processdata: false,
@@ -262,7 +262,7 @@ $(() => {
         var jobID = $("#ddjobid").val();
         $("#view_approv_Skill_document").empty();
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
+            url: "https://api.pdca.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
             type: "get",
             contenttype: false,
             processdata: false,
@@ -287,7 +287,7 @@ $(() => {
         }
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
+            url: "https://api.pdca.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
             type: "GET",
             data: {
                 AdminId: ADMIN_AUTH,
@@ -334,7 +334,7 @@ $(() => {
         }
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
+            url: "https://api.pdca.in/NewQualityManagement/getQualityDocsList?AdminId=" + ADMIN_AUTH + "&jobID=" + jobID + "&DocId=" + getvalue,
             type: "GET",
             data: {
                 AdminId: ADMIN_AUTH,
@@ -434,7 +434,7 @@ $(() => {
             docIdData.push($(this).closest("tr").find(".DocumentName").val())
             var id = $(this).closest("tr").attr("data-row-id")
             $.ajax({
-                url: "https://api.pioneerfoods.in/NewQualityManagement/DeleteTrainingDoc?AdminID=" + ADMIN_AUTH + "&trainingDocID=" + id,
+                url: "https://api.pdca.in/NewQualityManagement/DeleteTrainingDoc?AdminID=" + ADMIN_AUTH + "&trainingDocID=" + id,
                 type: "POST",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -520,7 +520,7 @@ $(() => {
             // docIdData.push($(this).closest("tr").find(".DocumentName").val())
             var id = $(this).closest("tr").attr("data-row-id")
             $.ajax({
-                url: "https://api.pioneerfoods.in/NewQualityManagement/DeleteSkillDoc?AdminID=" + ADMIN_AUTH + "&skillDocID=" + id,
+                url: "https://api.pdca.in/NewQualityManagement/DeleteSkillDoc?AdminID=" + ADMIN_AUTH + "&skillDocID=" + id,
                 type: "POST",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -650,7 +650,7 @@ $(() => {
                     "AdminID": AdminID
                 }
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality/Create_Joballocation",
+                    url: "https://api.pdca.in/Quality/Create_Joballocation",
                     type: "POST",
                     data: postdata,
                     dataType: "json",
@@ -751,7 +751,7 @@ $(() => {
                 postdata.append('clause', clause);
                 postdata.append('AdminId', ADMIN_AUTH);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateQualityDoc",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateQualityDoc",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -838,7 +838,7 @@ $(() => {
                 postdata.append('AdminId', ADMIN_AUTH);
                 postdata.append('ClauseNo', ClauseNo);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateTrainingDoc",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateTrainingDoc",
                     type: "POST",
                     data: postdata,
                     async: true,
@@ -915,7 +915,7 @@ $(() => {
                 postdata.append('AdminId', ADMIN_AUTH);
                 postdata.append('ClauseNo', ClauseNo);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateSkillDoc",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateSkillDoc",
                     type: "POST",
                     data: postdata,
                     async: true,
@@ -1340,7 +1340,7 @@ $(() => {
             // docIdData.push($(this).closest("tr").find(".DocumentName").val())
             var id = $(this).closest("tr").attr("data-row-id")
             $.ajax({
-                url: "https://api.pioneerfoods.in/NewQualityManagement/DeleteQualityCertificate?adminID=" + ADMIN_AUTH + "&docID=" + id,
+                url: "https://api.pdca.in/NewQualityManagement/DeleteQualityCertificate?adminID=" + ADMIN_AUTH + "&docID=" + id,
                 type: "POST",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -1400,7 +1400,7 @@ $(() => {
                 postdata.append('AdminId', ADMIN_AUTH);
                 postdata.append('clause', ClauseNo);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateQualityTemplateExecution",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateQualityTemplateExecution",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1478,7 +1478,7 @@ $(() => {
                 postdata.append('AdminId', ADMIN_AUTH);
                 postdata.append('ClauseNo', ClauseNo);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateInternalAuditMRM",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateInternalAuditMRM",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1555,7 +1555,7 @@ $(() => {
                 postdata.append('AdminId', ADMIN_AUTH);
                 postdata.append('clause', ClauseNo);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateExternalAuditMRM",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateExternalAuditMRM",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -1632,7 +1632,7 @@ $(() => {
                 postdata.append('NextDueOn', NextDueOn);
                 postdata.append('Remarks', Remarks);
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/NewQualityManagement/CreateOrUpdateQualityCertificate",
+                    url: "https://api.pdca.in/NewQualityManagement/CreateOrUpdateQualityCertificate",
                     type: "POST",
                     data: postdata,
                     async: true,
@@ -1680,7 +1680,7 @@ $(() => {
         var jobID = $("#ddjobid").val();
             $("#btnexportquailtydoc").show();
         $.ajax({
-            url: "https://api.pioneerfoods.in/NewQualityManagement/ListAllQualityData?jobId=" + jobID,
+            url: "https://api.pdca.in/NewQualityManagement/ListAllQualityData?jobId=" + jobID,
             type: "GET",
             async: false,
             contentType: false,
@@ -1797,7 +1797,7 @@ $(() => {
 
     function getlist() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/List_Template?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Quality_Template/List_Template?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false,
             processData: false,
@@ -1815,7 +1815,7 @@ $(() => {
     function getclients() {
         
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Client/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false,
             processData: false,
@@ -1855,7 +1855,7 @@ $(() => {
     function getJObID() {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality/ListforJobID?AdminID=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Quality/ListforJobID?AdminID=" + ADMIN_AUTH,
             type: "GET",
             async: false,
             contentType: false,
@@ -1929,7 +1929,7 @@ $(() => {
             });
         } else {
             $.ajax({
-                url: "https://api.pioneerfoods.in/EmpQuality/EmpQuality_list?EmpID=" + ADMIN_AUTH + "&downloadCsv=" + true,
+                url: "https://api.pdca.in/EmpQuality/EmpQuality_list?EmpID=" + ADMIN_AUTH + "&downloadCsv=" + true,
                 type: "GET",
                 dataType: "JSON",
                 async: true,

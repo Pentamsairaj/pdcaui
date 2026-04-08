@@ -176,7 +176,7 @@ $.ajax({
 //        getlist();
 //        function getlist() {
 //            $.ajax({
-//                url: "https://api.pioneerfoods.in/Process/ListofReports?AdminID=" + ADMIN_AUTH + "&ID="+ getjoballocationid,
+//                url: "https://api.pdca.in/Process/ListofReports?AdminID=" + ADMIN_AUTH + "&ID="+ getjoballocationid,
 //                type: "GET",
 //                contentType: false, // Not to set any content header
 //                processData: false, // Not to process data
@@ -226,7 +226,7 @@ $.ajax({
 //            var result = confirm("Are you Sure? You Want to Delete");
 //            if (result) {
 //                $.ajax({
-//                    url: "https://api.pioneerfoods.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
+//                    url: "https://api.pdca.in/Process/Deleteproductlist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
 //                    type: "GET",
 //                    contentType: false, // Not to set any content header
 //                    processData: false, // Not to process data

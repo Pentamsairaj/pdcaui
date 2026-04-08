@@ -23,7 +23,7 @@
     }
     function getJObID() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality/ListforJobID?AdminID=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Quality/ListforJobID?AdminID=" + ADMIN_AUTH,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -50,7 +50,7 @@
 
       
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
+            url: "https://api.pdca.in/Quality_Template/Get_Template_Data?AdminId=" + ADMIN_AUTH + "&TemplateID=" + gettemplateid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -136,7 +136,7 @@
     function getlist(getjoballocationid) {
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Quality/QualityExecutionList?AdminId=" + ADMIN_AUTH + "&joballocation_ID=" + getjoballocationid,
+            url: "https://api.pdca.in/Quality/QualityExecutionList?AdminId=" + ADMIN_AUTH + "&joballocation_ID=" + getjoballocationid,
             type: "GET",
             async: false,
             contentType: false, // Not to set any content header
@@ -283,7 +283,7 @@
 
 
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality/CreateQualityExecution",
+                    url: "https://api.pdca.in/Quality/CreateQualityExecution",
                     type: "POST",
                     data: postdata,
                     async: false,
@@ -322,7 +322,7 @@
             var result = confirm("Are you Sure? You Want to Delete");
             if (result) {
                 $.ajax({
-                    url: "https://api.pioneerfoods.in/Quality/Delete_QualityExecution?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
+                    url: "https://api.pdca.in/Quality/Delete_QualityExecution?AdminId=" + ADMIN_AUTH + "&ID=" + id + "",
                     type: "GET",
                     contentType: false, // Not to set any content header
                     processData: false, // Not to process data

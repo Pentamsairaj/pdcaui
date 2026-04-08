@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/VerifyOTP",
+            url: "https://api.pdca.in/Admin/VerifyOTP",
             type: "POST",
             data: { otp: otp, email: email },
             dataType: "JSON",
@@ -73,7 +73,7 @@ $(document).ready(function () {
         btn.prop("disabled", true);
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Admin/ForgotPassword", // ✅ fix URL
+            url: "https://api.pdca.in/Admin/ForgotPassword", // ✅ fix URL
             type: "POST",
             data: { email: email },
             dataType: "JSON",

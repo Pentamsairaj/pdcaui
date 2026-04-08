@@ -3,7 +3,7 @@
     const CLIENT_AUTH = localStorage.getItem("Client_auth");
     $("#txtjobid").hide();
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientJob/ClientJobsList?ClientID=" + CLIENT_AUTH,
+            url: "https://api.pdca.in/ClientJob/ClientJobsList?ClientID=" + CLIENT_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

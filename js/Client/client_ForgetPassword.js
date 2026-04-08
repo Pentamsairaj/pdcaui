@@ -11,7 +11,7 @@ $(document).ready(function () {
         var customer_email = $("#txtusername").val();
 
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/ForgotPassword",
+            url: "https://api.pdca.in/Client/ForgotPassword",
             type: "POST",
             data: { email: customer_email },
             dataType: "JSON",

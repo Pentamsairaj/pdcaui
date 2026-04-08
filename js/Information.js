@@ -20,7 +20,7 @@ $(document).ready(function () {
         var Id = $(this).attr("id");
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Delete",
+            url: "https://api.pdca.in/Regulation/Delete",
             type: "POST",
             data: { "AdminId": ADMIN_AUTH, "Id": Id },
             dataType: "json",
@@ -48,7 +48,7 @@ $(document).ready(function () {
         var Id = $(this).attr("id");
         const ADMIN_AUTH = localStorage.getItem("Admin_auth");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetDetails?AdminId=" + ADMIN_AUTH +"&InfoId="+Id,
+            url: "https://api.pdca.in/Regulation/GetDetails?AdminId=" + ADMIN_AUTH +"&InfoId="+Id,
             type: "Get",
             dataType: "json",
             traditional: true,
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
         }
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Create",
+            url: "https://api.pdca.in/Regulation/Create",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -138,7 +138,7 @@ $(document).ready(function () {
 
         }
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/Update",
+            url: "https://api.pdca.in/Regulation/Update",
             type: "POST",
             data: postdata,
             dataType: "json",
@@ -157,7 +157,7 @@ $(document).ready(function () {
     });
     function GetList() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Regulation/GetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Regulation/GetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             dataType: "JSON",
             async: false,

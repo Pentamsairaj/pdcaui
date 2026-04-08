@@ -17,7 +17,7 @@ const ADMIN_USERNAME = localStorage.getItem('Admin_UserName');
 const ADMIN_PHONE = localStorage.getItem('Admin_Phone');
 const EMPLOYEECHK = localStorage.getItem('TypeInfo');
 const PAGE_REDIRECTION = reUsableFunctions.pageReDirection;
-const BASE_URL = "https://api.pioneerfoods.in/" /*BASEURL*/;
+const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
 // ----------------------------------- GLOBAL DECLARATIONS  END ---------------------------------------//
 
 

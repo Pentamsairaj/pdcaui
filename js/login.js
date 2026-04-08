@@ -73,7 +73,7 @@ $(() => {
 
                                 SUCCESS_MESSAGE("Login Successfully");
 
-                                if (profile.username === "admin") {
+                                if (profile.id === "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
                                     PAGE_REDIRECTION('./dashboard.html');
                                 } else {
                                     PAGE_REDIRECTION('./empdashboard.html');

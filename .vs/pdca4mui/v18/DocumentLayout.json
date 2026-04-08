@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\quality_template.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\quality_template.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\newfile.1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\newfile.1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\imageupload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\imageupload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "api.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\api.js",
+              "RelativeDocumentMoniker": "js\\api.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\api.js",
+              "RelativeToolTip": "js\\api.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-08T19:16:27.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "quality_Template.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\quality_Template.js",
+              "RelativeDocumentMoniker": "js\\quality_Template.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\quality_Template.js",
+              "RelativeToolTip": "js\\quality_Template.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-08T19:16:19.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "newFile.1.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\newFile.1.js",
+              "RelativeDocumentMoniker": "js\\newFile.1.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\newFile.1.js",
+              "RelativeToolTip": "js\\newFile.1.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-08T19:16:17.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Imageupload.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\Imageupload.js",
+              "RelativeDocumentMoniker": "js\\Imageupload.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\Imageupload.js",
+              "RelativeToolTip": "js\\Imageupload.js",
+              "ViewState": "AgIAACsAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-08T19:15:48.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 232,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 59,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

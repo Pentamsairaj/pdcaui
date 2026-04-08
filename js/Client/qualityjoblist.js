@@ -37,7 +37,7 @@ $(document).ready(function () {
     function getlist() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/ClientQuality/ClientQualitylist?ClientID=" + CLIENT_AUTH,
+            url: "https://api.pdca.in/ClientQuality/ClientQualitylist?ClientID=" + CLIENT_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

@@ -20,7 +20,7 @@ $(() => {
         debugger;
         if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1" || ADMIN_AUTH == "8d12f95b-e288-40f0-862d-035ba875162b") {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Job/GetjobList?AdminId=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/Job/GetjobList?AdminId=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -198,7 +198,7 @@ $(() => {
             });
         } else {
             $.ajax({
-                url: "https://api.pioneerfoods.in/EmpJob/EmpJobsList?EmpID=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/EmpJob/EmpJobsList?EmpID=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -431,7 +431,7 @@ $(() => {
     $("#table-id").on("click", ".deleteRow", function () {
         var id = $(this).attr("id");
         $.ajax({
-            url: "https://api.pioneerfoods.in/Job/Job_Delete?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
+            url: "https://api.pdca.in/Job/Job_Delete?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data

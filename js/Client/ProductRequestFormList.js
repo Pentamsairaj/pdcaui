@@ -87,7 +87,7 @@ $(() => {
     function getProductRequestList() {
         debugger;
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/ClientRequestlist?AuthorId=" + CLIENT_AUTH,
+            url: "https://api.pdca.in/Client/ClientRequestlist?AuthorId=" + CLIENT_AUTH,
             type: "GET",
             contentType: false,
             processData: false,
@@ -165,7 +165,7 @@ $(() => {
             Servicetype: idlst,
         }
         $.ajax({
-            url: "https://api.pioneerfoods.in/Client/CreateRequest",
+            url: "https://api.pdca.in/Client/CreateRequest",
             type: "POST",
             data: requestData,
             dataType: "json",

@@ -30,7 +30,7 @@ $(() => {
     getlist();
     function getlist() {
         $.ajax({
-            url: "https://api.pioneerfoods.in/Vendor/VendorGetList?AdminId=" + ADMIN_AUTH,
+            url: "https://api.pdca.in/Vendor/VendorGetList?AdminId=" + ADMIN_AUTH,
             type: "GET",
             contentType: false, // Not to set any content header
             processData: false, // Not to process data
@@ -67,7 +67,7 @@ $(() => {
         var result = confirm("Are you Sure? You Want to Delete this Vendor");
         if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Vendor/VendorDelete?AdminId=" + ADMIN_AUTH + "&Id=" + id + "",
+                url: "https://api.pdca.in/Vendor/VendorDelete?AdminId=" + ADMIN_AUTH + "&Id=" + id + "",
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data

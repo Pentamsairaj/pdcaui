@@ -23,7 +23,7 @@ $(document).ready(function () {
         debugger;
         if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Quality_Template/List_Template?AdminId=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/Quality_Template/List_Template?AdminId=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -52,7 +52,7 @@ $(document).ready(function () {
         } else {
             debugger;
             $.ajax({
-                url: "https://api.pioneerfoods.in/Quality_Template/List_Template?EmpID=" + ADMIN_AUTH,
+                url: "https://api.pdca.in/Quality_Template/List_Template?EmpID=" + ADMIN_AUTH,
                 type: "GET",
                 contentType: false, // Not to set any content header
                 processData: false, // Not to process data
@@ -161,7 +161,7 @@ $(document).ready(function () {
        var result = confirm("Are you Sure? You Want to Delete");
        if (result) {
             $.ajax({
-                url: "https://api.pioneerfoods.in/Quality_Template/Delete_Template?AdminId=" + ADMIN_AUTH + "&TemplateID=" + id + "",
+                url: "https://api.pdca.in/Quality_Template/Delete_Template?AdminId=" + ADMIN_AUTH + "&TemplateID=" + id + "",
                 type: "POST",
                 contentType: false, // Not to set any content header
            processData: false, // Not to process data
@@ -181,7 +181,7 @@ $(document).ready(function () {
 //        
 //        var id = $(this).attr("id");
 //        $.ajax({
-//            url: "https://api.pioneerfoods.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
+//            url: "https://api.pdca.in/Quality/Deletelist?AdminId=" + ADMIN_AUTH + "&id=" + id + "",
 //            type: "GET",
 //            contentType: false, // Not to set any content header
 //            processData: false, // Not to process data

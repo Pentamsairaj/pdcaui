@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Dashboard</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendors Styles(used by this page)-->
+    <link href="./theme/plugins/custom/fullcalendar/fullcalendar.bundle1036.css?v=2.1.1" rel="stylesheet"
+          type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--end::Page Vendors Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="./theme/plugins/global/plugins.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="./theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="./theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <link href="theme/css/customStyle.css" rel="stylesheet" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon"
+          href="./theme/favicon/logo.ico" />
+    <style>
+        .counts {
+            background-color: #3F4254;
+        }
+
+            .counts:hover {
+                background-color: #0272E1;
+                box-shadow: 0px 0px 4px 2px #7090b0;
+            }
+
+        body {
+            background-color: #1F2433;
+        }
+    </style>
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container-fluid">
+                            <!--begin::Info-->
+                            <div class="">
+                                <!--begin::Page Heading-->
+                                <div class="">
+                                    <!--begin::Page Title-->
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12">
+                                            <h1 class="text-white mt-4" style="font-size:20px;">Dashboard</h1>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                            <!--<form id="applyFilter" onkeyup="return false">-->
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <div class="form-group">
+                                                        <label>From Date </label>
+                                                        <input type="date" class="form-control" autocomplete="off"
+                                                               id="startdate" />
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-5">
+                                                    <div class="form-group">
+                                                        <label>End Date </label>
+                                                        <input type="date" class="form-control" autocomplete="off"
+                                                               id="enddate" />
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="mt-4"></label>
+                                                    <input class="btn btn-primary" type="button" id="applyFilter" value="Apply" />
+                                                </div>
+                                            </div>
+                                            <!--</form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Page Title-->
+                            </div>
+                            <!--end::Page Heading-->
+                        </div>
+                        <!--end::Info-->
+                        <!--begin::Toolbar-->
+                        <!--end::Toolbar-->
+                    </div>
+                </div>
+                <!--end::Subheader-->
+                <!--begin::Entry-->
+
+                <div class="d-flex flex-column-fluid">
+
+                    <!--begin::Container-->
+                    <div class="container">
+                        <!--begin::Dashboard-->
+                        <!--begin::Row-->
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 1-->
+                                <div class="card card-custom card-stretch gutter-b h counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/leadManagement/quotesList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size:18px;">
+                                                    Service
+                                                    Offers
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body pb-5">
+                                        <!--begin::label-->
+                                        <span class="d-flex  align-items-center">
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Offers
+                                            </span>
+
+                                            <span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="srivoffcount">
+                                            </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                        </span>
+                                        <button id="btnexportService" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 1-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 2-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/leadManagement/invoiceList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Invoices Issued</span>
+                                            </a>
+                                        </h3>
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Invoices
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="invcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                        <button id="btnexportinvoices" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 2-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 3-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/PurchaseOrder/POList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                    Purchase
+                                                    Order
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Orders
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="purcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                        <button id="btnexportPurchase" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 3-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 3-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/roleManagement/employeeList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">
+                                                    Employee
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Employee
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="templist">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Freelancer List
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="freecount">
+
+                                        </span>
+
+                                    </div>
+                                    <div class="card-body d-block align-items-center pb-5 mb-5">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Employee Count
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tnoempcount">
+
+                                        </span>
+                                        <button id="btnexportEmployee" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 3-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 3-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/leadManagement/clientsList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">
+                                                    Client List
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Clients
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="clicount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+
+                                        <button id="btnexportClients" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 3-->
+                            </div>
+
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 3-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/leadManagement/VendorList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">
+                                                    Vendor List
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Vendors
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="vendorcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+
+                                        <button id="btnexportVendor" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 3-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 1-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/regulations/regulationStatus.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">
+                                                    Regulatory Works
+                                                </span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Regulatory
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="regcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Pending Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="pregcount">
+
+                                        </span>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center pb-5 mb-5">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Completed Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cregcount">
+
+                                        </span>
+                                        <button id="btnexportRegulatory" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 1-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 2-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/qualityCompliance/QualityJobsList.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Quality Compliance</span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Quality
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tqytcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Pending Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="pqytcount">
+
+                                        </span>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center pb-5 mb-5">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Completed Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cqytcount">
+
+                                        </span>
+                                        <button id="btnexportQuality" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 2-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 2-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/process/listofProducts.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Product</span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Products
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="prodcount">
+
+                                        </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Pending Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="pprodcount">
+
+                                        </span>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center pb-5 mb-5">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Completed Works
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cprodcount">
+
+                                        </span>
+
+                                        <button id="btnexportProducts" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 2-->
+                            </div>
+                            <div class="col-lg-4">
+                                <!--begin::Stats Widget 2-->
+                                <div class="card card-custom card-stretch gutter-b counts">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-6">
+                                        <h3 class="card-title">
+                                            <a href="/process/listofReports.html">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Test Service</span>
+                                            </a>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Sample
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tsmpcount">
+
+                                        </span>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center ">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Test Report
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="ttrepcount">
+
+                                        </span>
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <div class="card-body d-block align-items-center pb-5 mb-5">
+                                        <!--begin::label-->
+                                        <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                            Total Pending Report
+                                        </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tpreocount">
+
+                                        </span>
+
+                                        <button id="btnexportReport" class="btn btn-danger d-flex align-items-center justify-content-center">Export<i class="note-icon-arrow-circle-down px-2 text-success " style="font-size:20px"></i></button>
+
+                                        <!--end::label-->
+                                        <!--begin::Chart-->
+                                        <!--end::Chart-->
+                                    </div>
+                                    <!--end::Body-->
+                                </div>
+                                <!--end::Stats Widget 2-->
+                            </div>
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <!--end::Row-->
+                        <!--begin::Table Widget 6-->
+                        <!--end::Table Widget 6-->
+                        <!--begin::Row-->
+                        <!--end::Row-->
+                        <!--end::Dashboard-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Entry-->
+
+
+            </div>
+            <!--end::Content-->
+
+        </div>
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="./theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="./theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="./theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="./theme/plugins/custom/fullcalendar/fullcalendar.bundle1036.js?v=2.1.1"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="./theme/js/pages/widgets1036.js?v=2.1.1"></script>
+    <script type="module" src="./js/navbar.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <!--end::Page Scripts-->
+</body>
+<!--end::Body-->
+<!-- Mirrored from preview.keenthemes.com/keen/demo1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Jul 2022 15:28:10 GMT -->
+
+</html>

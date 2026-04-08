@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11505.172 d18.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "PDCA4MUI", ".", "{DB977E7F-082D-414F-998C-D630CB590F09}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53570"
+		Debug.AspNetCompiler.PhysicalPath = "..\pdcaui-main\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53570\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53570"
+		Release.AspNetCompiler.PhysicalPath = "..\pdcaui-main\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53570\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53570"
+		SlnRelativePath = "..\pdcaui-main\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB977E7F-082D-414F-998C-D630CB590F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB977E7F-082D-414F-998C-D630CB590F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEEB282A-4E6B-4987-8EA5-BFC683000ADE}
+	EndGlobalSection
+EndGlobal

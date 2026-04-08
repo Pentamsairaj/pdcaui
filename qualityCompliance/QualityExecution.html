@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Quality Execution</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="../theme/css/qulitity.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+    <style>
+
+        #spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        textarea {
+            height: auto;
+        }
+    </style>
+    <style type="text/css" media="print">
+        @page {
+            size: A4; /* auto is the initial value */
+            margin: 0; /* this affects the margin in the printer settings */
+        }
+
+        /*.content {
+         border: solid 1px #000000;
+         margin: 1rem;*/ /* margin you want for the content */
+        /*}*/
+        /* #kt_header_mobile img {
+            margin: 20px;
+        }*/
+        @media print {
+            #printPageButton {
+                display: none;
+            }
+          
+            body:after {
+                display: none;
+            }
+
+            #kt_header_menu_wrapper {
+                display: none;
+            }
+            #btnformsubmit {
+                display: none;
+            }
+            #kt_aside_mobile_toggle {
+                display: none;
+            }
+
+            #kt_header_mobile_topbar_toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Quality Execution</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityCompliance</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityExecution</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./newTemplate.html" class="text-muted">Execution</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="container">
+
+                            <!--begin:: FROM TO Details-->
+                            <div class="card mb-7">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row mb-3">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="font-weight-bold">Job ID:<sup class="text-danger">*</sup></label>
+                                                        <select name="" id="ddjobid" class="ddjobid form-control">
+                                                            <option value="">Select Job ID</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Content-->
+
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Execution/Implementation</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityCompliance</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityExecution</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./executionImp.html" class="text-muted">Implementation</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                    </div>
+                    <h6 class="text-danger d-flex flex-center">*Size of each pdf should be less than 800KB</h6>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="container">
+                            <form id="createTemplateSubmit" onsubmit="return false">
+
+                                <!-- Execution/Implementationg -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Execution/Implementation</h3>
+                                            <div class="buttons-list d-flex justify-content-end">
+                                                <div id="printPageButton" onclick="window.print()" class=" btn btn-primary">Print</div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover " id="execution">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Name of Document</th>
+
+                                                        <th scope="col">Clause. No</th>
+                                                        <th scope="col">Task Frequency</th>
+
+                                                        <th scope="col">Remarks</th>
+                                                        <th scope="col">Level 4 PDF</th>
+                                                        <th scope="col">PDF Upload </th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="eName" class="eName form-control" style="width:527px"></textarea>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="clause" class="clause form-control" style="width:110px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <select name="" id="taskFreq" class="taskFreq form-control" style="width:120px">
+                                                                    <option value="daily">Daily</option>
+                                                                    <option value="monthly">Monthly</option>
+                                                                    <option value="quarterly">Quarterly</option>
+                                                                    <option value="halfYea">Half Yearly</option>
+                                                                    <option value="yearly">Yearly</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="annualRemarks" class="annualRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="level4pdffile w-200px"
+                                                                   id="level4pdffile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="annualpdffile w-200px"
+                                                                   id="annualpdffile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of Execution/Implementation -->
+                                <div class="d-flex justify-content-between">
+                                    <button id="back" type="button" class="btn btn-success">Back</button>
+                                    <button id="btnformsubmit" type="submit" class="btn btn-success">Next</button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!--end::Container-->
+
+                    </div>
+                    <!--end::Entry-->
+                    <!--end::Page-->
+                </div>
+                <!--end::Main-->
+                <!--begin::Scrolltop-->
+
+            </div>
+        </div>
+    </div>
+    <!--end::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../js/Imageupload.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/commonFunctinality.js"></script>
+    <script src="../js/qualityexecution.js"></script>
+    <!--end::Page Scripts-->
+    <script>
+        $(document).ready(function () {
+            // Go back in history when the "BACK" button is clicked
+            $('#back').click(function () {
+                history.back();
+            });
+
+            // Go forward in history when the "FORWARD" button is clicked
+            $('#forward').click(function () {
+                history.forward();
+            });
+        });
+    </script>
+
+</body>
+<!--end::Body-->
+
+</html>

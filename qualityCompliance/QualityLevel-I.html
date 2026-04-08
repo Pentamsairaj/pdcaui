@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | QualityLevel-I </title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="../theme/css/qulitity.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+
+    <style>
+
+        #spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999999;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <style>
+        /* Define any necessary CSS styles for your div here */
+        .card {
+            /* Add your styles here */
+        }
+       /* textarea{
+            height:100px!important;
+        }*/
+        /* Adjust the table to fit on printed page */
+        @media print {
+            #printPageButton {
+                page-break-before: always;
+                display:none;
+            }
+            body:after {
+                display: none;
+            }
+            #kt_brand {
+                display: block;
+            }
+        }
+    </style>
+    
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Quality for Business</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityCompliance</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">QualityLevel-I</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./newTemplate.html" class="text-muted">Quality for Business</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                            <div class="form-group" id="template_div">
+                                <label class="font-weight-bold">
+                                    Selection of Quality Template:<sup class="text-danger">*</sup>
+                                </label>
+                                <select class="form-control" id="ddlqulitylist">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="container">
+                            <form id="createTemplateSubmit" onsubmit="return false">
+                                <!--begin:: FROM TO Details-->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row mb-3">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group" id="client">
+                                                            <label class="font-weight-bold">Company Name:<sup class="text-danger">*</sup></label>
+                                                            <select id="ddclient" name="client" class="ddclient form-control">
+                                                                <option value="">Select Client</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+
+                                                        <div class="form-group" id="jobnum">
+                                                            <label class="font-weight-bold">Job No:</label>
+                                                            <select name="" id="ddjobno" class="ddjobno form-control" required>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                                <option value="9">9</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-group" id="Employee">
+                                                            <label class="font-weight-bold">Employee Name:<sup class="text-danger">*</sup></label>
+                                                            <select id="ddlEmployee" name="employee" class="ddlEmployee form-control">
+                                                                <option value="">Select Employee</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group w-200px" id="jobid">
+                                                    <label class="font-weight-bold">Job ID:<sup class="text-danger">*</sup></label>
+                                                    <select id="ddjobid" name="ddjobid" class="ddjobid form-control">
+                                                        <option value="">Select Job ID</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <h6 class="text-danger d-flex flex-center">*Size of each pdf should be less than 800KB</h6>
+                                <!--end::FROM TO Details-->
+                                <!-- Quality Standards for Business Starts -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <h3>Quality Standards for Business</h3>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-6 " id="table-iddoc">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Standard</th>
+
+                                                        <th scope="col">Link</th>
+                                                        <th scope="col">Document</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>
+
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+
+                                                            <!-- <i class="fa-plus-circle"></i> -->
+
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td style="width:37%">
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="standard" class="standard form-control"></textarea>
+                                                            </div>
+                                                        </td>
+
+                                                        <td style="width:30%">
+                                                            <div class="form-group">
+                                                                <input type="url" name="" id="standardlink" class="standardlink form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <input type="file" class="fileinput qualityStandardDocumentfile"
+                                                                   id="qualityStandardDocumentfile"
+                                                                   aria-describedby="inputGroupFileAddon01" style="width:100%">
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                        <!-- <i class="fa-plus-circle"></i> -->
+
+
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end:: End of Quality Standard Starts  -->
+                                <!-- table starts -->
+                                <div class="card mb-7" id="printableDiv">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Quality Documents (preparation to approval)</h3>
+                                            <div class="buttons-list d-flex justify-content-end">
+                                                <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-6 " id="table-quality">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Name of the Doc</th>
+                                                        <th scope="col">Type</th>
+
+                                                        <th scope="col">Clause.No</th>
+
+                                                        <th scope="col">Client Remarks</th>
+                                                        <!--<th scope="col">Client Approval</th>-->
+
+                                                        <th scope="col" class="hover-text"> ADU <span class="tooltip-text" id="bottom">Apporved doc upload</span></th>
+                                                        <th scope="col">Draft format</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                            <!-- <i class="fa-plus-circle"></i> -->
+
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control" style="width:630px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <select name="" id="typepfDocument" class="typepfDocument form-control w-95px">
+                                                                    <option value="level1">Level 1</option>
+                                                                    <option value="level2">Level 2</option>
+                                                                    <option value="level3">Level 3</option>
+                                                                    <option value="level4">Level 4</option>
+                                                                </select>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="ClauseNo" class="ClauseNo form-control" style="width:110px;">
+                                                            </div>
+                                                        </td>
+
+                                                        <!--<td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="clientApproval" class="clientApproval form-control w-200px">
+                                                            </div>
+                                                        </td>-->
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="clientRemarks" class="clientRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+
+                                                            <input type="file" class="Apporveddocuploadfile w-200px"
+                                                                   id="Apporveddocuploadfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="Draftformatfile w-200px"
+                                                                   id="Draftformatfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end:: tabe ends -->
+                                <!-- standard annual training -->
+                                <!--<div class="card mb-7">
+                                    <div class="card-body">
+                                        <h3>Annual Training Calender</h3>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-6 " id="table-AunalTraining">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Year</th>
+                                                        <th scope="col">Draft Training planner</th>
+                                                        <th scope="col">Approved Annual Training </th>
+                                                        <th scope="col">Remarks</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="year" class="year form-control">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+
+                                                            <input type="file" class="DraftTrainingplannerfile w-200px"
+                                                                   id="DraftTrainingplannerfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="ApprovedAnnualTrainingfile w-200px"
+                                                                   id="ApprovedAnnualTrainingfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="annualRemarks" class="annualRemarks form-control"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <!-- end of standard annual training -->
+                                <!-- standard monthly training -->
+                                <!--<div class="card mb-7">
+                                    <div class="card-body">
+                                        <h3>Monthly Training Planner</h3>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-6 " id="table-Training">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Date of Training</th>
+                                                        <th scope="col">Topic Name</th>
+                                                        <th scope="col">Attendence format</th>
+                                                        <th scope="col">Evaluation paper download</th>
+                                                        <th scope="col">Upload filled Training Docs </th>
+                                                        <th scope="col">Remarks</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="dateOfTraining" class="dateOfTraining form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="topicName" class="topicName form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="Attendenceformatfile w-150px"
+                                                                   id="Attendenceformatfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="Evaluationpaperdownloadfile w-150px"
+                                                                   id="Evaluationpaperdownloadfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="UploadfilledTrainingDocsfile w-150px"
+                                                                   id="UploadfilledTrainingDocsfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="monthlyRemarks" class="monthlyRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <!-- end of standard monthly training -->
+                                <!-- standard skill Matrix -->
+                                <!--<div class="card mb-7">
+                                    <div class="card-body">
+                                        <h3>Skill Matrix</h3>
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover mb-6 " id="table-skill">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Employee Name</th>
+                                                        <th scope="col">Employee id</th>
+                                                        <th scope="col">Job Role</th>
+                                                        <th scope="col">Evidences upload </th>
+                                                        <th scope="col">JD Upload </th>
+                                                        <th scope="col">Auth Upload</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="employeeName" class="employeeName form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="employeeId" class="employeeId form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="jobRole" class="jobRole form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="Evidencesuploadfile w-150px"
+                                                                   id="Evidencesuploadfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="JDUploadFile w-150px"
+                                                                   id="JDUploadFile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="AuthUploadFile w-150px"
+                                                                   id="AuthUploadFile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <h6 class="text-danger d-flex flex-center">*Size of each pdf should be less than 800KB</h6>
+
+
+                                <button id="btnformsubmit" type="submit" value="Submit" class="btn btn-success">Next</button>
+                                <!-- end of skill Matrix -->
+                            </form>
+
+                        </div>
+                        <!--end::Container-->
+
+                    </div>
+                    <!--end::Entry-->
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../js/Imageupload.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/commonFunctinality.js"></script>
+    <script src="../js/qualitylevel-I.js"></script>
+    <!--end::Page Scripts-->
+
+    <script>
+        function printDiv(divId) {
+            var printContents = document.getElementById(divId).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
+<!--end::Body-->
+
+</html>

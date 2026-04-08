@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M |Create IT Support</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js">
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+    <style>
+        .view_status {
+            background-color: aliceblue;
+            padding: 12px;
+        }
+
+        .spinner_loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">IT Support Management</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">IT Support</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted active">
+                                            <a href="./activityList.html" class="text-muted">Tickets List</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                            <!--begin::Toolbar-->
+                            <div class="d-flex align-items-center flex-wrap">
+                                <!--begin::Button-->
+                                <button type="button" id="addNewActivityBtn" class="btn btn-primary font-weight-bolder"
+                                        data-toggle="modal" data-target="#addNewActivityModal">
+                                    <i class="la la-plus"></i>Create TIcket
+                                </button>
+                                <!--end::Button-->
+                            </div>
+                            <!--end::Toolbar-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-6" id="table_id">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th scope="col">S.No</th>
+                                                    <th scope="col">Ticket Num.</th>
+                                                    <th scope="col">Ticket Title</th>
+                                                    <th scope="col">Description</th>
+                                                    <th scope="col">Severity</th>
+                                                    <th scope="col">Created Date</th>
+                                                    <th scope="col">Updated Date</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade p-5" id="addNewActivityModal" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalSizeLg" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Add Ticket</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <i aria-hidden="true" class="ki ki-close"></i>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <input type="hidden" name="hiddenid" id="hiddenid">
+
+                                            <div class="editStatus">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label>Ticket Number</label>
+                                                            <input type="text" id="ticket_num" class="form-control" placeholder="Enter Ticket Number" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Ticket Title <sup class="text-danger">*</sup></label>
+                                                        <input type="text" id="ticket_title" class="form-control" placeholder="Enter Ticket Title" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label>Description <sup class="text-danger">*</sup></label>
+                                                        <textarea value="" id="description" placeholder="Enter Description" required class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="signature-section d-flex flex-column">
+                                                <label class="font-weight-bold"> Image </label>
+                                                <div class="wrapperImg">
+                                                    <div class="editStatus card view_status" id="image_view">
+                                                    </div>
+
+                                                    <div class="box createStatus">
+                                                        <div class="js--image-preview" id="fl_img"></div>
+                                                        <div class="upload-options">
+                                                            <label>
+                                                                <input type="file" id="img" class="image-upload"
+                                                                       accept="image/*" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="font-weight-bold">Select Severity:<sup class="text-danger">*</sup></label>
+                                                        <select name="" id="severity" class="form-control">
+                                                            <option value="">Please Select Severity</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="editStatus">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Select Status:</label>
+                                                            <select name="" id="status" class="form-control">
+                                                                <option value="">Please Select Status</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-primary font-weight-bold"
+                                                        data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" id="createActivity"
+                                                        class="btn btn-primary font-weight-bold">
+                                                    Save
+                                                    changes
+                                                </button>
+                                                <button type="button" id="editActivity"
+                                                        class="btn btn-primary font-weight-bold">
+                                                    Update
+                                                    changes
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end:: Add Category Modal-->
+                            </div>
+                            <!--end::Container-->
+                        </div>
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Entry-->
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../js/Imageupload.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/reUsableFunctions.js"></script>
+    <script type="module" src="../js/createItSupport.js"></script>
+    <script type="module" src="../js/commanAjaxCalls.js"></script>
+    <script type="module" src="../js/commonFunctinality.js"></script>
+    <script type="module" src="../js/api.js"></script>
+
+    <!--end::Page Scripts-->
+</body>
+<!--end::Body-->
+
+</html>

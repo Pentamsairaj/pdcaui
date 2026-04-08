@@ -1,0 +1,593 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Add Client</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .card-body {
+            padding: 5px !important
+        }
+        table tr td {
+        padding:0px!important;max-width:700px!important}
+    </style>
+    <style type="text/css" media="print">
+        @page {
+            size: A4; /* auto is the initial value */
+            margin: 10px 0px 10px 0px ; /* this affects the margin in the printer settings */
+        }
+
+        html {
+            background-color: #FFFFFF;
+            padding-bottom: 40px; /* this affects the margin on the html before sending to printer */
+        }
+
+        .content {
+            border: solid 1px #000000;
+            margin: 1rem; /* margin you want for the content */
+        }
+        #kt_header_mobile img{
+            margin:20px;
+        }
+        @media print {
+            #printPageButton {
+                display: none;
+            }
+           
+            body:after {
+                display: none;
+            }
+            #kt_header_menu_wrapper {
+                display: none;
+            }
+            #kt_aside_mobile_toggle {
+                display: none;
+            }
+            #kt_header_mobile_topbar_toggle {
+                display: none;
+            }
+          
+           
+        }
+    </style>
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Create Client Profile</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Lead </a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Client Profile</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./addClient.html" class="text-muted">Create Client</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <form id="ClientCreate" onsubmit="return false">
+                        <div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container">
+                                <!--begin:: FROM TO Details-->
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Company Name:<sup class="text-danger">*</sup>
+                                                            </label>
+                                                            <input readonly type="text" id="txtcompanyname" class="form-control"
+                                                                   placeholder="Enter Company Name" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <label>Complete Address:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <input readonly type="text" id="txtcompanyaddress" class="form-control"
+                                                                   placeholder="H/No:4/123, New Colony" />
+                                                            <div class="input-group-append">
+                                                                <input readonly type="hidden" id="loc_lat" />
+                                                                <input readonly type="hidden" id="loc_long" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <label>Drive Link:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <input readonly type="text" id="drive_link" class="form-control"
+                                                                   placeholder="Link" />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label>Email:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                            </div>
+                                                            <input readonly id="txtemail" type="email" class="form-control"
+                                                                   placeholder="xyz@email.com" required />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Phone:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                            </div>
+                                                            <input readonly type="number" id="txtphone" pattern="[789][0-9]{9}" class="form-control"
+                                                                   placeholder="99999 99999" required />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">GST Number:<sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" id="txtGST" class="form-control"
+                                                                   placeholder="GST 123456" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12" style="margin-left: 80px;">
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Type of Business:<sup class="text-danger">*</sup>
+                                                            </label>
+
+                                                            <input readonly type="text" id="ddlbusinesstype" value="" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Service Name:<sup class="text-danger">*</sup>
+                                                            </label>
+
+                                                            <ul type="text" id="ddlServicename"></ul>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Subscription Type:<sup class="text-danger">*</sup>
+                                                            </label>
+
+                                                            <input readonly type="text" id="ddlSubscritption" value="" class="form-control" />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <!--end::FROM TO Details-->
+                                <!--begin:: Documents section-->
+                                <div>
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header mb-0">
+                                                <h6 class="font-weight-bolder text-primary">Upload Documents</h6>
+                                            </div>
+                                            <div class="card-body ml-5">
+
+
+
+                                                <div>
+                                                    <label class="font-weight-bold">GST Document:<sup class="text-danger">*</sup></label>
+                                                </div>
+                                                <div>
+
+
+                                                    <span id="lblGST"></span>
+                                                    <br /><br />
+                                                </div>
+
+
+                                                <div>
+                                                    <label class="font-weight-bold">
+                                                        Firm Registration document <br /> (*partnership):
+                                                    </label>
+                                                </div>
+
+
+
+                                                <span id="lblfirmregistraionfile"></span>
+                                                <br /><br />
+
+
+
+                                                <div><label class="font-weight-bold">Partnership Deed : </label></div>
+
+
+
+                                                <span id="lblpartnershifirm"></span>
+                                                <br /><br />
+
+
+                                                <div>
+                                                    <label class="font-weight-bold">
+                                                        Certificate of incorporation <br /> (*pvt ltd / LLP):
+                                                    </label>
+                                                </div>
+
+
+
+                                                <span id="lblCertificatefrim"></span>
+                                                <br /><br />
+
+                                                <div>
+                                                    <label class="font-weight-bold">
+                                                        + MOA (Memorandum of articles)<br /> (*pvt ltd / LLP):
+                                                    </label>
+                                                </div>
+
+
+                                                <span id="lblMOA"></span>
+                                                <br /><br />
+
+
+                                                <div>
+                                                    <label class="font-weight-bold">
+                                                        + AOA (articles of association) <br />(*pvt ltd / LLP):
+                                                    </label>
+                                                </div>
+
+
+
+                                                <span id="lblAOA"></span>
+                                                <br /><br />
+
+                                                <div><label class="font-weight-bold">IEC code (*Exporters) : </label></div>
+
+                                                <span id="lblIEC"></span>
+                                                <br /><br />
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <br /><br />
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="font-weight-bolder text-primary">
+                                                    Amount/Purchase dept for
+                                                    invoices
+                                                </h6>
+                                            </div>
+                                            <div class="card-body m-5">
+                                                <div class="row mb-6">
+                                                    <div class="col-md-6 ">
+                                                        <label class="font-weight-bold" for="">Name <sup class="text-danger">*</sup></label>
+                                                        <input readonly type="text" name="" id="pname" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <label class="font-weight-bold" for="">Designation <sup class="text-danger">*</sup></label>
+                                                        <input readonly type="text" name="pdesignation" id="pdesignation" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-6">
+                                                    <div class="col-md-6 ">
+                                                        <label for="" class="font-weight-bold">Email:<sup class="text-danger">*</sup></label>
+                                                        <input readonly type="email" id="pEmail" class="form-control"
+                                                               placeholder="xyz@email.com" />
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <label class="font-weight-bold">Phone:<sup class="text-danger">*</sup></label>
+                                                        <input readonly type="number" id="pphone" class="form-control"
+                                                               placeholder="99999 99999" pattern="[789][0-9]{9}" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                        <br /><br />
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="font-weight-bolder text-primary ">
+                                                    One Point Contact For
+                                                    Technical Works
+                                                </h6>
+                                            </div>
+                                            <div class="card-body m-5">
+                                                <div class="row mb-6">
+                                                    <div class="col-md-6">
+                                                        <label class="font-weight-bold" for="">Name <sup class="text-danger">*</sup></label>
+                                                        <input readonly type="text" name="" id="tTechnocalWorksName" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="font-weight-bold" for="">Designation <sup class="text-danger">*</sup></label>
+                                                        <input readonly type="text" name="" id="tDesignation" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-6">
+                                                    <div class="col-md-6">
+                                                        <label class="font-weight-bold">Email:<sup class="text-danger">*</sup></label>
+                                                        <input readonly type="email" id="temail" class="form-control"
+                                                               placeholder="xyz@email.com" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="font-weight-bold">Phone:<sup class="text-danger">*</sup></label>
+                                                        <input readonly type="number" id="tphone" class="form-control"
+                                                               placeholder="99999 99999" pattern="[789][0-9]{9}" required />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <!--end::Documents section-->
+                                        <!--begin:: Products section-->
+                                        <div class="card mb-7" id="dvProduct">
+                                            <div class="card-header">
+                                                <h6 class="card-title text-primary font-weight-bold">Product</h6>
+                                            </div>
+
+                                            <div class="card-body ml-5">
+                                                <div class="row d-flex mb-7 align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="" class="font-weight-bold">Select Category <sup class="text-danger">*</sup></label>
+                                                            <p name="PCategory" id="PddlCategory"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <p name="PCategory" id="PActivity"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="" class="font-weight-bold">Product Name <sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" name="" id="PProductname" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="Pcapacity" class="font-weight-bold">Capacity of Production Per Day <sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" name="Pcapacity" id="Pcapacity" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="pCustomerName" class="font-weight-bold">Customers Name <sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" name="pCustomerName" id="pCustomerName" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--end::Products section-->
+                                        <!--begin:: Services section-->
+                                        <div class="card mb-7" id="dvService">
+                                            <div class="card-header">
+                                                <h6 class="card-title text-primary font-weight-bold">Services</h6>
+                                            </div>
+
+                                            <div class="card-body ml-5">
+                                                <div class="row d-flex mb-7 align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="Scategoryddl" class="font-weight-bold">Select Category <sup class="text-danger">*</sup></label>
+                                                            <p id="Scategoryddl"></p>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="sActivityDDl" class="font-weight-bold">Select Activity <sup class="text-danger">*</sup></label>
+                                                            <p id="sActivityDDl"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="txtsservice" class="font-weight-bold">Services <sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" name="txtsservice" id="txtsservice" class="form-control">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row d-flex align-items-center">
+                                                    <div class="col-md-10">
+                                                        <div class="form-group">
+                                                            <label for="txtscustomername" class="font-weight-bold">Customers Name <sup class="text-danger">*</sup></label>
+                                                            <input readonly type="text" name="txtscustomername" id="txtscustomername" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--end::Services section-->
+
+                                        <div class="buttons-list d-flex justify-content-end">
+                                            <button id="printPageButton" onclick="window.print()" class="p-5 m-5 btn btn-primary">Print</button>
+                                        </div>
+                                    </div>
+                                    <!--end::Container-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!--end::Entry-->
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script type="module" src="../js/navbar.js"></script>
+    <script src="../js/EditclientPreview.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBtJTe5pJ87ofwCmhzmeH4hdvwtKxoFvh0"></script>
+    <!--end::Page Scripts-->
+    <script>
+        var searchInput = "txtcompanyaddress";
+        var autocomplete;
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+            types: ['geocode'],
+        });
+
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var near_place = autocomplete.getPlace();
+            document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+            document.getElementById('loc_long').value = near_place.geometry.location.lng();
+
+            //    document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+            //    document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+            //});
+        });
+
+    </script>
+</body>
+<!--end::Body-->
+
+</html>

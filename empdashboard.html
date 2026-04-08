@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Dashboard</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendors Styles(used by this page)-->
+    <link href="./theme/plugins/custom/fullcalendar/fullcalendar.bundle1036.css?v=2.1.1" rel="stylesheet"
+          type="text/css" />
+    <!--end::Page Vendors Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="./theme/plugins/global/plugins.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="./theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="./theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="./theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon"
+          href="./theme/favicon/logo.ico" />
+    <style>
+        .counts {
+            background-color: #3F4254;
+        }
+
+            .counts:hover {
+                background-color: #0272E1;
+                box-shadow: 0px 0px 4px 2px #7090b0;
+            }
+
+        body {
+            background-color: #1F2433;
+        }
+        .carousel-inner {
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px #000000;
+        }
+        .spinner {
+            position: fixed;
+            z-index: 9999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        /*.spinner .spinner-inner {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid #3498db;
+                animation: spin 2s linear infinite;
+            }*/
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <h1 class="text-white mt-4" style="font-size: 20px;">Dashboard</h1>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <table class="mt-4 text-white">
+                                                <tr>
+                                                    <td class="pr-2 font-weight-bolder text-white">From Date:</td>
+                                                    <td class="pr-2"><input type="date" name="" id="startdate" class="form-control"></td>
+                                                    <td class="pr-2 font-weight-bolder text-white">End Date:</td>
+                                                    <td class="pr-2"><input type="date" name="" id="enddate" class="form-control"></td>
+                                                    <td><button id="applyFilter" class="btn btn-primary">Apply</button></td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!--end::Page Title-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                            <!--begin::Toolbar-->
+                            <!--end::Toolbar-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+
+                    <div class="d-flex flex-column-fluid">
+
+                        <!--begin::Container-->
+                        <div class="container">
+                            <!--begin::Dashboard-->
+                            <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <!--begin::Stats Widget 1-->
+                                    <div class="card card-custom card-stretch gutter-b counts">
+                                        <!--begin::Header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">
+                                                    Regulatory Works
+                                                </span>
+                                            </h3>
+
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Body-->
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Regulatory
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-2 pb-2" id="regcount">
+
+                                            </span>
+
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Pending Works
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-2 pb-2" id="pregcount">
+
+                                            </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center  pb-5 mb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Completed
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cregcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Stats Widget 1-->
+                                </div>
+                                <div class="col-lg-3">
+                                    <!--begin::Stats Widget 2-->
+                                    <div class="card card-custom card-stretch gutter-b counts">
+                                        <!--begin::Header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Quality Compliance</span>
+                                            </h3>
+
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Body-->
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Quality
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tqytcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Pending Works
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-2 pb-2" id="pqytcount">
+
+                                            </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center  pb-5 mb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Completed
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cqytcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Stats Widget 2-->
+                                </div>
+
+
+
+                                <div class="col-lg-3">
+                                    <!--begin::Stats Widget 2-->
+                                    <div class="card card-custom card-stretch gutter-b counts">
+                                        <!--begin::Header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Product</span>
+                                            </h3>
+
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Body-->
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Products
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="prodcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Pending Works
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-2 pb-2" id="pprodcount">
+
+                                            </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center  pb-5 mb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Completed
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="cprodcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Stats Widget 2-->
+                                </div>
+                                <div class="col-lg-3">
+                                    <!--begin::Stats Widget 2-->
+                                    <div class="card card-custom card-stretch gutter-b counts">
+                                        <!--begin::Header-->
+                                        <div class="card-header border-0 pt-6">
+                                            <h3 class="card-title">
+                                                <span class="card-label font-weight-bolder text-white " style="font-size: 18px;">Test Service</span>
+                                            </h3>
+
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Body-->
+
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Sample
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tsmpcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center pb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Test Report
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="ttrepcount">
+
+                                            </span>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <div class="card-body d-block align-items-center  pb-5 mb-5">
+                                            <!--begin::label-->
+                                            <span class="card-label font-weight-bolder text-white " style="font-size:15px;">
+                                                Total Pending
+                                            </span><span class="countani font-weight-bolder font-size-h1 text-white px-4 pb-2" id="tpreocount">
+
+                                            </span><i class="note-icon-arrow-circle-up  text-danger " style="font-size:30px"></i>
+                                            <!--end::label-->
+                                            <!--begin::Chart-->
+                                            <!--end::Chart-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Stats Widget 2-->
+                                </div>
+                            </div>
+                            <!--end::Row-->
+                            <!--begin::Row-->
+                            <!--end::Row-->
+                            <!--begin::Row-->
+                            <!--end::Row-->
+                            <!--begin::Table Widget 6-->
+                            <!--end::Table Widget 6-->
+                            <!--begin::Row-->
+                            <!--end::Row-->
+                            <!--end::Dashboard-->
+                            <!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="carousel-item active" style="width:100%;">
+                                        <img src="https://adef.annamrajus.com/DisplayImage/504e39f9-2948-421c-8e1c-005927fbb0fa.jpg">
+                                    </li>
+                                    <li class="carousel-item" data-slide-to="1" style="width:100%;">
+                                        <img src="https://adef.annamrajus.com/DisplayImage/66966d88-7d8f-438a-851c-b33a97f337eb.jpg">
+                                    </li>
+                                    <li class="carousel-item" data-slide-to="2" style="width:100%;">
+                                        <img src="https://adef.annamrajus.com/DisplayImage/714baece-7393-45bc-a8cf-e20b2f9731af.jpg">
+                                    </li>
+                                </ol>
+                                <div class="carousel-inner" id="main_banners">
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>-->
+                            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a target="_blank" href=" https://smartfoodlab.in/"><img src="theme/images/banner.png" class="d-block w-100" alt="..."></a>
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <a target="_blank" href=" http://pioneerfoods.in"><img src="theme/images/banner2.png" class="d-block w-100" alt="..."></a>
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a target="_blank" href="http://pioneerfoods.in"><img src="theme/images/banner 3.png" class="d-block w-100" alt="..."></a>
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a target="_blank" href=" https://smartfoodlab.in/"><img src="theme/images/banner4.png" class="d-block w-100" alt="..."></a>
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a target="_blank" href="http://pioneerfoods.in"><img src="theme/images/banner5.png" class="d-block w-100" alt="..."></a>
+                                        <div class="carousel-caption d-none d-md-block">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" data-target="#carouselExampleCaptions" role="button" data-slide="prev">
+                                    <span class="" aria-hidden="true"><i class='fas fa-angle-left' style='font-size: 24px; color: blue'></i></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" data-target="#carouselExampleCaptions" role="button" data-slide="next">
+                                    <span class="" aria-hidden="true"><i class='fas fa-angle-right' style='font-size: 24px; color: blue'></i></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Entry-->
+
+                    <marquee>WELCOME TO PDCA4M</marquee>
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="./theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="./theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="./theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Vendors(used by this page)-->
+    <script src="./theme/plugins/custom/fullcalendar/fullcalendar.bundle1036.js?v=2.1.1"></script>
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="./theme/js/pages/widgets1036.js?v=2.1.1"></script>
+    <script type="module" src="./js/navbar.js"></script>
+    <script src="js/employeedashboard.js"></script>
+    <!--end::Page Scripts-->
+</body>
+<!--end::Body-->
+<!-- Mirrored from preview.keenthemes.com/keen/demo1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Jul 2022 15:28:10 GMT -->
+
+</html>

@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | QualityLevel-I </title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js">
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+
+
+    <style>
+        .nameofdocument_styles {
+            width: 600px;
+            height: 70px !important;
+        }
+
+        .level_styles {
+            width: 160px;
+        }
+
+        .spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 99999999;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        textarea.form-control {
+            height: calc(1.5em + 1.3rem + 2px);
+        }
+
+        h6.text-danger {
+            animation: blink-animation 1s steps(6, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media print {
+            #printPageButton {
+                page-break-before: always;
+                display: none;
+            }
+
+            body:after {
+                display: none;
+            }
+
+            #kt_brand {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Quality for Business</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Quality Management</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted active">
+                                            <a href="#" class="text-muted">Quality for Business</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                            <!--<div class="form-group" id="template_div">
+                                <label class="font-weight-bold">
+                                    Selection of Quality Template:<sup class="text-danger">*</sup>
+                                </label>
+                                <select class="form-control" id="ddlqulitylist">
+                                </select>
+                            </div>-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="container">
+
+                            <form id="createTemplateSubmit" onsubmit="return false">
+                                <!--begin:: FROM TO Details-->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div id="company_data">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row mb-3">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="client">
+                                                                <label class="font-weight-bold">Company Name:<sup class="text-danger">*</sup></label>
+                                                                <select id="ddclient" name="client" class="ddclient form-control">
+                                                                    <option value="">Select Client</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-3">
+
+                                                            <div class="form-group" id="jobnum">
+                                                                <label class="font-weight-bold">Job No:</label>
+                                                                <select name="" id="ddjobno" class="ddjobno form-control" required>
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="5">5</option>
+                                                                    <option value="6">6</option>
+                                                                    <option value="7">7</option>
+                                                                    <option value="8">8</option>
+                                                                    <option value="9">9</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group" id="Employee">
+                                                                <label class="font-weight-bold">Employee Name:<sup class="text-danger">*</sup></label>
+                                                                <select id="ddlEmployee" name="employee" class="ddlEmployee form-control">
+                                                                    <option value="">Select Employee</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group w-200px" id="jobid_data">
+                                            <label class="font-weight-bold">Job ID:<sup class="text-danger">*</sup></label>
+                                            <select id="ddjobid" name="ddjobid" class="ddjobid form-control">
+                                                <option value="">Select Job ID</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h6 class="text-danger d-flex flex-center">* Size of each file should be less than 3MB</h6>
+                                <!--end::FROM TO Details-->
+                                <!-- table starts -->
+                                <!-- table quality starts -->
+                                <div class="card-container" data-step="1">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Quality Documentation and Control</h3>
+                                                <!--<div class="buttons-list d-flex justify-content-end">
+        <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+    </div>-->
+                                                <div class="flex-wrap">
+                                                    <button id="btnexportquailtydoc" class="btn btn-danger mx-3">Export<i class="note-icon-arrow-circle-down px-2 text-success" style="font-size:20px"></i></button>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6 " id="table-quality">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">New Record</th>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Document</th>
+                                                            <th scope="col">Type</th>
+                                                            <th scope="col">Doc ID</th>
+                                                            <th scope="col" class="editQualityHeading">Upload File</th>
+                                                            <th scope="col">Clause No.</th>
+                                                            <th scope="col" class="editQualityHeading">Approved View</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="next-step btn btn-success mx-2" data-next="2">Save</button>
+                                        <button type="button" class="next-step btn btn-primary" data-next="2">Next</button>
+                                    </div>
+                                </div>
+                                <!-- table quality ends -->
+                            </form>
+                            <!-- table quality 1 starts -->
+
+                            <form id="createTemplateSubmit1" onsubmit="return false">
+                                <div class="card-container" data-step="2" style="display: none;">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between my-2">
+                                                <div class="d-flex align-items-center my-2">
+                                                    <h3>Training Plan CY</h3>
+                                                    <div id="view_approv_document" class="px-3"></div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group" id="clauseDropdown">
+                                                        <select id="ddclause" name="ddclause" class="ddclause form-control">
+                                                            <option value="">Select Doc ID</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6 " id="table-quality1">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">New Record</th>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Document</th>
+                                                            <th scope="col">Type of Training</th>
+                                                            <th scope="col">Start Date</th>
+                                                            <th scope="col">End Date</th>
+                                                            <th scope="col">Upload file</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between my-2">
+                                                <div class="d-flex align-items-center my-2">
+                                                    <h3>Skill matrix Requirement</h3>
+                                                    <div id="view_approv_Skill_document" class="px-3"></div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group" id="clauseDropdown">
+                                                        <select id="ddclause2" name="ddclause2" class="ddclause2 form-control">
+                                                            <option value="">Select Doc ID</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6" id="table-quality1-main">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">New Record</th>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Employee</th>
+                                                            <th scope="col">Employee ID</th>
+                                                            <th scope="col">Designation</th>
+                                                            <th scope="col">Qualification/No of Years Experience</th>
+                                                            <th scope="col">Upload file</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between m-5">
+                                        <div>
+                                            <button type="button" class="prev-step btn btn-secondary" data-prev="1">Back</button>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="next-step btn btn-success" data-next="3">Save</button>
+                                            <button type="button" class="next-step btn btn-primary" data-next="3">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- table quality 1 ends -->
+                            <!-- table quality 2 starts -->
+                            <form onsubmit="return false" id="createTemplateSubmit2">
+                                <div class="card-container" data-step="3" style="display: none;">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Quality System Execution</h3>
+                                                <!--<div class="buttons-list d-flex justify-content-end">
+                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+                                                </div>-->
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6 " id="table-quality2">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Document</th>
+                                                            <th scope="col">Level 4 -Doc ID</th>
+                                                            <th scope="col">Clause No.</th>
+                                                            <th scope="col">Approved View</th>
+                                                            <th scope="col">Upload Multi Doc(max 12)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end:: tabe ends -->
+                                    <div class="d-flex justify-content-between m-5">
+                                        <div>
+                                            <button type="button" class="prev-step btn btn-secondary" data-prev="2">Back</button>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="next-step btn btn-success" data-next="4">Save</button>
+                                            <button type="button" class="next-step btn btn-primary" data-next="4">Next</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <!-- table quality 2 ends -->
+                            <!-- table quality 3 starts -->
+                            <form onsubmit="return false" id="createTemplateSubmit3">
+                                <div class="card-container" data-step="4" style="display: none;">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Internal Audit and MRM</h3>
+                                                <!--<div class="buttons-list d-flex justify-content-end">
+                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+                                                </div>-->
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6 " id="table-quality3">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <!--<th scope="col">New Record</th>-->
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Document</th>
+                                                            <th scope="col">Level 4 -Doc ID</th>
+                                                            <th scope="col">Clause No.</th>
+                                                            <th scope="col">Approved View</th>
+                                                            <th scope="col">Upload Multi Doc(max 12)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end:: tabe ends -->
+
+                                    <div class="d-flex justify-content-between m-5">
+                                        <div>
+                                            <button type="button" class="prev-step btn btn-secondary" data-prev="3">Back</button>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="next-step btn btn-success" data-next="5">Save</button>
+                                            <button type="button" class="next-step btn btn-primary" data-next="5">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- table quality 3 ends -->
+                            <!-- table quality 4 starts -->
+                            <form onsubmit="return false" id="createTemplateSubmit4">
+                                <div class="card-container" data-step="5" style="display: none;">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>External Audit and MRM</h3>
+                                                <!--<div class="buttons-list d-flex justify-content-end">
+                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+                                                </div>-->
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6 " id="table-quality4">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Name of Document</th>
+                                                            <th scope="col">Level 4 -Doc ID</th>
+                                                            <th scope="col">Clause No.</th>
+                                                            <th scope="col">Approved View</th>
+                                                            <th scope="col">Upload Multi Doc(max 12)</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end:: tabe ends -->
+                                    <div class="d-flex justify-content-between m-5">
+                                        <div>
+                                            <button type="button" class="prev-step btn btn-secondary" data-prev="4">Back</button>
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="next-step btn btn-success" data-next="6">Save</button>
+                                            <button type="button" class="next-step btn btn-primary" data-next="6">Next</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+                            <!-- table quality 4 ends -->
+                            <!-- table quality 5 starts -->
+                            <form onsubmit="return false" id="createTemplateSubmit5">
+                                <div class="card-container" data-step="6" style="display: none;">
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Quality Certificate</h3>
+                                                <!--<div class="buttons-list d-flex justify-content-end">
+                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+                                                </div>-->
+                                            </div>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-hover mb-6" id="table-quality5">
+                                                    <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">New Record</th>
+                                                            <th scope="col">S.No</th>
+                                                            <th scope="col">Certificate (upload/view)</th>
+                                                            <th scope="col">Type of Certificate</th>
+                                                            <th scope="col">Issued on</th>
+                                                            <th scope="col">Next Due on</th>
+                                                            <th scope="col">Remarks</th>
+                                                            <th scope="col">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end:: tabe ends -->
+                                    <div class="d-flex justify-content-between m-5">
+                                        <button type="button" class="prev-step btn btn-secondary" data-prev="5">Back</button>
+                                        <button type="submit" class="next-step btn btn-success">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- table quality 5 ends -->
+                        </div>
+                        <!--end::Container-->
+                    </div>
+                    <!--end::Entry-->
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <div id="spinner" style="display:none" class="spinner">
+        <i class="fa fa-spinner fa-spin fa-3x" style="color: #3699FF;"></i> Loading...
+    </div>
+    <!--end::Scrolltop-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js"></script>
+    <script src="../theme/js/scripts.bundle1036.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- TOASTIFY -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <!-- TOASTIFY -->
+    <!--Convert dateformat to general format end-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../js/Imageupload.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/commonFunctinality.js"></script>
+    <script type="module" src="../js/qualityDocumentationNew.js"></script>
+
+    <!--end::Page Scripts-->
+    <script>
+        //function printDiv(divId) {
+        //    var printContents = document.getElementById(divId).innerHTML;
+        //    var originalContents = document.body.innerHTML;
+
+        //    document.body.innerHTML = printContents;
+
+        //    window.print();
+
+        //    document.body.innerHTML = originalContents;
+        //}
+        $(".editQualityHeading").hide();
+    </script>
+    <!--end::Page Scripts-->
+    <script>
+        $(document).ready(function () {
+            $("#ddclause3").select2({
+                //placeholder: "Search here...",
+                allowClear: true,
+                width: '100%'
+            });
+        });
+    </script>
+</body>
+</html>

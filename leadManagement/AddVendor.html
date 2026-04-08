@@ -1,0 +1,728 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Add Vendor</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+  
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Create Vendor Profile</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Lead Management</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./VendorList.html" class="text-muted">Vendor List</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./AddVendor.html" class="text-muted">Create Vendor</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <form id="VendorCreate" onsubmit="return false">
+                        <div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container">
+                                <!--begin:: FROM TO Details-->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Company Name:<sup class="text-danger">*</sup>
+                                                            </label>
+                                                            <input type="text" id="txtcompanyname" class="form-control"
+                                                                   placeholder="Enter Company Name" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <label>Complete Address:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <input type="text" id="txtcompanyaddress" class="form-control"
+                                                                   placeholder="H/No:4/123, New Colony" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <label>Drive Link:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <input type="text" id="drivelink" class="form-control"
+                                                                   placeholder="https://drive.google.com/file/d/12345abcdef/view" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label>Email:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-envelope"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input id="txtemail" type="email" class="form-control"
+                                                                   placeholder="xyz@email.com" required />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Phone:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-phone"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="number" id="txtphone" pattern="[789][0-9]{9}" class="form-control"
+                                                                   placeholder="99999 99999" required />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">GST Number:<sup class="text-danger">*</sup></label>
+                                                            <input type="text" id="txtGST" class="form-control"
+                                                                   placeholder="GST 123456" required/>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Bank Name:<sup class="text-danger">*</sup></label>
+                                                            <input type="text" id="BankName" class="form-control"
+                                                                   placeholder="Bank Name" required/>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label>Account Number:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-envelope"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input id="Bank_Account" type="number" class="form-control"
+                                                                   placeholder="646484849" required />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>IFSC Code:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-phone"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="text" id="IFSC_Code" class="form-control"
+                                                                   placeholder="CBIN002332" required />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4  bg-secondary" style="margin-left: 80px;">
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Type of Business:<sup class="text-danger">*</sup>
+                                                            </label>
+                                                            <select name="" id="ddlbusinesstype" class="form-control">
+                                                                <option>Select Type of Business</option>
+                                                                <option value="Product">Product</option>
+                                                                <option value="Service">Service</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Service Name:<sup class="text-danger">*</sup>
+                                                            </label>
+                                                            <select name="ddlServicename" id="ddlServicename" class="selectpicker form-control" multiple>
+                                                                <option value="leadManagement">Lead Management</option>
+                                                                <option value="regulatoryManagement">Regulatory Management</option>
+                                                                <option value="qualityManagement">Qulaity Management</option>
+                                                                <option value="process">Process</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2 mb-7">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">
+                                                                Subscription Type:<sup class="text-danger">*</sup>
+                                                            </label>
+                                                            <select name="Subsciption" id="ddlSubscritption" class="form-control">
+                                                                <option value="Annual">Annual</option>
+                                                                <option value="Monthly">Monthly</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::FROM TO Details-->
+                                <!--begin:: Documents section-->
+                                <div class="row mb-7">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header mb-0">
+                                                <h6 class="font-weight-bolder text-primary">Upload Documents</h6>
+                                            </div>
+                                            <div class="card-body">
+
+                                                <table class="table table-borderless">
+                                                    <tr>
+                                                        <td>
+                                                            <small>GST</small>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <label class="font-weight-bold">GST Document:</label>
+                                                                <div class="input-group">
+                                                                    <div class="custom-file" id="dvinputGroupFile01">
+                                                                        <input type="file" class="custom-file-input"
+                                                                               id="inputGroupFile01"
+                                                                               aria-describedby="inputGroupFileAddon01">
+                                                                        <label class="custom-file-label"
+                                                                               for="inputGroupFile01"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <small>
+                                                                Firm Registration document <br /> (*partnership):
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file" id="dvfirmregistraionfile">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="firmregistraionfile"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="inputGroupFile01"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><small>Partnership Deed : </small></td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file" id="dvpartnershipfirm">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="partnershipfirm"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="inputGroupFile01"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <small>
+                                                                Certificate of incorporation <br /> (*pvt ltd / LLP):
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file" id="dvcertificatefirm">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="certificatefirm"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="inputGroupFile01"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <small>
+                                                                + MOA (Memorandum of articles)<br /> (*pvt ltd / LLP):
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file" id="dvMOA">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="MOA"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="MOA"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <small>
+                                                                + AOA (articles of association) <br />(*pvt ltd / LLP):
+                                                            </small>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="AOA"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="AOA"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><small>IEC code (*Exporters) : </small></td>
+                                                        <td>
+                                                            <div class="input-group">
+                                                                <div class="custom-file" id="dvIEC">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="IEC"
+                                                                           aria-describedby="inputGroupFileAddon01">
+                                                                    <label class="custom-file-label"
+                                                                           for="inputGroupFile01"></label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <input type="hidden" id="imagestr" value="" />
+
+                                                <input type="hidden" id="imagestr1" value="" />
+
+                                                <input type="hidden" id="imagestr2" value="" />
+
+                                                <input type="hidden" id="imagestr3" value="" />
+                                                <input type="hidden" id="imagestr4" value="" />
+                                                <input type="hidden" id="imagestr5" value="" />
+                                                <input type="hidden" id="imagestr6" value="" />
+                                                <span id="fileuploads" class="btn btn-success">Upload Selected Documents</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h6 class="font-weight-bolder text-primary">
+                                                    Amount/Purchase dept for
+                                                    invoices
+                                                </h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label for="">Name <sup class="text-danger">*</sup></label>
+                                                        <input type="text" name="" id="pname" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="">Designation <sup class="text-danger">*</sup></label>
+                                                        <input type="text" name="pdesignation" id="pdesignation" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label>Email:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-envelope"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="email" id="pEmail" class="form-control"
+                                                                   placeholder="xyz@email.com" required />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Phone:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-phone"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="number" id="pphone" class="form-control"
+                                                                   placeholder="99999 99999" pattern="[789][0-9]{9}" required />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <h6 class="font-weight-bolder text-primary mb-5" style="margin-top: 40px; margin-bottom: 20px;">
+                                                    One Point Contact For
+                                                    Technical Works
+                                                </h6>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label for="">Name <sup class="text-danger">*</sup></label>
+                                                        <input type="text" name="" id="tTechnocalWorksName" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="">Designation <sup class="text-danger">*</sup></label>
+                                                        <input type="text" name="" id="tDesignation" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-md-6">
+                                                        <label>Email:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-envelope"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="email" id="temail" class="form-control"
+                                                                   placeholder="xyz@email.com" required />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label>Phone:<sup class="text-danger">*</sup></label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-phone"></i>
+                                                                </span>
+                                                            </div>
+                                                            <input type="number" id="tphone" class="form-control"
+                                                                   placeholder="99999 99999" pattern="[789][0-9]{9}" required />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Documents section-->
+                                <!--begin:: Products section-->
+                                <div class="card mb-7" id="dvProduct">
+                                    <div class="card-header">
+                                        <h6 class="card-title text-primary font-weight-bold">Product</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="row d-flex mb-7 align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="" class="font-weight-bold">Select Category <sup class="text-danger">*</sup></label>
+                                                    <select name="PCategory" id="PddlCategory" class="form-control"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="btn btn-outline-primary border-0 font-weight-bolder" data-toggle="modal" data-target="#ModalCat" style="font-size: 1.5rem;">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="Select" class="font-weight-bold">Select Activity <sup class="text-danger">*</sup></label>
+                                                    <select id="PActivity" class="form-control">
+                                                        <option value="">Select Activity</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="btn btn-outline-primary border-0 font-weight-bolder" data-toggle="modal" data-target="#ModalAct" style="font-size: 1.5rem;">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="" class="font-weight-bold">Product Name <sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="" id="PProductname" class="form-control">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="Pcapacity" class="font-weight-bold">Capacity of Production Per Day <sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="Pcapacity" id="Pcapacity" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="pCustomerName" class="font-weight-bold">Customers Name <sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="pCustomerName" id="pCustomerName" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--end::Products section-->
+                                <!--begin:: Services section-->
+                                <div class="card mb-7" id="dvService">
+                                    <div class="card-header">
+                                        <h6 class="card-title text-primary font-weight-bold">Services</h6>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="row d-flex mb-7 align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="Scategoryddl" class="font-weight-bold">Select Category <sup class="text-danger">*</sup></label>
+                                                    <select name="Scategoryddl" id="Scategoryddl" class="form-control">
+                                                        <option value="">Select Category</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="btn btn-outline-primary border-0 font-weight-bolder" data-toggle="modal" data-target="#ModalCat" style="font-size: 1.5rem;">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="sActivityDDl" class="font-weight-bold">Select Activity <sup class="text-danger">*</sup></label>
+                                                    <select name="sActivityDDl" id="sActivityDDl" class="form-control"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="btn btn-outline-primary border-0 font-weight-bolder" data-toggle="modal" data-target="#ModalAct" style="font-size: 1.5rem;">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="txtsservice" class="font-weight-bold">Services <sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="txtsservice" id="txtsservice" class="form-control">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row d-flex align-items-center">
+                                            <div class="col-md-10">
+                                                <div class="form-group">
+                                                    <label for="txtscustomername" class="font-weight-bold">Customers Name <sup class="text-danger">*</sup></label>
+                                                    <input type="text" name="txtscustomername" id="txtscustomername" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--end::Services section-->
+
+                                <div class="buttons-list d-flex justify-content-end">
+                                    <button class="btn btn-secondary mx-3" type="button" onclick="location.href='./VendorList.html'">Cancel</button>
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                            <!--end::Container-->
+
+                        </div>
+                    </form>
+                    <!--end::Entry-->
+                </div>
+                <!--end::Content-->
+
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Page-->
+    </div>
+
+    <div class="modal fade" id="ModalCat" tabindex="-1" aria-labelledby="ModalCat" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Categories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmcat" onsubmit="return false">
+                        <input type="text" id="txtCategory" class="form-control" placeholder="Category Name" name="name" value="" /> <input style="float:right" type="submit" class="btn btn-success" />
+                    </form>
+                    <br /><br />
+                    <table id="tblcategory" class="table table-dark">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalAct" tabindex="-1" aria-labelledby="ModalAct" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Activity</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frmact" onsubmit="return false">
+                        <input type="text" id="txtactivity" class="form-control" placeholder="Activity Name" name="name" value="" /> <input style="float:right" type="submit" class="btn btn-success" />
+                    </form>
+                    <br /><br />
+                    <table id="tblactivity" class="table table-dark">
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--end::Scrolltop-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/AddVendor.js"></script>
+</body>
+<!--end::Body-->
+
+</html>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <form class="form-validate-summernote">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" name="form2-name" type="text" required="required"
+                               data-msg="Please enter your name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Text</label>
+                        <textarea class="summernote" required="required"
+                                  data-msg="Please write something :)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+        <!--begin::Menu Container-->
+        <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
+            <!--begin::Menu Nav-->
+            <ul class="menu-subnav">
+                <li class="menu-item" aria-haspopup="true">
+                    <a href="../roleManagement/rolesList.html" class="menu-link">
+                        <i class="menu-bullet menu-bullet-dot">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">Roles List</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        $(function () {
+
+            /* Summernote Validation */
+
+            var summernoteForm = $('.form-validate-summernote');
+            var summernoteElement = $('.summernote');
+
+            var summernoteValidator = summernoteForm.validate({
+                errorElement: "div",
+                errorClass: 'is-invalid',
+                validClass: 'is-valid',
+                ignore: ':hidden:not(.summernote),.note-editable.card-block',
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("invalid-feedback");
+                    console.log(element);
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.siblings("label"));
+                    } else if (element.hasClass("summernote")) {
+                        error.insertAfter(element.siblings(".note-editor"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+
+            summernoteElement.summernote({
+                height: 300,
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        // Note that at this point, the value of the `textarea` is not the same as the one
+                        // you entered into the summernote editor, so you have to set it yourself to make
+                        // the validation consistent and in sync with the value.
+                        summernoteElement.val(summernoteElement.summernote('isEmpty') ? "" : contents);
+
+                        // You should re-validate your element after change, because the plugin will have
+                        // no way to know that the value of your `textarea` has been changed if the change
+                        // was done programmatically.
+                        summernoteValidator.element(summernoteElement);
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

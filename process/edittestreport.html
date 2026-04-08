@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Test Report</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Create Test Report</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Process</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Service</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./reviewandapproval.html" class="text-muted">Create Testreport</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--  Service SHEET ALLOCATION module
+
+                    <!--  Create Test Report Module  -->
+                    <!--begin::Entry-->
+                    <form id="dvpdf" onsubmit="return false">
+                        <div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container">
+                                <div id="createTemplateSubmit">
+                                    <!--begin:: FROM TO Details-->
+                                    <div class="card mb-7">
+                                        <div class="card-body">
+                                            <!-- Test Report number table -->
+                                            <div class="table-responsive col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Registration No:</label>
+                                                            <select name="" id="ddjobid" class="ddjobid form-control">
+                                                                <option value="">Select Registration ID</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Test Report No:</label>
+                                                            <input type="text" name="" id="TestReport" class="TestReport form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">ULR No:</label>
+                                                            <input type="text" name="" id="ULRNo" class="ULRNo form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Report Issued Date:</label>
+                                                            <input type="date" name="" id="IssuedDate" class="IssuedDate form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End of Test Report Table -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Container-->
+                        <!--end::Entry-->
+                        <!-- 4.Create Test Report (TEMPLATE MODEL) -->
+                        <div class="card mb-7">
+                            <div class="card-body">
+                                <div class="table-responsive col-md-12">
+                                    <div id="test">
+                                        <h3>Create Test Report (TEMPLATE MODEL) </h3>
+                                        <h4>Report Issued to:</h4>
+                                        <table class="table table-hover mb-6 " id="table-iddoc10">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Name:   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="name" class="name form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Address:   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <textarea type="text" id="address" class="address form-control"></textarea>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Email:   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="email" id="email" class="email form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Contact Number:   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="number" id="mobile" class="mobile form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <h4>Sample Details</h4>
+                                        <table class="table table-hover mb-6 " id="table-iddoc20">
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Discipline</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="discipline" class="discipline form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Product Group  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="grp" class="grp form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample Receipt Date   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SampleReceiptDate" class="SampleReceiptDate form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample Registration Date  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SampleRegistrationDate" class="SampleRegistrationDate form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample ID   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SampleID" class="SampleID form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample Name  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SampleName" class="SampleName form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Customer Reference   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="CustomerReference" class="CustomerReference form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample Packing Type  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SamplePackingType" class="SamplePackingType form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Sample Quantity Received   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="SampleQuantityReceived" class="SampleQuantityReceived form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Batch/Lot No. </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="BatchLotNo" class="LotNo form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Date of Mfg./Pkg.   </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="DateofMfgPkg" class="DateofMfgPkg form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Date of expiry  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="Dateofexpiry" class="Dateofexpiry form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Analysis Starting Date  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="AnalysisStartingDate" class="AnalysisStartingDate form-control">
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Analysis completion date  </label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" id="Analysiscompletiondate" class="Analysiscompletiondate form-control">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!--<tr><td colspan="4"><h4>Additional Information:</h4></td></tr>-->
+
+
+                                            </tbody>
+                                        </table>
+                                        <h4>TEST RESULT</h4>
+                                        <table class="table table-hover mb-6 " id="table-iddoc30">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">S.No</th>
+                                                    <th scope="col">Test Parameter</th>
+                                                    <th scope="col">Unit</th>
+                                                    <th scope="col">Results</th>
+                                                    <th scope="col">Test Method</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" />
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" name="" id="testParameter" class="testParameter form-control">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" name="" id="unit" class="unit form-control">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" name="" id="results" class="results form-control">
+                                                        </div>
+                                                    </td>
+
+
+                                                    <td>
+                                                        <div class="form-group">
+                                                            <input type="text" name="" id="testMethod" class="testMethod form-control">
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="form-group">
+                                            <label class=" col-form-label text-alert">Remarks: </label>
+                                            <div class="">
+                                                <textarea type="text" class="disclaimer form-control" id="disclaimer"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-4"></div>
+                                            <div class="signature-section d-flex flex-column">
+                                                <h4 class="font-weight-bolder mb-9">
+                                                    Authorised Signature <sup class="text-danger">*</sup>
+                                                </h4>
+                                                <div class="wrapperImg">
+                                                    <div class="box">
+                                                        <div class="js--image-preview" id="fl_img1view"></div>
+                                                        <div class="upload-options">
+                                                            <label>
+                                                                <input type="file" id="imgfile1" class="image-upload"
+                                                                       accept="image/*" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <input type="submit" value="Submit" class="form-control form-control-sm">
+                                            </div>
+
+                                        </div>-->
+
+                                    </div>
+                                    <button id="btnformsubmit" type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- End of 4.Create Test Report (TEMPLATE MODEL) -->
+                <!-- End of Review and Approval -->
+            </div>
+
+        </div>
+    </div>
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../js/Imageupload.js"></script>
+    <script type="module" src="../js/navbar.js"></script>
+    <script type="module" src="../js/commonFunctinality.js"></script>
+    <script type="module" src="../js/Createtestreport.js"></script>
+    <!--end::Page Scripts-->
+
+
+</body>
+<!--end::Body-->
+
+</html>

@@ -72,14 +72,15 @@
 
 
                 if (currentRow.find("td:eq(3)").find("input").hasClass("Clientfile")) {
-                    var file = currentRow.find("td:eq(3)").find(".Clientfile")[0].files[0];
-                    var reader = new FileReader();
+                    //var file = currentRow.find("td:eq(3)").find(".Clientfile")[0].files[0];
+                    //var reader = new FileReader();
                     try {
-                        reader.readAsDataURL(file);
-                        reader.onload = function () {
+                    //    reader.readAsDataURL(file);
+                    //    reader.onload = function () {
 
                             const checklistid = getid;
                             const nameofthedocument = currentRow.find("td:eq(1)").find('textarea').val();
+                        const modelformat = currentRow.find("td:eq(3)").find("input.Clientfile").val();
                             var status = "";
                             const RowId = currentRow.find("td:eq(0)").find(".addRow").attr("id");
 
@@ -91,7 +92,7 @@
                             }
 
 
-                            const modelformat = reader.result;
+                            //const modelformat = reader.result;
 
 
                             var postdata = {
@@ -120,7 +121,7 @@
                                     }
                                 }
                             });
-                        };
+                        /*};*/
                     } catch (e) {
                         var reader = new FileReader();
                         const checklistid = getid;
@@ -239,7 +240,7 @@
                             '<td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" id="' + values.id + '"><i class="fas fa-plus-circle"></i></span></td>' +
                             '<td id="col1" style="width:70%;"><textarea placeholder="document name" class="form-control txtdocname" style="width:100%;">' + values.nameofthedocument + '</textarea></td>' +
                             '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">View</button></a></td>' +
-                            '<td><input type="file" class="form-control Clientfile"/>' + docView + '</td>' +
+                            '<td><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
                             '<td><span class="deleteRows" style="cursor:pointer" id="' + values.id + '"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td>' +
                             '</tr>';
                     } else {
@@ -247,7 +248,7 @@
                             '<td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" id="' + values.id + '"><i class="fas fa-plus-circle"></i></span></td>' +
                             '<td id="col1" style="width:70%;"><textarea placeholder="document name" class="form-control txtdocname" style="width:100%;">' + values.nameofthedocument + '</textarea></td>' +
                             '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">View</button></a></td>' +
-                            '<td><input type="file" class="form-control Clientfile"/>' + docView + '</td>' +
+                            '<td><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
                             '</tr>';
                     }
 
@@ -406,7 +407,7 @@
         })
     });
     $("#pricingTable").on("click", ".addRow", function () {
-        var addrow = '<tr><td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow"><i class="fas fa-plus-circle"></i></span></td><td id="col1"><input type="text" name="" placeholder="document name" class="form-control txtdocname"></td><td id="col2" colspan="2"><div class="row"><div class="col-md-9"><input type="file" class="form-control fileupload"></div><div class="col-md-3"><input type="checkbox" class="chk" name="select" /></div></div></td><td> <span class="deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></span></td></tr>'
+        var addrow = '<tr><td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow"><i class="fas fa-plus-circle"></i></span></td><td id="col1"><input type="text" name="" placeholder="document name" class="form-control txtdocname"></td><td id="col2" colspan="2"><div class="row"><div class="col-md-9"><input type="url" class="form-control fileupload"></div><div class="col-md-3"><input type="checkbox" class="chk" name="select" /></div></div></td><td> <span class="deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></span></td></tr>'
         $("#pricingTable tbody").append(addrow);
     })
     $("#pricingTable").on("click", ".deleteRow", function () {

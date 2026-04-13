@@ -384,12 +384,12 @@ $(() => {
             }
             const startDate = value.Dateoftrainingstart ? moment(value.Dateoftrainingstart).format("YYYYY-MM-DD") : "N/A";
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}" ${value.TypeOfTraining == item.id ? "selected" : ""}>Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr data-row-id="' + value.ID + '"><td><input class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document" value="" edit_id=' + value.ID + '> ' + value.DocumentName + ' </textarea></div></td><td><div class="form-group"><select class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"  value=' + startDate + '></div></td><td><div class="form-group"><input type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd" value=' + value.topcoftrainingEnd + '></div></td><td><input class="w-300px form-control DocUpload mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon01" type="file"><a href="' + value.DocUpload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr data-row-id="' + value.ID + '"><td><input class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document" value="" edit_id=' + value.ID + '> ' + value.DocumentName + ' </textarea></div></td><td><div class="form-group"><select class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"  value=' + startDate + '></div></td><td><div class="form-group"><input type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd" value=' + value.topcoftrainingEnd + '></div></td><td><div class="form-group"><input class="w-300px form-control DocUpload mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon01" type="url"></div><a href="' + value.DocUpload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
             $("#table-quality1 tbody").append(getrowcontent);
         }
         else {
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}">Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr><td><input class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document"></textarea></div></td><td><div class="form-group"><select class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"></div></td><td><div class="form-group"><input type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd"></div></td><td><input class="form-control w-300px DocUpload mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon01" type="file"><a href="#" class="btn btn-primary viewButton disabled" >View</a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document"></textarea></div></td><td><div class="form-group"><select class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"></div></td><td><div class="form-group"><input type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd"></div></td><td><div class="form-group"><input class="form-control w-300px DocUpload mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon01" type="url"></div><a href="#" class="btn btn-primary viewButton disabled" >View</a></td><td>' + deleteIcon + '</td></tr>';
             $("#table-quality1 tbody").append(getrowcontent);
         }
     }
@@ -473,11 +473,11 @@ $(() => {
             if ($("#ddclause2 option[value='" + value.ClauseNo + "']").length > 0) {
                 $("#ddclause2").val(value.ClauseNo);
             }
-            var getrowcontent = '<tr  data-row-id="' + value.ID + '"><td><input class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name" value=' + value.EmployeeName + '></div></td><td><div class="form-group"><input type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID" value=' + value.EmployeeID + '></div></td><td><div class="form-group"><input type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation" value=' + value.Designation + '></div></td><td><div class="form-group"><input type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience" edit_id=' + value.ID + ' value=' + value.Qualification + '></div></td><td><input class="w-300px form-control uploadFile mb-2" id="uploadFile" aria-describedby="inputGroupFileAddon01" type="file"><a href="' + value.JDupload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr  data-row-id="' + value.ID + '"><td><input class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name" value=' + value.EmployeeName + '></div></td><td><div class="form-group"><input type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID" value=' + value.EmployeeID + '></div></td><td><div class="form-group"><input type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation" value=' + value.Designation + '></div></td><td><div class="form-group"><input type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience" edit_id=' + value.ID + ' value=' + value.Qualification + '></div></td><td><div class="form-group"><input class="w-300px form-control uploadFile mb-2" id="uploadFile" aria-describedby="inputGroupFileAddon01" type="url"></div><a href="' + value.JDupload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
             $("#table-quality1-main tbody").append(getrowcontent);
         }
         else {
-            var getrowcontent = '<tr><td><input class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name"></div></td><td><div class="form-group"><input type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID"></div></td><td><div class="form-group"><input type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation"></div></td><td><div class="form-group"><input type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience"></div></td><td><input class="w-300px form-control uploadFile mb-2" id="uploadFile" aria-describedby="inputGroupFileAddon01" type="file"> <a href="#" id="viewButton" class="btn btn-primary viewButton disabled">View</a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name"></div></td><td><div class="form-group"><input type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID"></div></td><td><div class="form-group"><input type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation"></div></td><td><div class="form-group"><input type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience"></div></td><td><div class="form-group"><input class="w-300px form-control uploadFile mb-2" id="uploadFile" aria-describedby="inputGroupFileAddon01" type="url"> </div><a href="#" id="viewButton" class="btn btn-primary viewButton disabled">View</a></td><td>' + deleteIcon + '</td></tr>';
             $("#table-quality1-main tbody").append(getrowcontent);
         }
 
@@ -815,10 +815,10 @@ $(() => {
                 var jobID = $("#ddjobid").val();
 
                
-                var fileInputElement = $("#table-quality1 tbody tr").eq(i).find(".DocUpload")[0];
+                var fileInputElement = $("#table-quality1 tbody tr").eq(i).find(".DocUpload").val();
 
-                if (fileInputElement && fileInputElement.files && fileInputElement.files.length > 0) {
-                    postdata.append('DocUpload', fileInputElement.files[0]);
+                if (fileInputElement) {
+                    postdata.append('DocUpload', fileInputElement);
                 } else {
                     //console.warn("File input not found or no files selected.");
                 }
@@ -893,10 +893,10 @@ $(() => {
                     //do nothing
                 }
                 var jobID = $("#ddjobid").val();
-                var fileInputElement = $("#table-quality1-main tbody tr").eq(i).find(".uploadFile")[0];
+                var fileInputElement = $("#table-quality1-main tbody tr").eq(i).find(".uploadFile").val();
 
-                if (fileInputElement && fileInputElement.files && fileInputElement.files.length > 0) {
-                    postdata.append('JDupload', fileInputElement.files[0]);
+                if (fileInputElement) {
+                    postdata.append('JDupload', fileInputElement);
                 } else {
                     //console.warn("File input not found or no files selected.");
                 }
@@ -974,7 +974,7 @@ $(() => {
             } else {
                 var Approveduplpdf = '<a href="#" class="btn btn-primary viewButton disabled" >View</a>';
             }
-            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.TemplateID + '" placeholder="Name of Document"> ' + value.Nameofthedoc + '</textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" name="" value="' + value.DocId + '" style="" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" value="' + value.clause + '" name="" style="" placeholder="Clause No."></div></td><td><div>' + Approveduplpdf + '</div></td><td><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="file" value_id=' + value.ID + ' accept="application/*" multiple><div>' + multidocViewButtons + '</div></td></tr>';
+            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.TemplateID + '" placeholder="Name of Document"> ' + value.Nameofthedoc + '</textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" name="" value="' + value.DocId + '" style="" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" value="' + value.clause + '" name="" style="" placeholder="Clause No."></div></td><td><div>' + Approveduplpdf + '</div></td><td><div class="form-group"><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="url" value_id=' + value.ID + '></div><div>' + multidocViewButtons + '</div></td></tr>';
             $("#table-quality2 tbody").append(getrowcontent);
         }
         //const getIndex = currentRowCount + 1;
@@ -1044,11 +1044,11 @@ $(() => {
                 const tableBody1 = $("#table-quality2 tbody");
                 const currentRowCount = tableBody1.children("tr").length;
                 const getIndex = currentRowCount + 1;
-                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" placeholder="Clause No."></div></td><td><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="file" accept="application/*" multiple></td></tr>';
+                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" placeholder="Clause No."></div></td><td><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><div class="form-group"><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="url"></div></td></tr>';
                 $("#table-quality2 tbody").append(getrowcontent);
             }
         } else {
-            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" placeholder="Clause No."></div></td><td><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="file" accept="application/*" multiple></td></tr>';
+            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><input class="form-control type level_styles" id="type" placeholder="Type 4 Doc ID"></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo" placeholder="Clause No."></div></td><td><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><div class="form-group"><input class="Draftformatfile w-300px form-control mb-2" id="certificateformatfile" aria-describedby="inputGroupFileAddon01" type="url"></div></td></tr>';
             $("#table-quality2 tbody").append(getrowcontent);
         }
     }
@@ -1073,7 +1073,7 @@ $(() => {
                 const tableBody1 = $("#table-quality3 tbody");
                 const currentRowCount = tableBody1.children("tr").length;
                 const getIndex = currentRowCount + 1;
-                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="col-md-12"><div class="form-group"><select id="ddclause3" class="form-control" ><option value="">Select DOC ID</option></select></div></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo1" style="" placeholder="Clause No."></div></td><td class="view4tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="inputGroupFileAddon01" type="file" accept="application/*" multiple></td><td><div class="deleterow2 my-2" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="col-md-12"><div class="form-group"><select id="ddclause3" class="form-control" ><option value="">Select DOC ID</option></select></div></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo1" style="" placeholder="Clause No."></div></td><td class="view4tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><div class="form-group"><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="inputGroupFileAddon01" type="url"></div></td><td><div class="deleterow2 my-2" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                 $("#table-quality3 tbody").append(getrowcontent);
                 getDocIdlevel4()
                 $("#ddclause3").select2({
@@ -1104,7 +1104,7 @@ $(() => {
                 const tableBody1 = $("#table-quality4 tbody");
                 const currentRowCount = tableBody1.children("tr").length;
                 const getIndex = currentRowCount + 1;
-                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc2" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><select id="ddclause4" class="form-control" ><option value="">Select DOC ID</option></select></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" placeholder="Clause No."></div></td><td class="view5tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile2" aria-describedby="inputGroupFileAddon01" type="file" accept="application/*" multiple></td></tr>';
+                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc2" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="form-group"><select id="ddclause4" class="form-control" ><option value="">Select DOC ID</option></select></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" placeholder="Clause No."></div></td><td class="view5tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><div class="form-group"><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile2" aria-describedby="inputGroupFileAddon01" type="url"></div></td></tr>';
                 $("#table-quality4 tbody").append(getrowcontent);
                 getDocIdlevel4()
                 $("#ddclause4").select2({
@@ -1132,7 +1132,7 @@ $(() => {
             } else {
                 var ApprovedView = '<a href="#" class="btn btn-primary viewButton disabled" >View</a>';
             }
-            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.templateid + '" placeholder="Name of Document"> ' + value.NameOfDocument + '</textarea></div></td><td><div class="col-md-12"><div class="form-group"><select id="ddclause3" class="form-control ddclause3_' + value.ID + '" ></select></div></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" value="' + value.ClauseNo + '" placeholder="Clause No."></div></td><td class="view4tabdoc"><div> ' + ApprovedView + '</div></td><td><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="inputGroupFileAddon01" type="file" value_id=' + value.ID + ' accept="application/*" multiple><div>' + multidocViewButtons + '</div></td></tr>';
+            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.templateid + '" placeholder="Name of Document"> ' + value.NameOfDocument + '</textarea></div></td><td><div class="col-md-12"><div class="form-group"><select id="ddclause3" class="form-control ddclause3_' + value.ID + '" ></select></div></div></td><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" value="' + value.ClauseNo + '" placeholder="Clause No."></div></td><td class="view4tabdoc"><div> ' + ApprovedView + '</div></td><td><div class="form-group"><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="inputGroupFileAddon01" type="url" value_id=' + value.ID + '></div><div>' + multidocViewButtons + '</div></td></tr>';
             $("#table-quality3 tbody").append(getrowcontent);
             getDocIdlevel4();
             $("#ddclause3").select2({
@@ -1218,7 +1218,7 @@ $(() => {
             } else {
                 var ApprovedView = '<a href="#" class="btn btn-primary viewButton disabled" >View</a>';
             }
-            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc2" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.templateid + '" placeholder="Name of Document"> ' + value.NameOfDocument + '</textarea></div></td><td><div class="form-group"><select id="ddclause4" class="form-control ddclause4_' + value.ID + '"></select ></div ></td ><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" value="' + value.ClauseNo + '" name="" style="" placeholder="Clause No."></div></td><td class="view5tabdoc"><div>' + ApprovedView + '</div></td><td><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile2" aria-describedby="inputGroupFileAddon01" type="file" value_id=' + value.ID + ' accept="application/*" multiple><div>' + multidocViewButtons + '</div></td></tr > ';
+            var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc2" class="NameoftheDoc form-control nameofdocument_styles" value="" edit_id="' + value.ID + '" tem_id="' + value.templateid + '" placeholder="Name of Document"> ' + value.NameOfDocument + '</textarea></div></td><td><div class="form-group"><select id="ddclause4" class="form-control ddclause4_' + value.ID + '"></select ></div ></td ><td><div class="form-group"><input class="form-control ClauseNo level_styles" id="ClauseNo2" value="' + value.ClauseNo + '" name="" style="" placeholder="Clause No."></div></td><td class="view5tabdoc"><div>' + ApprovedView + '</div></td><td><div class="form-group"><input class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile2" aria-describedby="inputGroupFileAddon01" type="url" value_id=' + value.ID + '></div><div>' + multidocViewButtons + '</div></td></tr > ';
             $("#table-quality4 tbody").append(getrowcontent);
             getDocIdlevel4()
             $("#ddclause4").select2({
@@ -1386,10 +1386,10 @@ $(() => {
                 if (firs_table_tem_id != null) postdata.append('TemplateID', firs_table_tem_id);
                 var ID = $("#table-quality2 tbody tr").eq(i).find("#NameoftheDoc").attr("edit_id");
                 if (ID != null) postdata.append('ID', ID);
-                var multiDocs = $("#table-quality2 tbody tr").eq(i).find("#certificateformatfile")[0].files;
-                for (var j = 0; j < multiDocs.length; j++) {
-                    postdata.append("file" + j, multiDocs[j]);
-                }
+                var multiDocs = $("#table-quality2 tbody tr").eq(i).find("#certificateformatfile").val();
+                
+                    postdata.append("file", multiDocs);
+                
                 var DocumentName = $("#table-quality2 tbody tr").eq(i).find("#NameoftheDoc").val();
                 var TypeOfTraining = $("#table-quality2 tbody tr").eq(i).find("#type").val();
                 var ClauseNo = $("#table-quality2 tbody tr").eq(i).find("#ClauseNo").val();
@@ -1459,10 +1459,10 @@ $(() => {
                 if (firs_table_tem_id != null) postdata.append('firs_table_ROWID', firs_table_tem_id);
                 var ID = $("#table-quality3 tbody tr").eq(i).find("#NameoftheDoc1").attr("edit_id");
                 if (ID != null) postdata.append('ID', ID);
-                var multiDocs = $("#table-quality3 tbody tr").eq(i).find("#certificateformatfile1")[0].files;
-                for (var j = 0; j < multiDocs.length; j++) {
-                    postdata.append("file" + j, multiDocs[j]);
-                }
+                var multiDocs = $("#table-quality3 tbody tr").eq(i).find("#certificateformatfile1").val();
+               
+                    postdata.append("file", multiDocs);
+                
 
                 var hrefValue = $("#table-quality3 tbody tr").eq(i).find(".view4tabdoc a").attr("href");
 
@@ -1537,11 +1537,11 @@ $(() => {
                 var firs_table_ROWID = $("#table-quality4 tbody tr").eq(i).find("#NameoftheDoc2").attr("edit_id");
                 if (firs_table_ROWID != null) postdata.append('firs_table_ROWID', firs_table_ROWID);
 
-                var multiDocs = $("#table-quality4 tbody tr").eq(i).find("#certificateformatfile2")[0].files;
+                var multiDocs = $("#table-quality4 tbody tr").eq(i).find("#certificateformatfile2").val();
 
-                for (var j = 0; j < multiDocs.length; j++) {
-                    postdata.append("file" + j, multiDocs[j]);
-                }
+            /*    for (var j = 0; j < multiDocs.length; j++) {*/
+                    postdata.append("file", multiDocs);
+             /*   }*/
                 var hrefValue = $("#table-quality4 tbody tr").eq(i).find(".view5tabdoc a").attr("href");
                 var DocumentName = $("#table-quality4 tbody tr").eq(i).find("#NameoftheDoc2").val();
                 var TypeOfTraining = $("#table-quality4 tbody tr").eq(i).find("#ddclause4").val();

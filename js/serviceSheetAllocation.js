@@ -176,7 +176,7 @@
                             datef = "";
                         }
                         if (values.SRFDraftFormat == null) {
-                            var SRFDraftFormat = '<td> <input type="file" class="srfdraftFormatfile w-200px" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var SRFDraftFormat = '<td><div class="form-group"> <input type="url" class="srfdraftFormatfile w-200px form-control" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var SRFDraftFormat = '<td> <a class="alink" target="_blank" href="' + values.SRFDraftFormat + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -188,7 +188,7 @@
                             var SRFForm = '<td> <div class=form-group>  <input type="text" name="" value="' + values.SRFForm + '" id="srfFrom" class="srfFrom form-control w-200px"></div></td> ';
                         }
                         if (values.FilledSRFUpload == null) {
-                            var FilledSRFUpload = '<td> <input type="file" class="filledSRFfile w-200px" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var FilledSRFUpload = '<td> <div class="form-group"><input type="url" class="filledSRFfile w-200px form-control" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var FilledSRFUpload = '<td> <a class="alink1" target="_blank" href="' + values.FilledSRFUpload + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -226,11 +226,11 @@
                     var sno = 1;
                     var snos = 1;
                     if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
-                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <input type="file" class="srfdraftFormatfile w-200px" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <input type="file" class="filledSRFfile w-200px" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td><div class="form-group"> <input type="url" class="srfdraftFormatfile w-200px form-control" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="filledSRFfile w-200px form-control" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                         $("#table-iddoc11 tbody").append(getrowcontent);
                     }
                     else {
-                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <input type="file" class="srfdraftFormatfile w-200px" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <input type="file" class="filledSRFfile w-200px" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td></tr>';
+                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td><div class="form-group"> <input type="url" class="srfdraftFormatfile w-200px form-control" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="filledSRFfile w-200px form-control" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td></tr>';
                         $("#table-iddoc11 tbody").append(getrowcontent);
                     }
                     
@@ -497,7 +497,7 @@
                             var RegistrationNo = '<td> <div class=form-group> <input type="text" name="" id="regNum" value="' + values.RegistrationNo + '" class="regNum1 form-control w-200px"></div></td> ';
                         }
                         if (values.RawdataUpload == null) {
-                            var RawdataUpload = '<td><input type="file" class="rawdatafile w-200px" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var RawdataUpload = '<td><div class="form-group"><input type="url" class="rawdatafile w-200px form-control" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var RawdataUpload = '<td> <a class="alink" target="_blank" href="' + values.RawdataUpload + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -536,11 +536,11 @@
                     var sno = 1;
                     var snos = 1;
                     if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
-                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td> <input type="file" class="rawdatafile w-200px" id="rawdatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="rawdatafile w-200px form-control" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                         $("#table-iddoc44 tbody").append(getrowcontent);
                     }
                     else {
-                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td> <input type="file" class="rawdatafile w-200px" id="rawdatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td></tr>';
+                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="rawdatafile w-200px form-control" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td></tr>';
                         $("#table-iddoc44 tbody").append(getrowcontent);
                     }
                     
@@ -661,7 +661,7 @@
 
                     var checkfiles = $("#table-iddoc11 tbody tr").eq(i).find(".srfdraftFormatfile").val();
                     if (checkfiles) {
-                        file = $("#table-iddoc11 tbody tr").eq(i).find(".srfdraftFormatfile")[0].files[0];
+                        file = checkfiles;
                     }
                 }
                 var file1 = ""
@@ -673,7 +673,7 @@
 
                     var checkfile1 = $("#table-iddoc11 tbody tr").eq(i).find(".filledSRFfile").val();
                     if (checkfile1) {
-                        file1 = $("#table-iddoc11 tbody tr").eq(i).find(".filledSRFfile")[0].files[0];
+                        file1 = checkfile1;
                     }
                 }
                 var srfFrom = $("#table-iddoc11 tbody tr").eq(i).find(".srfFrom").val();
@@ -848,7 +848,7 @@
 
                     var checkfile3 = $("#table-iddoc44 tbody tr").eq(i).find(".rawdatafile").val();
                     if (checkfile3) {
-                        file3 = $("#table-iddoc44 tbody tr").eq(i).find(".rawdatafile")[0].files[0];
+                        file3 = checkfile3;
                     }
                 }
                 var regdate1 = $("#table-iddoc44 tbody tr").eq(i).find(".regdate1").val();
@@ -1010,7 +1010,7 @@
 
                 var getvalue = currentSnos1++;
             }
-            var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <input type="file" class="srfdraftFormatfile w-200px" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <input type="file" class="filledSRFfile w-200px" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+            var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td><div class="form-group"> <input type="url" class="srfdraftFormatfile w-200px form-control" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="filledSRFfile w-200px form-control" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
             $("#table-iddoc11 tbody").append(getrowcontent);
         });
         $("#table-iddoc11").on("click", ".deleterow", function () {
@@ -1022,7 +1022,7 @@
     $("#table-iddoc11").on("click", ".addrow1", function () {
         var getvalue = currentSnos1++;
         
-        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <input type="file" class="srfdraftFormatfile w-200px" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <input type="file" class="filledSRFfile w-200px" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td><div class="form-group">  <input type="url" class="srfdraftFormatfile w-200px form-control" id="srfdraftFormatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="filledSRFfile w-200px form-control" id="filledSRFfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="srfNo" class="srfNo form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
         $("#table-iddoc11 tbody").append(getrowcontent);
     });
     $("#table-iddoc11").on("click", ".deleterow", function () {
@@ -1080,7 +1080,7 @@
 
                 var getvalue = currentSnos3++;
             }
-            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td> <input type="file" class="rawdatafile w-200px" id="rawdatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="rawdatafile w-200px form-control" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
             $("#table-iddoc44 tbody").append(getrowcontent);
         })
         $("#table-iddoc44").on("click", ".deleterow", function () {
@@ -1092,7 +1092,7 @@
     $("#table-iddoc44").on("click", ".addrow1", function () {
        var getvalue = currentSnos3++;
         
-        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td> <input type="file" class="rawdatafile w-200px" id="rawdatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="date" name="" id="regdate" class="regdate1 form-control"> </div></td><td> <div class="form-group"> <input type="text" name="" id="regNum" class="regNum1 form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="rawdatafile w-200px form-control" id="rawdatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px"> </div></td><td> <div class="form-group"> <input type="date" name="" id="verifiedOn" class="verifiedOn form-control"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
         $("#table-iddoc44 tbody").append(getrowcontent);
     })
     $("#table-iddoc44").on("click", ".deleterow", function () {

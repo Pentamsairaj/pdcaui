@@ -100,7 +100,7 @@ class APIS {
     GetjobExportExport = "https://api.pdca.in/Job/GetjobExport";
     GetjobExportExportemp = "https://api.pdca.in/EmpJob/EmpJobsExport";
     qualityExport = "https://api.pdca.in/Quality/QualityJobsExport";
-    qualityDocExport = "http://localhost:56901/NewQualityManagement/ExportQualityDocsCsv";
+    qualityDocExport = "https://api.pdca.in/NewQualityManagement/ExportQualityDocsCsv";
     ListofProductsexportExport = "https://api.pdca.in/Process/ListofProductsexport";
     ListofReportExportExport = "https://api.pdca.in/Process/ListofReportExport";
     VendorExport = "https://api.pdca.in/Vendor/VendorGetListexport";

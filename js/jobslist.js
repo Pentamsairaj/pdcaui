@@ -345,7 +345,7 @@ $(() => {
         }
         // AJAX request to update status
         $.ajax({
-            url: "http://localhost:56901/Job/update_job_status?AdminId=" + ADMIN_AUTH + "&id=" + id + "&status=" + status,
+            url: "https://api.pdca.in/Job/update_job_status?AdminId=" + ADMIN_AUTH + "&id=" + id + "&status=" + status,
             type: "POST",
             //data: postdata,
             dataType: "json",

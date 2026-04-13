@@ -71,13 +71,14 @@
 
 
                 if (currentRow.find("td:eq(2)").find("input").hasClass("fileupload")) {
-                    var file = currentRow.find("td:eq(2)").find(".fileupload")[0].files[0];
-                    var reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onload = function () {
+                    //var file = currentRow.find("td:eq(2)").find(".fileupload")[0].files[0];
+                    //var reader = new FileReader();
+                    //reader.readAsDataURL(file);
+                    //reader.onload = function () {
 
                         const checklistid = getid;
                         const nameofthedocument = currentRow.find("td:eq(1)").find('textarea').val();
+                    const modelformat = currentRow.find("td:eq(2)").find("input.fileupload").val();
                         var status = "";
                         const RowId = currentRow.find("td:eq(0)").find(".addRow").attr("id");
 
@@ -89,7 +90,7 @@
                         }
 
 
-                        const modelformat = reader.result;
+                        /*const modelformat = reader.result;*/
 
 
                         var postdata = {
@@ -117,7 +118,7 @@
                                 }
                             }
                         });
-                    };
+                    /*};*/
 
                 }
                 else {
@@ -254,7 +255,7 @@
     });
 
     $("#pricingTable").on("click", ".addRow", function () {
-        var addrow = '<tr><td class="text-center"><span class="btn btn-outline-primary border-0 addRow"><i class="fas fa-plus-circle"></i></span></td><td><textarea type="text" name="" placeholder="document name" class="form-control txtdocname" style="width:400px"></textarea></td><td><input type="file" class="form-control fileupload"></td><td><span class="switch switch-primary"><label><input type="checkbox" id="chk" name="select"><span></span></label></span></td><td><span class="deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td></tr>'
+        var addrow = '<tr><td class="text-center"><span class="btn btn-outline-primary border-0 addRow"><i class="fas fa-plus-circle"></i></span></td><td><textarea type="text" name="" placeholder="document name" class="form-control txtdocname" style="width:400px"></textarea></td><td><input type="url" class="form-control fileupload"></td><td><span class="switch switch-primary"><label><input type="checkbox" id="chk" name="select"><span></span></label></span></td><td><span class="deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td></tr>'
         $("#pricingTable tbody").append(addrow);
     })
     $("#pricingTable").on("click", ".deleteRow", function () {

@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\editjobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\jobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:regulations\\editjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\regulations\\newjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:regulations\\newjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,6 +75,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "editjobs.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js",
+              "RelativeDocumentMoniker": "js\\editjobs.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js",
+              "RelativeToolTip": "js\\editjobs.js",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAgwE4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-12T08:25:54.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "editjob.html",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html",
+              "RelativeDocumentMoniker": "regulations\\editjob.html",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html",
+              "RelativeToolTip": "regulations\\editjob.html",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAKIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-12T08:24:49.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "newJob.html",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\newJob.html",
+              "RelativeDocumentMoniker": "regulations\\newJob.html",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\newJob.html",
+              "RelativeToolTip": "regulations\\newJob.html",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAKsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-12T08:18:49.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "jobs.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js",
+              "RelativeDocumentMoniker": "js\\jobs.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js",
+              "RelativeToolTip": "js\\jobs.js",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowFAAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-12T08:14:41.519Z",
+              "EditorCaption": ""
             }
           ]
         },

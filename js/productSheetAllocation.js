@@ -163,10 +163,10 @@
                             var Ingredientname = '<td> <div class=form-group> <input type="text" name="" value="' + values.Ingredientname + '" id="ingredient_name" class="ingredient_name form-control"></div></td> ';
                         }
                         if (values.Specrequirement == null) {
-                            var Specrequirement = '<td><div class=form-group> <textarea type="text" name="" id="spec_req" class="spec_req form-control"></textarea></div></td>'
+                            var Specrequirement = '<td><div class=form-group> <input type="url" name="" id="spec_req" class="spec_req form-control"></div></td>'
                         }
                         else {
-                            var Specrequirement = '<td> <div class=form-group> <textarea type="text" name="" id="spec_req" class="spec_req form-control">' + values.Specrequirement + '</textarea></div></td> ';
+                            var Specrequirement = '<td> <a class="alink" target="_blank" href="' + values.Specrequirement + '"><button class="btn btn-primary" type="button">View</button></a></td>  ';
                         }
                         if (values.Sourcedetails == null) {
                             var Sourcedetails = '<td><div class=form-group><textarea type="text" name="" id="source_details" class="source_details form-control"></textarea></div></td>'
@@ -306,7 +306,7 @@
                     var snos = 1;
                     $.each(data, function (index, values) {
                         if (values.Processflowformat == null) {
-                            var Processflowformat = '<td><input type="file" class="processflowfile w-200px" id="processflowfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Processflowformat = '<td> <div class="form-group"><input type="url" class="processflowfile w-200px form-control" id="processflowfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Processflowformat = '<td> <a class="alink" target="_blank" href="' + values.Processflowformat + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -318,7 +318,7 @@
                             var Trail = '<td> <div class=form-group> <input type="text" name="" value="' + values.Trail + '" id="trail" class="trail form-control w-200px"></div></td> ';
                         }
                         if (values.Sensorydata == null) {
-                            var Sensorydata = '<td><input type="file" class="sensoryDatafile w-200px" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Sensorydata = '<td> <div class="form-group"><input type="url" class="sensoryDatafile w-200px form-control" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Sensorydata = '<td> <a class="alink1" target="_blank" href="' + values.Sensorydata + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -344,11 +344,11 @@
                     var sno = 1;
                     var snos = 1;
                     if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
-                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <input type="file" class="processflowfile w-200px" id="processflowfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <input type="file" class="sensoryDatafile w-200px" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td><div class="form-group"> <input type="url" class="processflowfile w-200px form-control" id="processflowfile" aria-describedby="inputGroupFileAddon01"></div></td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="sensoryDatafile w-200px form-control" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                         $("#table-iddoc3 tbody").append(getrowcontent);
                     }
                     else {
-                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <input type="file" class="processflowfile w-200px" id="processflowfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <input type="file" class="sensoryDatafile w-200px" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td></tr>';
+                        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td><div class="form-group"> <input type="url" class="processflowfile w-200px form-control" id="processflowfile" aria-describedby="inputGroupFileAddon01"></div></td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="sensoryDatafile w-200px form-control" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td></tr>';
                         $("#table-iddoc3 tbody").append(getrowcontent);
                     }
 
@@ -375,13 +375,13 @@
                             var FreezedFormula = '<td> <div class=form-group><textarea type="text" name="" id="freezed_formula" class="freezed_formula form-control w-200px">' + values.FreezedFormula + '</textarea></div></td> ';
                         }
                         if (values.Finalizedformulaformat == null) {
-                            var Finalizedformulaformat = '<td><input type="file" class="final_formula_Formatfile w-200px" id="final_formula_Formatfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Finalizedformulaformat = '<td><div class="form-group"><input type="url" class="final_formula_Formatfile w-200px form-control" id="final_formula_Formatfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Finalizedformulaformat = '<td> <a class="alink" target="_blank" href="' + values.Finalizedformulaformat + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
                         }
                         if (values.Sensorydata == null) {
-                            var Sensorydata = '<td><input type="file" class="productfinalsensoryDatafile w-200px" id="productfinalsensoryDatafile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Sensorydata = '<td><div class="form-group"><input type="url" class="productfinalsensoryDatafile w-200px form-control" id="productfinalsensoryDatafile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Sensorydata = '<td> <a class="alink1" target="_blank" href="' + values.Sensorydata + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -404,7 +404,7 @@
                     });
                 }
                 else {
-                    var getrowcontent = '<tr> <td> <div class="form-group"> <textarea type="text" name="" id="freezed_formula" class="freezed_formula form-control w-200px"></textarea> </div></td><td> <input type="file" class="final_formula_Formatfile w-200px" id="final_formula_Formatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="productfinalsensoryDatafile w-200px" id="productfinalsensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="productfinalRemarks" class="productfinalRemarks form-control w-200px"></textarea> </div></td></tr>';
+                    var getrowcontent = '<tr> <td> <div class="form-group"> <textarea type="text" name="" id="freezed_formula" class="freezed_formula form-control w-200px"></textarea> </div></td><td><div class="form-group"> <input type="url" class="final_formula_Formatfile w-200px form-control" id="final_formula_Formatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td><div class="form-group"> <input type="url" class="productfinalsensoryDatafile w-200px form-control" id="productfinalsensoryDatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <textarea type="text" name="" id="productfinalRemarks" class="productfinalRemarks form-control w-200px"></textarea> </div></td></tr>';
                     $("#table-iddoc4 tbody").append(getrowcontent);
                 }
             }
@@ -423,7 +423,7 @@
                 if (data != 0) {
                     $.each(data, function (index, values) {
                         if (values.Finalizedpackingformat == null) {
-                            var Finalizedpackingformat = '<td><input type="file" class="finalpackingfile w-200px" id="finalpackingfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Finalizedpackingformat = '<td><div class="form-group"><input type="url" class="finalpackingfile w-200px form-control" id="finalpackingfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Finalizedpackingformat = '<td> <a class="alink" target="_blank" href="' + values.Finalizedpackingformat + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -435,7 +435,7 @@
                             var Typeofpackingmaterial = '<td> <div class=form-group><input type="text" name="" id="finalpackingmaterial" value="' + values.Typeofpackingmaterial + '" class="finalpackingmaterial form-control w-200px"></div></td> ';
                         }
                         if (values.Specification == null) {
-                            var Specification = '<td><input type="file" class="finalpackingspecificationfile w-200px" id="finalpackingspecificationfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Specification = '<td><div class="form-group"><input type="url" class="finalpackingspecificationfile w-200px form-control" id="finalpackingspecificationfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Specification = '<td> <a class="alink1" target="_blank" href="' + values.Specification + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -451,7 +451,7 @@
                     });
                 }
                 else {
-                    var getrowcontent = ' <tr> <td> <input type="file" class="finalpackingfile w-200px" id="finalpackingfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="finalpackingmaterial" class="finalpackingmaterial form-control w-200px"> </div></td><td> <input type="file" class="finalpackingspecificationfile w-200px" id="finalpackingspecificationfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="finalpackingRemarks" class="finalpackingRemarks form-control w-200px"></textarea> </div></td></tr>';
+                    var getrowcontent = ' <tr> <td><div class="form-group"> <input type="url" class="finalpackingfile w-200px form-control" id="finalpackingfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="finalpackingmaterial" class="finalpackingmaterial form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="finalpackingspecificationfile w-200px form-control" id="finalpackingspecificationfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="finalpackingRemarks" class="finalpackingRemarks form-control w-200px"></textarea> </div></td></tr>';
                     $("#table-iddoc5 tbody").append(getrowcontent);
                 }
             }
@@ -482,7 +482,7 @@
                             var Batchsize = '<td> <div class=form-group><input type="text" name="" id="batch_size" value="' + values.Batchsize + '" class="batch_size form-control w-200px"></div></td> ';
                         }
                         if (values.Protocoloftesting == null) {
-                            var Protocoloftesting = '<td><input type="file" class="protocolnfrequencyfile w-200px" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Protocoloftesting = '<td><div class=form-group><input type="url" class="protocolnfrequencyfile w-200px form-control" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Protocoloftesting = '<td> <a class="alink" target="_blank" href="' + values.Protocoloftesting + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -518,11 +518,11 @@
                 }
                 else {
                     if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
-                        var getrowcontent = ' <tr>  <td> <div class="form-group"> <input type="text" name="" id="batch_no" class="batch_no form-control w-200px"> </div></td><td> <div class="form-group"> <input type="text" name="" id="batch_size" class="batch_size form-control w-200px"> </div></td><td> <input type="file" class="protocolnfrequencyfile w-200px" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="numofpackings" class="numofpackings form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="packing_material" class="packing_material form-control w-200px"></textarea> </div></td><td> <input type="file" class="testreportsfile w-200px" id="testreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                        var getrowcontent = ' <tr>  <td> <div class="form-group"> <input type="text" name="" id="batch_no" class="batch_no form-control w-200px"> </div></td><td> <div class="form-group"> <input type="text" name="" id="batch_size" class="batch_size form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="protocolnfrequencyfile w-200px form-control" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <input type="text" name="" id="numofpackings" class="numofpackings form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="packing_material" class="packing_material form-control w-200px"></textarea> </div></td><td> <input type="file" class="testreportsfile w-200px" id="testreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                         $("#table-iddoc6 tbody").append(getrowcontent);
                     }
                     else {
-                        var getrowcontent = ' <tr>  <td> <div class="form-group"> <input type="text" name="" id="batch_no" class="batch_no form-control w-200px"> </div></td><td> <div class="form-group"> <input type="text" name="" id="batch_size" class="batch_size form-control w-200px"> </div></td><td> <input type="file" class="protocolnfrequencyfile w-200px" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="numofpackings" class="numofpackings form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="packing_material" class="packing_material form-control w-200px"></textarea> </div></td><td> <input type="file" class="testreportsfile w-200px" id="testreportsfile" aria-describedby="inputGroupFileAddon01"> </td></tr>';
+                        var getrowcontent = ' <tr>  <td> <div class="form-group"> <input type="text" name="" id="batch_no" class="batch_no form-control w-200px"> </div></td><td> <div class="form-group"> <input type="text" name="" id="batch_size" class="batch_size form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="protocolnfrequencyfile w-200px form-control" id="protocolnfrequencyfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <input type="text" name="" id="numofpackings" class="numofpackings form-control w-200px"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="packing_material" class="packing_material form-control w-200px"></textarea> </div></td><td> <input type="file" class="testreportsfile w-200px" id="testreportsfile" aria-describedby="inputGroupFileAddon01"> </td></tr>';
                         $("#table-iddoc6 tbody").append(getrowcontent);
                     }
 
@@ -642,25 +642,25 @@
                             var Batchno = '<td> <div class=form-group> <input type="text" name="" id="sheet_batch_no" value="' + values.Batchno + '" class="sheet_batch_no form-control w-200px"></div></td> ';
                         }
                         if (values.MPCRFormat == null) {
-                            var MPCRFormat = '<td><input type="file" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var MPCRFormat = '<td><div class=form-group><input type="url" class="mpcrformatfile w-200px form-control" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var MPCRFormat = '<td> <a class="alink" target="_blank" href="' + values.MPCRFormat + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
                         }
                         if (values.Flowchart == null) {
-                            var Flowchart = '<td> <input type="file" class="flowchatfile w-200px" id="flowchatfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var Flowchart = '<td><div class=form-group> <input type="url" class="flowchatfile w-200px form-control" id="flowchatfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var Flowchart = '<td> <a class="alink1" target="_blank" href="' + values.Flowchart + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
                         }
                         if (values.BatchRecord == null) {
-                            var BatchRecord = '<td><input type="file" class="process_recordfile w-200px" id="process_recordfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var BatchRecord = '<td><div class=form-group><input type="url" class="process_recordfile w-200px form-control" id="process_recordfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var BatchRecord = '<td> <a class="alink2" target="_blank" href="' + values.BatchRecord + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
                         }
                         if (values.TestReports == null) {
-                            var TestReports = '<td><input type="file" class="batchtestreportsfile w-200px" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"></td>'
+                            var TestReports = '<td><div class=form-group><input type="url" class="batchtestreportsfile w-200px form-control" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"></div></td>'
                         }
                         else {
                             var TestReports = '<td> <a class="alink3" target="_blank" href="' + values.TestReports + '"><button class="btn btn-primary" type="button">View</button></a></td> ';
@@ -686,11 +686,11 @@
                     var sno = 1;
                     var snos = 1;
                     if (ADMIN_AUTH == "2d4ac65e-ff99-407a-a729-ccde60c7d5f1") {
-                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <input type="file" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="flowchatfile w-200px" id="flowchatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="process_recordfile w-200px" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="batchtestreportsfile w-200px" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="mpcrformatfile w-200px form-control" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td><div class="form-group"> <input type="url" class="flowchatfile w-200px form-control" id="flowchatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td><div class="form-group"> <input type="url" class="process_recordfile w-200px form-control" id="process_recordfile" aria-describedby="inputGroupFileAddon01"></div> </td><td><div class="form-group"> <input type="url" class="batchtestreportsfile w-200px form-control" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
                         $("#table-iddoc8 tbody").append(getrowcontent);
                     }
                     else {
-                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <input type="file" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="flowchatfile w-200px" id="flowchatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="process_recordfile w-200px" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="batchtestreportsfile w-200px" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td></tr>';
+                        var getrowcontent = ' <tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm" sno=' + snos++ + '></td><td>' + sno++ + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"><input type="url" class="flowchatfile w-200px form-control" id="flowchatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td><div class="form-group"> <input type="url" class="process_recordfile w-200px form-control" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </div></td><td><div class="form-group"> <input type="url" class="batchtestreportsfile w-200px form-control" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td></tr>';
                         $("#table-iddoc8 tbody").append(getrowcontent);
                     }
 
@@ -1003,7 +1003,7 @@
 
                     var checkfiles = $("#table-iddoc3 tbody tr").eq(i).find(".processflowfile").val();
                     if (checkfiles) {
-                        file = $("#table-iddoc3 tbody tr").eq(i).find(".processflowfile")[0].files[0];
+                        file = checkfiles;
                     }
                 }
                 var file1 = ""
@@ -1015,7 +1015,7 @@
 
                     var checkfile1 = $("#table-iddoc3 tbody tr").eq(i).find(".sensoryDatafile").val();
                     if (checkfile1) {
-                        file1 = $("#table-iddoc3 tbody tr").eq(i).find(".sensoryDatafile")[0].files[0];
+                        file1 = checkfile1;
                     }
                 }
                 var trail = $("#table-iddoc3 tbody tr").eq(i).find(".trail").val();
@@ -1071,7 +1071,7 @@
 
                     var checkfile2 = $("#table-iddoc4 tbody tr").eq(i).find(".final_formula_Formatfile").val();
                     if (checkfile2) {
-                        file2 = $("#table-iddoc4 tbody tr").eq(i).find(".final_formula_Formatfile")[0].files[0];
+                        file2 = checkfile2;
                     }
                 }
                 var file3 = ""
@@ -1083,7 +1083,7 @@
 
                     var checkfile3 = $("#table-iddoc4 tbody tr").eq(i).find(".productfinalsensoryDatafile").val();
                     if (checkfile3) {
-                        file3 = $("#table-iddoc4 tbody tr").eq(i).find(".productfinalsensoryDatafile")[0].files[0];
+                        file3 = checkfile3;
                     }
                 }
                 var freezed_formula = $("#table-iddoc4 tbody tr").eq(i).find(".freezed_formula").val();
@@ -1139,7 +1139,7 @@
 
                     var checkfile4 = $("#table-iddoc5 tbody tr").eq(i).find(".finalpackingfile").val();
                     if (checkfile4) {
-                        file4 = $("#table-iddoc5 tbody tr").eq(i).find(".finalpackingfile")[0].files[0];
+                        file4 = checkfile4;
                     }
                 }
                 var file5 = ""
@@ -1151,7 +1151,7 @@
 
                     var checkfile5 = $("#table-iddoc5 tbody tr").eq(i).find(".finalpackingspecificationfile").val();
                     if (checkfile5) {
-                        file5 = $("#table-iddoc5 tbody tr").eq(i).find(".finalpackingspecificationfile")[0].files[0];
+                        file5 = checkfile5;
                     }
                 }
                 var finalpackingmaterial = $("#table-iddoc5 tbody tr").eq(i).find(".finalpackingmaterial").val();
@@ -1207,7 +1207,7 @@
 
                     var checkfile6 = $("#table-iddoc6 tbody tr").eq(i).find(".protocolnfrequencyfile").val();
                     if (checkfile6) {
-                        file6 = $("#table-iddoc6 tbody tr").eq(i).find(".protocolnfrequencyfile")[0].files[0];
+                        file6 = checkfile6;
                     }
                 }
                 var file7 = ""
@@ -1329,7 +1329,7 @@
 
                     var checkfile8 = $("#table-iddoc8 tbody tr").eq(i).find(".mpcrformatfile").val();
                     if (checkfile8) {
-                        file8 = $("#table-iddoc8 tbody tr").eq(i).find(".mpcrformatfile")[0].files[0];
+                        file8 = checkfile8;
                     }
                 }
                 var file9 = ""
@@ -1341,7 +1341,7 @@
 
                     var checkfile9 = $("#table-iddoc8 tbody tr").eq(i).find(".flowchatfile").val();
                     if (checkfile9) {
-                        file9 = $("#table-iddoc8 tbody tr").eq(i).find(".flowchatfile")[0].files[0];
+                        file9 = checkfile9;
                     }
                 }
                 var file10 = ""
@@ -1353,7 +1353,7 @@
 
                     var checkfile10 = $("#table-iddoc8 tbody tr").eq(i).find(".process_recordfile").val();
                     if (checkfile10) {
-                        file10 = $("#table-iddoc8 tbody tr").eq(i).find(".process_recordfile")[0].files[0];
+                        file10 = checkfile10;
                     }
                 }
                 var file11 = ""
@@ -1365,7 +1365,7 @@
 
                     var checkfile11 = $("#table-iddoc8 tbody tr").eq(i).find(".batchtestreportsfile").val();
                     if (checkfile11) {
-                        file11 = $("#table-iddoc8 tbody tr").eq(i).find(".batchtestreportsfile")[0].files[0];
+                        file11 = checkfile11;
                     }
                 }
                 var sheet_batch_no = $("#table-iddoc8 tbody tr").eq(i).find(".sheet_batch_no").val();
@@ -1706,7 +1706,7 @@
 
                 var getvalue = currentSnos3++;
             }
-            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <input type="file" class="processflowfile w-200px" id="processflowfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <input type="file" class="sensoryDatafile w-200px" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td><div class="form-group"> <input type="url" class="processflowfile w-200px form-control" id="processflowfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="sensoryDatafile w-200px form-control" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
             $("#table-iddoc3 tbody").append(getrowcontent);
         });
         $("#table-iddoc3").on("click", ".deleterow", function () {
@@ -1717,7 +1717,7 @@
     $("#table-iddoc3").on("click", ".addrow1", function () {
         var getvalue = currentSnos3++;
 
-        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <input type="file" class="processflowfile w-200px" id="processflowfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <input type="file" class="sensoryDatafile w-200px" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"><input type="url" class="processflowfile w-200px form-control" id="processflowfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="text" name="" id="trail" class="trail form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="sensoryDatafile w-200px form-control" id="sensoryDatafile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
         $("#table-iddoc3 tbody").append(getrowcontent);
     });
     $("#table-iddoc3").on("click", ".deleterow", function () {
@@ -1773,7 +1773,7 @@
 
                 var getvalue = currentSnos5++;
             }
-            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <input type="file" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="flowchatfile w-200px" id="flowchatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="process_recordfile w-200px" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="batchtestreportsfile w-200px" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+            var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <div class="form-group"><input type="url" class="mpcrformatfile w-200px form-control" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td><div class="form-group"> <input type="url" class="flowchatfile w-200px form-control" id="flowchatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td>  <div class="form-group"><input type="url" class="process_recordfile w-200px form-control" id="process_recordfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <input type="url" class="batchtestreportsfile w-200px form-control" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
             $("#table-iddoc8 tbody").append(getrowcontent);
         });
         $("#table-iddoc8").on("click", ".deleterow", function () {
@@ -1784,7 +1784,7 @@
     $("#table-iddoc8").on("click", ".addrow1", function () {
         var getvalue = currentSnos5++;
 
-        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td> <input type="file" class="mpcrformatfile w-200px" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="flowchatfile w-200px" id="flowchatfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="process_recordfile w-200px" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </td><td> <input type="file" class="batchtestreportsfile w-200px" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"> </td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+        var getrowcontent = '<tr> <td> <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm"/> </td><td>' + getvalue + '</td><td> <div class="form-group"> <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px"> </div></td><td><div class="form-group"> <input type="url" class="mpcrformatfile w-200px form-control" id="mpcrformatfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"><input type="url" class="flowchatfile w-200px form-control" id="flowchatfile" aria-describedby="inputGroupFileAddon01"></div> </td><td>  <div class="form-group"><input type="url" class="process_recordfile w-200px form-control" id="process_recordfile" aria-describedby="inputGroupFileAddon01"> </div></td><td> <div class="form-group"> <input type="url" class="batchtestreportsfile w-200px form-control" id="batchtestreportsfile" aria-describedby="inputGroupFileAddon01"></div> </td><td> <div class="form-group"> <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea> </div></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
         $("#table-iddoc8 tbody").append(getrowcontent);
     });
     $("#table-iddoc8").on("click", ".deleterow", function () {

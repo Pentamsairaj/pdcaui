@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\api.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\editjobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\quality_template.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\quality_template.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\jobs.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\newfile.1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\newfile.1.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:regulations\\editjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|c:\\sai_raj__projects\\pdca4m client\\stg_pdca4m\\new_pdca_ui\\js\\imageupload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:js\\imageupload.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\newjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DB977E7F-082D-414F-998C-D630CB590F09}|C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui|solutionrelative:regulations\\newjob.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,60 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "api.js",
-              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\api.js",
-              "RelativeDocumentMoniker": "js\\api.js",
-              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\api.js",
-              "RelativeToolTip": "js\\api.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-08T19:16:27.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "quality_Template.js",
-              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\quality_Template.js",
-              "RelativeDocumentMoniker": "js\\quality_Template.js",
-              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\quality_Template.js",
-              "RelativeToolTip": "js\\quality_Template.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-08T19:16:19.652Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "newFile.1.js",
-              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\newFile.1.js",
-              "RelativeDocumentMoniker": "js\\newFile.1.js",
-              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\newFile.1.js",
-              "RelativeToolTip": "js\\newFile.1.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-08T19:16:17.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Imageupload.js",
-              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\Imageupload.js",
-              "RelativeDocumentMoniker": "js\\Imageupload.js",
-              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\Imageupload.js",
-              "RelativeToolTip": "js\\Imageupload.js",
-              "ViewState": "AgIAACsAAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-08T19:15:48.902Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -127,6 +75,56 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "editjobs.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js",
+              "RelativeDocumentMoniker": "js\\editjobs.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\editjobs.js",
+              "RelativeToolTip": "js\\editjobs.js",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAgwFIAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-12T08:25:54.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "editjob.html",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html",
+              "RelativeDocumentMoniker": "regulations\\editjob.html",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\editjob.html",
+              "RelativeToolTip": "regulations\\editjob.html",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAKIAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-12T08:24:49.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "newJob.html",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\newJob.html",
+              "RelativeDocumentMoniker": "regulations\\newJob.html",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\regulations\\newJob.html",
+              "RelativeToolTip": "regulations\\newJob.html",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAKsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-12T08:18:49.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "jobs.js",
+              "DocumentMoniker": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js",
+              "RelativeDocumentMoniker": "js\\jobs.js",
+              "ToolTip": "C:\\sai_Raj__Projects\\PDCA4M Client\\stg_pdca4m\\new_pdca_ui\\js\\jobs.js",
+              "RelativeToolTip": "js\\jobs.js",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAowE8AAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-12T08:14:41.519Z",
+              "EditorCaption": ""
             }
           ]
         },

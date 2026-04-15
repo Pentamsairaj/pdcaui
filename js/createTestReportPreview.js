@@ -53,12 +53,16 @@ $(() => {
 
            
             CONVERT_IMAGE_TO_BASE64(data.AuthSign, "signatureLogo");
+            CONVERT_IMAGE_TO_BASE64(data.logo, "templateLogo");
 
 
             
 
             if (data.AuthSign) {
                 $("#signature").attr("src", `${data.AuthSign}`);
+            }
+            if (data.Logo) {
+                $("#logo").attr("src", `${data.Logo}`);
             }
 
             
@@ -211,12 +215,16 @@ $(() => {
 
                 
                 let signature = localStorage.getItem("signatureLogo");
+                let logo = localStorage.getItem("Logo");
 
 
                 
 
                 if (signature) {
                     $("#signature").attr("src", `${signature}`);
+                }
+                if (logo) {
+                    $("#logo").attr("src", `${logo}`);
                 }
 
             }, 2500);

@@ -198,10 +198,15 @@ $(() => {
                 }
                 $("#Analysiscompletiondate").val(AnalysisCompletionDate);
                 $("#fl_img1view").attr("src", data.AuthSign);
+                $("#fl_img2view").attr("src", data.Logo);
                 $("#disclaimer").summernote('code', data.TermsandConditions);
                 CONVERT_IMAGE_TO_BASE64(data.AuthSign, "signatureLogo");
                 if (data.AuthSign) {
                     $("#fl_img1view").css("background-image", "url('" + data.AuthSign + "')");
+                }
+                CONVERT_IMAGE_TO_BASE64(data.logo, "templateLogo");
+                if (data.Logo) {
+                    $("#fl_img2view").css("background-image", "url('" + data.Logo + "')");
                 }
                 if (data.TestResult.length > 0) {
                     $("#table-iddoc30 tbody").empty();
@@ -279,6 +284,14 @@ $(() => {
         } else if (Posignature) {
             signature = Posignature;
         }
+        let logo = "";
+        let Pologo = localStorage.getItem("logo");
+        let file2 = $("#imgfile2")[0].files[0];
+        if (file1) {
+            logo = $("#fl_img2view").css("background-image").replace(/^url\(['"](.+)['"]\)/, '$1');
+        } else if (Pologo) {
+            logo = Pologo;
+        }
         var postdata = {
             "ReportNo": TestReport,
             "ULRNo": ULRNo,
@@ -303,6 +316,7 @@ $(() => {
             "AnalysisCompletionDate": Analysiscompletiondate,
             "TermsandConditions": disclaimer,
             "AuthSign": signature,
+            "Logo": logo,
             "AdminID": AdminID,
             "Service_ID": Service_ID,
             "ID": ID,

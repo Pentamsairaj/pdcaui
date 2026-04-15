@@ -132,7 +132,7 @@ $(() => {
             }
             $(".editQualityHeading").show();
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}" ${value.level == item.id ? "selected" : ""}>Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr data-row-id=' + value.ID + '><td><input class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value="" edit_id=' + value.ID + '>' + value.NameoftheDoc + ' </textarea></div></td><td><div class="form-group"><select class="form-control level level_styles" id="level" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input class="form-control DocId level_styles" id="DocId" name="" style="" placeholder="Doc ID." value="' + value.DocId + '"></div></td><td><input class="w-300px form-control DocUploadPdf mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon" type="file"><div class=form-group id="draftdocview">' + draftview + '</div></td><td><div class="form-group"><input class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No." value="' + value.clause + '"></div></td><td><div class=form-group><input class="w-300px form-control Approveddocupload mb-2" id="Approveddocupload" aria-describedby="inputGroupFileAddon" type="file">' + Approveddocupload + '</div></td><td>' + deleteIcon + '</td></tr > ';
+            var getrowcontent = '<tr data-row-id=' + value.ID + '><td><input class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value="" edit_id=' + value.ID + '>' + value.NameoftheDoc + ' </textarea></div></td><td><div class="form-group"><select class="form-control level level_styles" id="level" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input class="form-control DocId level_styles" id="DocId" name="" style="" placeholder="Doc ID." value="' + value.DocId + '"></div></td><td><div class="form-group"><input class="w-300px form-control DocUploadPdf mb-2" id="DocUpload" aria-describedby="inputGroupFileAddon" type="url"></div><div class=form-group id="draftdocview">' + draftview + '</div></td><td><div class="form-group"><input class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No." value="' + value.clause + '"></div></td><td><div class=form-group><input class="w-300px form-control Approveddocupload mb-2" id="Approveddocupload" aria-describedby="inputGroupFileAddon" type="url">' + Approveddocupload + '</div></td><td>' + deleteIcon + '</td></tr > ';
             $("#table-quality tbody").append(getrowcontent);
         }
         else {
@@ -691,7 +691,9 @@ $(() => {
                 standardajax(joballocation_ID);
                 ID = joballocation_ID;
                 alert("Quality Documentation and Control Updated Successfully");
-                getDocId();
+                //getDocId();
+                //getQualityControl3_Data()
+                //getQualityControl4_Data()
                 $(".spinner").hide();
                 form.data('isSubmitting', false)
             }
@@ -715,16 +717,16 @@ $(() => {
                 //} else {
 
                 //}
-                var fileInputElement = $("#table-quality tbody tr").eq(i).find(".DocUploadPdf")[0];
-                var fileInputElement1 = $("#table-quality tbody tr").eq(i).find(".Approveddocupload")[0];
+                var fileInputElement = $("#table-quality tbody tr").eq(i).find(".DocUploadPdf").val();
+                var fileInputElement1 = $("#table-quality tbody tr").eq(i).find(".Approveddocupload").val();
 
-                if (fileInputElement && fileInputElement.files && fileInputElement.files.length > 0) {
-                    postdata.append('DraftView', fileInputElement.files[0]);
+                if (fileInputElement) {
+                    postdata.append('DraftView', fileInputElement);
                 } else {
                     //console.warn("File input not found or no files selected.");
                 }
-                if (fileInputElement1 && fileInputElement1.files && fileInputElement1.files.length > 0) {
-                    postdata.append('approveddoc', fileInputElement1.files[0]);
+                if (fileInputElement1) {
+                    postdata.append('approveddoc', fileInputElement1);
                 } else {
                     //console.warn("File input not found or no files selected.");
                 }

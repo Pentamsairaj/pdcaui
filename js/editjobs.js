@@ -240,7 +240,7 @@
                             '<td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" id="' + values.id + '"><i class="fas fa-plus-circle"></i></span></td>' +
                             '<td id="col1" style="width:70%;"><textarea placeholder="document name" class="form-control txtdocname" style="width:100%;">' + values.nameofthedocument + '</textarea></td>' +
                             '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">View</button></a></td>' +
-                            '<td><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
+                            '<td class="theadaligned"><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
                             '<td><span class="deleteRows" style="cursor:pointer" id="' + values.id + '"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td>' +
                             '</tr>';
                     } else {
@@ -248,7 +248,7 @@
                             '<td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" id="' + values.id + '"><i class="fas fa-plus-circle"></i></span></td>' +
                             '<td id="col1" style="width:70%;"><textarea placeholder="document name" class="form-control txtdocname" style="width:100%;">' + values.nameofthedocument + '</textarea></td>' +
                             '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">View</button></a></td>' +
-                            '<td><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
+                            '<td class="theadaligned"><input type="url" class="form-control Clientfile"/>' + docView + '</td>' +
                             '</tr>';
                     }
 

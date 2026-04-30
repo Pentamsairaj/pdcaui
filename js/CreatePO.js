@@ -558,54 +558,13 @@ $(() => {
     // -----------------------------------  TEMPLATE FOR SERVICE OFFER VIEW  END ---------------------------------------//
 
 
-    // ----------------------------------- CREATE SERVICE OFFER START ---------------------------------------//
-
-    $("#createServiceSubmit").one("submit", (e) => {
-        e.preventDefault();
-        const submitButton = $("#createServiceSubmit button[type='submit']");
-        const templateData = GET_DATA_FROM_FORM();
-        if (templateData.templatename != "" && templateData.logo != "" && templateData.companylogo != "" && templateData.signature != "" && templateData.tandc != "") {
-            submitButton.prop("disabled", true);
-            $.ajax({
-                url: CREATE_SERVICE_OFFER_URL,
-                type: "POST",
-                data: { ...templateData, "AdminId": ADMIN_AUTH },
-                async: false,
-                dataType: "JSON",
-                crossDomain: true,
-                success: (data) => {
-                    if (data.responsecode === 1) {
-                        localStorage.setItem("templateID", data.responseObject);
-                        priceAndBillCreation(data.responseObject);
-
-                    } else {
-                        ERROR_MESSAGE(data.responsemessage);
-                    }
-                },
-                complete: () => {
-                    submitButton.prop("disabled", false);
-                }
-            });
-        } else if (templateData.tandc == "") {
-            ERROR_MESSAGE("Please Enter Terms & Conditions");
-        } else if (templateData.templatename == "") {
-            ERROR_MESSAGE("Template Name is Required");
-        } else if (templateData.logo == "") {
-            ERROR_MESSAGE("Template Logo is Required");
-        } else if (templateData.companylogo == "") {
-            ERROR_MESSAGE("Powered By is Required");
-        } else if (templateData.signature == "") {
-            ERROR_MESSAGE("Signature is Required");
-        }
-    });
-   
-    //  ----------------------------------- PULL VENDOR DATA START ---------------------------------------//
+  
 
     //  ----------------------------------- CREATE SERVICE OFFER START ---------------------------------------//
 
-    $("#createInvoiceSubmit").one("submit", (e) => {
+    $("#createpoSubmit").one("submit", (e) => {
         e.preventDefault();
-        const submitButton = $("#createInvoiceSubmit button[type='submit']");
+        const submitButton = $("#createpoSubmit button[type='submit']");
         const templateData = GET_DATA_FROM_FORM();
         if (templateData.logo != "" && templateData.poweredbylogo != "" && templateData.signature != "" && templateData.tandc != "" && templateData.poraisedby != "") {
             submitButton.prop("disabled", true);

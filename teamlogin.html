@@ -5,8 +5,8 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>PDCA4M | Team Login </title>
-    <meta name="description" content="Login page example" />
+    <title>PDCA4M | Team Login</title>
+    <meta name="description" content="Team Login page - Food Compliance Management" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -31,10 +31,160 @@
     <!--end::Layout Themes-->
     <link rel="shortcut icon" href="../theme/favicon/logo.ico" />
     <style>
-        .contactus {
-            position: absolute;
-            transform: translate(350px,540px);
+        .quick-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
+
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #f3f6f9;
+            color: #3699FF;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+            .quick-link i {
+                font-size: 14px;
+            }
+
+            .quick-link:hover {
+                background: #3699FF;
+                color: #fff;
+                border-color: #3699FF;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(54, 153, 255, 0.25);
+            }
+
+        /* ----- Enhanced Login Toggle Styles (Team Active) ----- */
+        .login-tabs {
+            display: flex;
+            gap: 20px;
+            background: #f8f9fc;
+            padding: 6px;
+            border-radius: 60px;
+            width: fit-content;
+            margin-bottom: 25px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        .login-tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            background: transparent;
+            color: #5b6e8c;
+            border: none;
+            cursor: pointer;
+        }
+
+            /* Active Team tab - vibrant primary style (greenish-blue to match team theme) */
+            .login-tab.active-team {
+                background: linear-gradient(105deg, #2c7be5 0%, #1a68d1 100%);
+                color: white !important;
+                box-shadow: 0 8px 18px rgba(44, 123, 229, 0.28);
+                transform: translateY(-1px);
+            }
+
+            /* Inactive client tab */
+            .login-tab.inactive-client {
+                background: #ffffff;
+                color: #3f4d67;
+                border: 1px solid #e2e8f0;
+            }
+
+                .login-tab.inactive-client:hover {
+                    background: #eff3f9;
+                    color: #3699FF !important;
+                    border-color: #cddfef;
+                    transform: translateY(-1px);
+                }
+
+            .login-tab i {
+                font-size: 1.1rem;
+            }
+
+        .active-team i {
+            color: white;
+        }
+
+        .inactive-client i {
+            color: #5b6e8c;
+        }
+
+        .inactive-client:hover i {
+            color: #3699FF;
+        }
+
+        /* Role hint styling */
+        .role-hint {
+            font-size: 0.85rem;
+            background: linear-gradient(135deg, #eef4ff 0%, #e8f0fe 100%);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 40px;
+            color: #2c7be5;
+            font-weight: 600;
+            margin-top: 12px;
+            border: 1px solid rgba(44, 123, 229, 0.15);
+        }
+
+        .welcome-title {
+            margin-bottom: 0.25rem;
+        }
+
+        /* Contact info styling */
+        .contact-info {
+           
+            padding-top: 12px;
+        }
+
+            .contact-info i {
+                color: #3699FF;
+                margin-right: 6px;
+            }
+
+            .contact-info a {
+                color: #3699FF;
+                font-weight: 500;
+                text-decoration: none;
+            }
+
+                .contact-info a:hover {
+                    text-decoration: underline;
+                }
+
+        @media (max-width: 640px) {
+            .login-tab {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+
+            .login-tabs {
+                gap: 12px;
+            }
+        }
+
+       
     </style>
 </head>
 <!--end::Head-->
@@ -48,13 +198,12 @@
         <!--begin::Login-->
         <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
              id="kt_login">
-            <!--begin::Aside-->
+            <!--begin::Aside (Logo Area)-->
             <div class="login-aside"
                  style="margin:150px 0px 0px 150px; background: url('./theme/images/pdca4m-logo-1.png'); background-repeat:no-repeat; background-size: contain; ">
-                <!--begin::Aside Top-->
-                <!--end::Aside Bottom-->
+                <!-- Logo background only -->
             </div>
-            <!--begin::Aside-->
+            <!--end::Aside-->
             <!--begin::Content-->
             <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
                 <!--begin::Content body-->
@@ -63,27 +212,56 @@
                     <div class="login-form login-signin">
                         <!--begin::Form-->
                         <form class="form" id="kt_login_signin_form" onsubmit="return false">
-                            <!--begin::Title-->
-                            <div class="pb-13 pt-lg-0 pt-5">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+                            <!--begin::Title Area-->
+                            <div class="pb-5 pt-lg-0 pt-3">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg welcome-title">
                                     Welcome to Food<br />
                                     Compliance Management
                                 </h3>
-
+                                <!-- Dynamic role hint - Team active -->
+                                <!--<div class="role-hint" id="activeRoleHint">
+                                    <i class="fas fa-users"></i> Team Portal — internal access & administration
+                                </div>-->
                             </div>
-                            <!--begin::Title-->
-                            <!--begin::Form group-->
+                            <!--end::Title Area-->
+                            <!-- Login Tabs - Team Active, Client Inactive -->
+                            <div class="login-tabs" role="tablist" aria-label="Login type">
+                                <!-- Client Login - INACTIVE (links to client page) -->
+                                <a href="/clientlogin.html"
+                                   id="clientTabBtn"
+                                   class="login-tab inactive-client"
+                                   data-type="client">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Client Login</span>
+                                </a>
+                                <!-- Team Login - ACTIVE (current page, highlighted) -->
+                                <a href="javascript:void(0);"
+                                   id="teamTabBtn"
+                                   class="login-tab active-team"
+                                   data-type="team">
+                                    <i class="fas fa-users"></i>
+                                    <span>Team Login</span>
+                                </a>
+                            </div>
+
+                            <!-- Email Field -->
                             <div class="form-group">
                                 <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
-                                <input class="form-control form-control-solid h-auto p-6 rounded-lg" id="adminUserName"
-                                       type="text" name="username" autocomplete="off" />
+                                <input class="form-control form-control-solid h-auto p-6 rounded-lg"
+                                       id="adminUserName"
+                                       type="text"
+                                       name="username"
+                                       autocomplete="off"
+                                       placeholder="team@pdca.com" />
                             </div>
-                            <!--end::Form group-->
-                            <!--begin::Form group-->
+
+                            <!-- Password Field with Forgot Link -->
                             <div class="form-group">
                                 <div class="d-flex justify-content-between mt-n5">
                                     <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
-                                    <a href="Forgotpassword.html" class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5" id="kt_login_forgot">Forgot Password ?</a>
+                                    <a href="Forgotpassword.html"
+                                       class="text-primary font-size-h6 font-weight-bolder text-hover-primary pt-5"
+                                       id="kt_login_forgot">Forgot Password ?</a>
                                 </div>
 
                                 <div class="position-relative">
@@ -91,55 +269,81 @@
                                            type="password"
                                            name="password"
                                            id="adminPassword"
-                                           autocomplete="off" />
+                                           autocomplete="off"
+                                           placeholder="••••••••" />
 
-                                    <!-- Eye Icon -->
+                                    <!-- Eye Icon for password visibility toggle -->
                                     <span onclick="togglePassword()"
                                           style="position:absolute; right:15px; top:50%; transform:translateY(-50%); cursor:pointer;">
                                         <i id="eyeIcon" class="fa fa-eye"></i>
                                     </span>
                                 </div>
                             </div>
-                            <!--end::Form group-->
-                            <!--begin::Action-->
+
+                            <!-- Action Buttons & Footer Info -->
                             <div class="pb-lg-0 pb-5">
                                 <button type="submit" id="kt_login_signin_submit"
                                         class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">
-                                    Sign
-                                    In
+                                    Sign In <i class="fas fa-arrow-right ml-2"></i>
                                 </button>
-                                <div>
-                                    <i class="fa-solid fa-bell pr-1" style="color: #3699FF"></i><span>For Annual Subscription Reach us : <div><a target="_blank" href="mailto:contact@pioneerfoods.in">contact@pioneerfoods.in</a> , <a target="_blank" href="tel:7337441144">+91-7337441144</a></span>
+
+                                <!-- Contact / Subscription Info -->
+                                <div class="contact-info">
+                                    <i class="fa-solid fa-bell"></i>
+                                    <span>For Annual Subscription / Team Access, Reach us : </span>
+                                    <div class="mt-1">
+                                        <a target="_blank" href="mailto:contact@pioneerfoods.in">contact@pioneerfoods.in</a> ,
+                                        <a target="_blank" href="tel:7337441144">+91-7337441144</a>
+                                    </div>
                                 </div>
 
+                                <!-- Quick Links Row -->
+                                <div class="quick-links">
+                                    <!--<a href="https://pdca.in/clientlogin.html" target="_blank" class="quick-link">
+                                        <i class="fa fa-user-check"></i>
+                                        <span>Client Login</span>
+                                    </a>-->
+                                    <a href="https://pdcaskill.in/" target="_blank" class="quick-link">
+                                        <i class="fa fa-graduation-cap"></i>
+                                        <span>PDCA Skill.in</span>
+                                    </a>
+                                    <a href="https://pdcaaudit.in/" target="_blank" class="quick-link">
+                                        <i class="fa fa-file-alt"></i>
+                                        <span>PDCA Audit.in</span>
+                                    </a>
+                                    
+                                </div>
                             </div>
                         </form>
+                        <!--end::Form-->
                     </div>
-                    <!--end::Action-->
-                    <!--end::Form-->
+                    <!--end::Signin-->
                 </div>
+                <!--end::Content body-->
             </div>
-            <!--end::Signin-->
+            <!--end::Content-->
         </div>
-        <!--end::Content body-->
+        <!--end::Login-->
     </div>
+
     <!--begin::SPINNER-->
-    <div id="spinnerOverlay">
+    <div id="spinnerOverlay" style="display: none;">
         <div class="loaders"></div>
     </div>
     <!--end::SPINNER-->
     <!--end::Main-->
-    <!--begin::Global Theme Bundle(used by all pages)-->
+    <!--begin::Global Theme Bundle-->
     <script src="./theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
     <script src="./theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
-    <!-- <script src="./theme/js/scripts.bundle1036.js"></script> -->
     <!-- TOASTIFY -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!--end::Global Theme Bundle-->
-    <!--begin::Page Scripts(used by this page)-->
+    <!--begin::Page Scripts-->
     <script type="module" src="./js/login.js"></script>
-    <!--eye icon-->
+
+    <!-- Eye Icon Toggle & UI Enhancements -->
     <script>
+        // Password visibility toggle
         function togglePassword() {
             const passwordField = document.getElementById("adminPassword");
             const eyeIcon = document.getElementById("eyeIcon");
@@ -154,7 +358,205 @@
                 eyeIcon.classList.add("fa-eye");
             }
         }
+
+        //// Additional UI: ensure active team tab behavior & client redirect with smooth toast
+        //document.addEventListener('DOMContentLoaded', function () {
+        //    const clientTab = document.getElementById('clientTabBtn');
+        //    const teamTab = document.getElementById('teamTabBtn');
+        //    const signinBtn = document.getElementById('kt_login_signin_submit');
+        //    const forgotLink = document.getElementById('kt_login_forgot');
+
+        //    // Client tab click: redirect to client login page with toast notification
+        //    if (clientTab) {
+        //        clientTab.addEventListener('click', function (e) {
+        //            e.preventDefault();
+        //            if (typeof Toastify === 'function') {
+        //                Toastify({
+        //                    text: "Redirecting to Client Login Portal...",
+        //                    duration: 1500,
+        //                    gravity: "top",
+        //                    position: "right",
+        //                    backgroundColor: "linear-gradient(135deg, #3699FF, #1a7fdf)",
+        //                    stopOnFocus: true,
+        //                }).showToast();
+        //            }
+        //            setTimeout(function () {
+        //                window.location.href = '/clientlogin.html';
+        //            }, 200);
+        //        });
+        //    }
+
+        //    // Team tab is active on current page - just prevent any accidental redirect
+        //    if (teamTab) {
+        //        teamTab.addEventListener('click', function (e) {
+        //            e.preventDefault();
+        //            // Already on team login, just show a subtle feedback
+        //            if (typeof Toastify === 'function') {
+        //                Toastify({
+        //                    text: "✓ You are on Team Login Portal",
+        //                    duration: 1200,
+        //                    gravity: "top",
+        //                    position: "right",
+        //                    style: { background: "linear-gradient(135deg, #2c7be5, #1a68d1)" }
+        //                }).showToast();
+        //            }
+        //        });
+        //    }
+
+        //    // Forgot password link - ensure it points to team forgot password page
+        //    if (forgotLink && forgotLink.getAttribute('href') === 'Forgotpassword.html') {
+        //        // Keep as is - team specific forgot password
+        //        forgotLink.addEventListener('click', function (e) {
+        //            if (typeof Toastify === 'function') {
+        //                Toastify({
+        //                    text: "🔐 Redirecting to password recovery",
+        //                    duration: 1000,
+        //                    gravity: "top",
+        //                    position: "right",
+        //                    style: { background: "#4a5568" }
+        //                }).showToast();
+        //            }
+        //        });
+        //    }
+
+        //    // Ensure active team styling persists (override any conflicts)
+        //    const teamBtn = document.querySelector('.login-tab.active-team');
+        //    if (teamBtn) {
+        //        teamBtn.style.pointerEvents = 'none'; // Makes active tab non-clickable (visual only)
+        //        teamBtn.style.cursor = 'default';
+        //    }
+
+        //    // Page loading removal
+        //    const body = document.getElementById('kt_body');
+        //    if (body && body.classList.contains('page-loading')) {
+        //        setTimeout(function () {
+        //            body.classList.remove('page-loading');
+        //        }, 300);
+        //    }
+
+        //    // Hide spinner on load
+        //    const spinner = document.getElementById('spinnerOverlay');
+        //    if (spinner) spinner.style.display = 'none';
+
+        //    // Smooth form submission hint (original login.js will handle actual auth)
+        //    if (signinBtn) {
+        //        signinBtn.addEventListener('click', function () {
+        //            const email = document.getElementById('adminUserName')?.value;
+        //            const pwd = document.getElementById('adminPassword')?.value;
+        //            if (!email || !pwd) {
+        //                if (typeof Toastify === 'function') {
+        //                    Toastify({
+        //                        text: "⚠️ Please enter email and password",
+        //                        duration: 2000,
+        //                        gravity: "top",
+        //                        position: "right",
+        //                        style: { background: "#f59e0b" }
+        //                    }).showToast();
+        //                }
+        //            }
+        //        });
+        //    }
+        //});
     </script>
+
+    <!-- Additional style for active team tab -->
+    <style>
+        /* Active team tab specific - visual enhancement */
+        .login-tab.active-team {
+            position: relative;
+            background: linear-gradient(105deg, #2c7be5 0%, #1a68d1 100%);
+            font-weight: 700;
+        }
+
+           /* .login-tab.active-team:before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 40%;
+                height: 3px;
+                background: rgba(255,255,255,0.5);
+                border-radius: 3px;
+            }
+*/
+        /* Role hint team specific glow */
+        .role-hint i {
+            animation: subtlePulse 2s infinite;
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Quick links enhancement */
+        .quick-link {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+            .quick-link:hover {
+                background: #2c7be5;
+                border-color: #2c7be5;
+            }
+
+        /* Form input focus border */
+        .form-control-solid:focus {
+            border-color: #2c7be5;
+            box-shadow: 0 0 0 2px rgba(44, 123, 229, 0.2);
+        }
+
+        /* Custom scrollbar for modern look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 3px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #2c7be5;
+            }
+        /* Additional polish */
+        .btn-primary {
+            background: linear-gradient(100deg, #2c7be5, #1a68d1) !important;
+            border: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 10px rgba(44, 123, 229, 0.2);
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-1px);
+                background: linear-gradient(100deg, #2369d4, #145cb8);
+                box-shadow: 0 10px 20px rgba(44, 123, 229, 0.3);
+            }
+
+        .form-control-solid:focus {
+            border-color: #2c7be5;
+            box-shadow: 0 0 0 2px rgba(44, 123, 229, 0.25);
+        }
+
+        .text-primary {
+            color: #2c7be5 !important;
+        }
+
+            .text-primary:hover {
+                color: #1a68d1 !important;
+            }
+    </style>
     <!--end::Page Scripts-->
 </body>
 <!--end::Body-->

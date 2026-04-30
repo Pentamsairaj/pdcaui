@@ -73,7 +73,7 @@ $(document).ready(function () {
             for (var i = 0; i < gettablelength; i++) {
                
                 
-                var file = $("#pricingTable tbody tr").eq(i).find(".fileupload")[0].files[0];
+                var file = $("#pricingTable tbody tr").eq(i).find(".fileupload").val();
                 const checklistid = getid;
                 
                 var checklisttitle = $("#pricingTable tbody tr").eq(i).find(".txtinput").val();
@@ -234,7 +234,7 @@ $(document).ready(function () {
 
     var sno = 2;
     $("#pricingTable").on("click", ".addRow", function () {
-        var addrow = '<tr><td class="text-center" id="col0"> <span class="btn btn-outline-primary border-0 addRow"  id="addRow"> <i class="fas fa-plus-circle"></i> </span> </td><td>' + sno++ + '</td><td id="col1"><textarea type="text" placeholder="Name" class="form-control txtinput"></textarea></td><td id="col3">  <input type="file" class="fileupload" required /></td><td><span class="Delete deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td></tr>'
+        var addrow = '<tr><td class="text-center" id="col0"> <span class="btn btn-outline-primary border-0 addRow"  id="addRow"> <i class="fas fa-plus-circle"></i> </span> </td><td>' + sno++ + '</td><td id="col1"><textarea type="text" placeholder="Name" class="form-control txtinput"></textarea></td><td id="col3">  <div class="form-group"> <input type="url" class="fileupload form-control" required /></div></td><td><span class="Delete deleteRow" style="cursor:pointer"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></span></td></tr>'
         $("#pricingTable tbody").append(addrow);
     })
     $("#pricingTable").on("click", ".deleteRow", function () {

@@ -200,64 +200,76 @@ $(() => {
         var element = document.getElementById("download_section");
 
         html2canvas(element, {
-            scale: 2,
+            scale: 3, // Higher scale for better quality
             useCORS: true,
             scrollY: -window.scrollY,
-            backgroundColor: "#ffffff"
+            backgroundColor: "#ffffff",
+            logging: false,
+            windowWidth: element.scrollWidth,
+            windowHeight: element.scrollHeight
         }).then(function (canvas) {
 
             var pdf = new jsPDF("p", "mm", "a4");
 
-            var pageWidth = 210;
-            var pageHeight = 297;
-            var margin = 10;
+            // Page dimensions
+            var pageWidth = pdf.internal.pageSize.width;  // 210mm
+            var pageHeight = pdf.internal.pageSize.height; // 297mm
 
-            var imgWidth = pageWidth - margin * 2;
+            // Define margins (top, bottom, left, right) in mm
+            var marginTop = 15;    // Top margin
+            var marginBottom = 15; // Bottom margin
+            var marginLeft = 10;   // Left margin
+            var marginRight = 10;  // Right margin
 
-            var pxFullHeight = canvas.height;
-            var pxPageHeight = Math.floor(canvas.width * (pageHeight / pageWidth));
+            // Available content area after margins
+            var availableWidth = pageWidth - marginLeft - marginRight;
+            var availableHeight = pageHeight - marginTop - marginBottom;
 
-            var pageCount = Math.ceil(pxFullHeight / pxPageHeight);
+            // Calculate canvas aspect ratio
+            var canvasWidth = canvas.width;
+            var canvasHeight = canvas.height;
+            var canvasAspectRatio = canvasHeight / canvasWidth;
 
-            for (var page = 0; page < pageCount; page++) {
+            // Calculate image dimensions to fit within available area while maintaining aspect ratio
+            var imgWidth = availableWidth;
+            var imgHeight = availableWidth * canvasAspectRatio;
 
-                if (page > 0) pdf.addPage();
-
-                var pageCanvas = document.createElement("canvas");
-                var ctx = pageCanvas.getContext("2d");
-
-                pageCanvas.width = canvas.width;
-                pageCanvas.height = pxPageHeight;
-
-                ctx.fillStyle = "#ffffff";
-                ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-
-                ctx.drawImage(
-                    canvas,
-                    0,
-                    page * pxPageHeight,
-                    canvas.width,
-                    pxPageHeight,
-                    0,
-                    0,
-                    canvas.width,
-                    pxPageHeight
-                );
-
-                var imgData = pageCanvas.toDataURL("image/jpeg", 0.95);
-
-                var imgHeight = (pxPageHeight * imgWidth) / canvas.width;
-
-                pdf.addImage(imgData, "JPEG", margin, margin, imgWidth, imgHeight);
+            // If image height exceeds available height, scale down to fit
+            if (imgHeight > availableHeight) {
+                imgHeight = availableHeight;
+                imgWidth = availableHeight / canvasAspectRatio;
             }
+
+            // Center the image within the available area (between margins)
+            var xOffset = marginLeft + (availableWidth - imgWidth) / 2;
+            var yOffset = marginTop + (availableHeight - imgHeight) / 2;
+
+            // Convert canvas to image
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+            // Add image to PDF
+            pdf.addImage(imgData, "JPEG", xOffset, yOffset, imgWidth, imgHeight);
 
             var pdfBlob = pdf.output("blob");
 
+            // Get WhatsApp number from the invoice data
+            var whatsappNumber = $("#phone").text();
+            var companyName = $("#company").text();
+
+            // Clean the phone number
+            whatsappNumber = whatsappNumber.replace(/\s/g, '').replace(/[^0-9+]/g, '');
+
+            // Ensure number has country code
+            if (whatsappNumber && !whatsappNumber.startsWith('+')) {
+                whatsappNumber = '+91' + whatsappNumber;
+            }
 
             var formData = new FormData();
             formData.append("file", pdfBlob, "TaxInvoice.pdf");
             formData.append("AdminId", ADMIN_AUTH);
             formData.append("id", TemplateId);
+            formData.append("whatsappNumber", whatsappNumber);
+            formData.append("customerName", companyName);
 
             $.ajax({
                 url: SAVE_INVOICE_PDF,
@@ -267,18 +279,29 @@ $(() => {
                 contentType: false,
 
                 success: function (response) {
-                    hideLoader(); // ⭐ HIDE LOADER
-                    alert("PDF Sent successfully!");
+                    hideLoader();
+                    try {
+                        var result = typeof response === 'string' ? JSON.parse(response) : response;
+                        if (response.responsecode == 1) {
+                            alert("Invoice sent via WhatsApp successfully!");
+                        } else {
+                            alert("Failed to send via WhatsApp: " + (result.message || "Unknown error"));
+                        }
+                    } catch (e) {
+                        alert("Invoice PDF generated and sent!");
+                    }
                 },
                 error: function (xhr) {
-                    hideLoader(); // ⭐ HIDE LOADER
-                    console.log(xhr.responseText);
+                    hideLoader();
+                    console.error(xhr.responseText);
+                    alert("Error sending PDF via WhatsApp. Please check console for details.");
                 }
             });
 
         }).catch(function (error) {
-            hideLoader(); // ⭐ ALSO HANDLE ERROR
+            hideLoader();
             console.error(error);
+            alert("Error generating PDF. Please try again.");
         });
 
     });

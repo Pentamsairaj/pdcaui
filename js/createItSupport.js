@@ -126,6 +126,8 @@ $(() => {
 
                         if (AUTHOR_ID.toUpperCase() == "2D4AC65E-FF99-407A-A729-CCDE60C7D5F1") {
                             Actions = `<button ID=${value.id} class="btn activity_edit"><i class='menu-icon flaticon2-edit text-info'></i></button>` + Actions;
+                        } else {
+                            Actions = `<button ID=${value.id} class="btn activity_edit"><i class='menu-icon flaticon2-edit text-info'></i></button>`;
                         }
 
                         const updatedDate = value.updated_on ? moment(value.updated_on).format('DD-MM-YYYY') : "N/A";

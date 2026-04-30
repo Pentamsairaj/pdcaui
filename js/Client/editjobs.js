@@ -256,15 +256,15 @@
 
                     var getdetails = '';
                     var docView = values.document != null ?
-                        '<div class="py-2"><a target="_blank" href="' + values.document + '"><button class="btn btn-primary" type="button">View</button></a></div>'
+                        '<div class="py-2"><a target="_blank" href="' + values.document + '"><button class="btn btn-primary" type="button">Final View</button></a></div>'
                         : '';
 
                    
                         getdetails = '<tr>' +
                             '<td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" id="' + values.id + '" disabled><i class="fas fa-plus-circle"></i></span></td>' +
                             '<td id="col1" style="width:70%;"><textarea placeholder="document name" class="form-control txtdocname" disabled style="width:100%;">' + values.nameofthedocument + '</textarea></td>' +
-                            '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">View</button></a></td>' +
-                            '<td><input type="file" class="form-control Clientfile" disabled/>' + docView + '</td>' +
+                            '<td id="col2"><a target="_blank" href="' + values.modalformat + '"><button class="btn btn-primary" type="button">Format View</button></a></td>' +
+                            '<td class="theadaligned">' + docView + '</td>' +
                             '</tr>';
                     
 
@@ -356,13 +356,13 @@
             });
         })
     });
-    $("#pricingTable").on("click", ".addRow", function () {
-        var addrow = '<tr><td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow"><i class="fas fa-plus-circle"></i></span></td><td id="col1"><input type="text" name="" placeholder="document name" class="form-control txtdocname"></td><td id="col2"><div class="row"><div class="col-md-6"><input type="file" class="form-control fileupload"></div><div class="col-md-6"><input type="checkbox" class="chk" name="select" /></div></div></td><td></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>'
-        $("#pricingTable tbody").append(addrow);
-        $("#pricingTable").on("click", ".deleterow", function () {
-            $(this).closest("tr").remove();
-        });
-    })
+    //$("#pricingTable").on("click", ".addRow", function () {
+    //    var addrow = '<tr><td class="text-center" id="col0"><span class="btn btn-outline-primary border-0 addRow" disabled><i class="fas fa-plus-circle"></i></span></td><td id="col1"><input type="text" name="" placeholder="document name" class="form-control txtdocname"></td><td id="col2"><div class="row"><div class="col-md-6"><input type="file" class="form-control fileupload"></div><div class="col-md-6"><input type="checkbox" class="chk" name="select" /></div></div></td><td></td><td> <div class="deleterow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>'
+    //    $("#pricingTable tbody").append(addrow);
+    //    $("#pricingTable").on("click", ".deleterow", function () {
+    //        $(this).closest("tr").remove();
+    //    });
+    //})
     //$("#pricingTable").on("click", ".deleteRows", function () {
     //    $(this).closest("tr").remove();
      

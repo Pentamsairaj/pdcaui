@@ -84671,6 +84671,18 @@ body {
     padding-left: 75px;
   }
 }
+.theadaligned {
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.theadaligned2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 @media (max-width: 991.98px) {
   .header-menu-wrapper {
     z-index: 1001;

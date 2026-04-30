@@ -478,90 +478,150 @@
 
                                     </div>
                                     <div class="card-footer">
-                                        <div class="form-group d-flex align-items-center">
-                                            <label for="">Amount Chargeable( in words) :</label>
-                                            <input type="text" name="" id="amtInString" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--end::Pricing Details-->
-                                <!--begin:: Scope of Work-->
-                                <div class="card mb-7">
-                                    <div class="card-header d-flex">
-                                        <h6 class="card-title font-weight-bolder mb-0 mr-7">Scope of Work</h6>
-                                        <div class="form-group">
-                                            <label class="checkbox checkbox-lg">
-                                                <input type="checkbox" id="scopeWorkCheckBox" name="Checkboxes3_1" />
-                                                <span></span>&nbsp;&nbsp;
-                                                Enable
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="card-body">
-                                        <textarea class="summernote" id="scopeOfWorkDescription"></textarea>
-                                    </div>
-                                </div>
-                                <!--end:: Scope of Work-->
-                                <!--begin:: Terms & Conditions-->
-                                <div class="card mb-7">
-                                    <div class="card-header">
-                                        <h6 class="card-title font-weight-bolder mb-0 mr-7">Terms & Conditions</h6>
-                                    </div>
-                                    <div class="card-body">
-                                        <textarea class="summernote" id="termsAndConditions"></textarea>
-                                    </div>
-                                </div>
-                                <!--end:: Terms & Conditions-->
-                                <!--begin:: logo & signature-->
-                                <div class="card mb-7">
-                                    <div class="card-body d-flex justify-content-between">
-                                        <div class="logo-section d-flex flex-column">
-                                            <h4 class="font-weight-bolder">
-                                                Powered By <sup class="text-danger">*</sup>
-                                            </h4>
-                                            <h6 class="font-weight-bold mb-7">
-                                                Powered By <sup class="text-danger">*</sup>
-                                            </h6>
-                                            <div>
-                                                <img id="companyLogoDisplay" style="width: 200px;" alt="">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group d-flex align-items-center">
+                                                    <label for="">Amount Chargeable( in words) :</label>
+                                                    <input type="text" name="" id="amtInString" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td class="pr-3">
+                                                                <h6 class="font-weight-bolder d-flex ">
+                                                                    Paid Amount:
+                                                                </h6>
+                                                            </td>
+                                                            <td>
+                                                                <label class="checkbox checkbox-lg">
+                                                                    <input type="checkbox" id="invoicePaidAmtcheckbox"
+                                                                           name="Checkboxes3_1" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <small class="text-danger text-center">Client no preview</small>
+                                                </div>
+                                                <div>
+                                                    <h6><input type="number" name="" id="invoicePaidAmt" class="form-control" disabled></h6>
+                                                    <small class="text-danger text-center"
+                                                           style="visibility: hidden;">
+                                                        no
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <table>
+                                                        <tr>
+                                                            <td class="pr-3">
+                                                                <h6 class="font-weight-bolder d-flex ">
+                                                                    Balance Due:
+                                                                </h6>
+                                                            </td>
+                                                            <td>
+                                                                <label class="checkbox checkbox-lg">
+                                                                    <input type="checkbox" id="invoiceDueAmtcheckbox"
+                                                                           name="Checkboxes3_1" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <small class="text-danger text-center">Client no preview</small>
+                                                </div>
+                                                <div>
+                                                    <h6><input type="number" name="" id="invoiceDueAmt" class="form-control" disabled></h6>
+                                                    <small class="text-danger text-center"
+                                                           style="visibility: hidden;">
+                                                        no
+                                                    </small>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="signature-section d-flex flex-column">
-                                            <h4 class="font-weight-bolder mb-9">
-                                                Authorised Signature <sup class="text-danger">*</sup>
-                                            </h4>
-                                            <div>
-                                                <img id="signatureDisplay" style="width: 200px;" alt="">
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                                <!--end:: logo & signature-->
-
-                                <div class="buttons-list d-flex justify-content-end">
-                                    <button class="btn btn-secondary mx-3" id="cancelTamplate" type="button" onclick="history.back()">
-                                        Cancel
-                                    </button>
-                                    <button class="btn btn-primary" type="submit">
-                                        Update
-                                        Service offer
-                                    </button>
-                                </div>
-                            </form>
-
                         </div>
-                        <!--end::Container-->
-                    </div>
-                    <!--end::Entry-->
-                </div>
-                <!--end::Content-->
 
+                        <!--end::Pricing Details-->
+                        <!--begin:: Scope of Work-->
+                        <div class="card mb-7">
+                            <div class="card-header d-flex">
+                                <h6 class="card-title font-weight-bolder mb-0 mr-7">Scope of Work</h6>
+                                <div class="form-group">
+                                    <label class="checkbox checkbox-lg">
+                                        <input type="checkbox" id="scopeWorkCheckBox" name="Checkboxes3_1" />
+                                        <span></span>&nbsp;&nbsp;
+                                        Enable
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                <textarea class="summernote" id="scopeOfWorkDescription"></textarea>
+                            </div>
+                        </div>
+                        <!--end:: Scope of Work-->
+                        <!--begin:: Terms & Conditions-->
+                        <div class="card mb-7">
+                            <div class="card-header">
+                                <h6 class="card-title font-weight-bolder mb-0 mr-7">Terms & Conditions</h6>
+                            </div>
+                            <div class="card-body">
+                                <textarea class="summernote" id="termsAndConditions"></textarea>
+                            </div>
+                        </div>
+                        <!--end:: Terms & Conditions-->
+                        <!--begin:: logo & signature-->
+                        <div class="card mb-7">
+                            <div class="card-body d-flex justify-content-between">
+                                <div class="logo-section d-flex flex-column">
+                                    <h4 class="font-weight-bolder">
+                                        Powered By <sup class="text-danger">*</sup>
+                                    </h4>
+                                    <h6 class="font-weight-bold mb-7">
+                                        Powered By <sup class="text-danger">*</sup>
+                                    </h6>
+                                    <div>
+                                        <img id="companyLogoDisplay" style="width: 200px;" alt="">
+                                    </div>
+                                </div>
+                                <div class="signature-section d-flex flex-column">
+                                    <h4 class="font-weight-bolder mb-9">
+                                        Authorised Signature <sup class="text-danger">*</sup>
+                                    </h4>
+                                    <div>
+                                        <img id="signatureDisplay" style="width: 200px;" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end:: logo & signature-->
+
+                        <div class="buttons-list d-flex justify-content-end">
+                            <button class="btn btn-secondary mx-3" id="cancelTamplate" type="button" onclick="history.back()">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary" type="submit">
+                                Update
+                                Service offer
+                            </button>
+                        </div>
+                        </form>
+
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Entry-->
             </div>
-            <!--end::Wrapper-->
+            <!--end::Content-->
+
         </div>
-        <!--end::Page-->
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
     </div>
     <div id="kt_scrolltop" class="scrolltop"></div>
     <!--begin::SPINNER-->

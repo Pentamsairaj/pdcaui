@@ -345,7 +345,17 @@ $(() => {
                         $("#gstOutsideState").show();
                     }
 
+                    if (item.paid) {
+                        $("#invoicePaidAmtcheckbox").attr('checked', true);
+                        $('#invoicePaidAmt').removeAttr('disabled');
+                        $("#invoicePaidAmt").val(item.paid)
+                    }
 
+                    if (item.balance) {
+                        $("#invoiceDueAmtcheckbox").attr('checked', true);
+                        $('#invoiceDueAmt').removeAttr('disabled');
+                        $("#invoiceDueAmt").val(item.balance)
+                    }
                 });
             }
 

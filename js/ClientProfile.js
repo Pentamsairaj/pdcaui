@@ -175,110 +175,19 @@
     }
 
 
-    $("#fileuploads").click(function () {
-        $("#imagestr").val("");
-        $("#imagestr1").val("");
-        $("#imagestr2").val("");
-        $("#imagestr3").val("");
-        $("#imagestr4").val("");
-        $("#imagestr5").val("");
-        $("#imagestr6").val("");
-        var file = $("#inputGroupFile01")[0].files[0];
-        var file1 = $("#firmregistraionfile")[0].files[0];
-        var file2 = $("#partnershipfirm")[0].files[0];
-        var file3 = $("#certificatefirm")[0].files[0];
-        var file4 = $("#MOA")[0].files[0];
-        var file5 = $("#AOA")[0].files[0];
-        var file6 = $("#IEC")[0].files[0];
-        if (file) {
-
-            var reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = function () {
-                $("#imagestr").val(reader.result);
-            };
-            reader.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        if (file1) {
-            var reader1 = new FileReader();
-            reader1.readAsDataURL(file1);
-            reader1.onload = function () {
-                $("#imagestr1").val(reader1.result);
-            };
-            reader1.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        if (file2) {
-            var reader2 = new FileReader();
-            reader2.readAsDataURL(file2);
-            reader2.onload = function () {
-                $("#imagestr2").val(reader2.result);
-            };
-            reader2.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-
-        }
-        if (file3) {
-            var reader3 = new FileReader();
-            reader3.readAsDataURL(file3);
-            reader3.onload = function () {
-                $("#imagestr3").val(reader3.result);
-            };
-            reader3.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        if (file4) {
-
-            var reader4 = new FileReader();
-            reader4.readAsDataURL(file4);
-            reader4.onload = function () {
-                $("#imagestr4").val(reader4.result);
-            };
-            reader4.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        if (file5) {
-            var reader5 = new FileReader();
-            reader5.readAsDataURL(file5);
-            reader5.onload = function () {
-                $("#imagestr5").val(reader5.result);
-            };
-            reader5.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        if (file6) {
-            var reader6 = new FileReader();
-            reader6.readAsDataURL(file6);
-            reader6.onload = function () {
-                $("#imagestr6").val(reader6.result);
-
-            };
-            reader6.onerror = function (error) {
-                console.log('Error: ', error);
-            };
-        }
-        alert("Uploaded files Submitted Successfully!")
-    });
     $("#ClientCreate").submit(function () {
         const ComapnayName = $("#txtcompanyname").val();
         const CompanyAddress = $("#txtcompanyaddress").val();
         const Email = $("#txtemail").val();
         const Phone = $("#txtphone").val();
         const GST = $("#txtGST").val();
-        var imagestr = $("#imagestr").val();
-        var imagestr1 = $("#imagestr1").val();
-        var imagestr2 = $("#imagestr2").val();
-        var imagestr3 = $("#imagestr3").val();
-        var imagestr4 = $("#imagestr4").val();
-        var imagestr5 = $("#imagestr5").val();
-        var imagestr6 = $("#imagestr6").val();
+        var imagestr = $("#inputGroupFile01").val();
+        var imagestr1 = $("#firmregistraionfile").val();
+        var imagestr2 = $("#partnershipfirm").val();
+        var imagestr3 = $("#certificatefirm").val();
+        var imagestr4 = $("#MOA").val();
+        var imagestr5 = $("#AOA").val();
+        var imagestr6 = $("#IEC").val();
         var ddlbusinesstype = $("#ddlbusinesstype").val();
         var clienttype = 0;
         if (ddlbusinesstype == "Product") {

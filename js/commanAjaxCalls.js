@@ -186,6 +186,8 @@ const updateBillForServiceOffer = (PRICING_id, URL) => {
     let templateId = localStorage.getItem("templateID");
     const billData = GET_DATA_FROM_FORM();
     let billId = localStorage.getItem("billId");
+    let paidAmount = $("#invoicePaidAmt").val();
+    let dueAmount = $("#invoiceDueAmt").val();
     if (billId == null) {
         debugger;
         createBillForServiceOffer(PRICING_id, CREATE_SERVICE_OFFER_BILL_URL);
@@ -195,7 +197,7 @@ const updateBillForServiceOffer = (PRICING_id, URL) => {
         $.ajax({
             url: URL,
             type: "POST",
-            data: { ...billData, "t_pricingid": PRICING_id, "AdminId": ADMIN_AUTH, "TemplateId": templateId, "id": billId, },
+            data: { ...billData, "t_pricingid": PRICING_id, "AdminId": ADMIN_AUTH, "TemplateId": templateId, "id": billId, "balance": Number(dueAmount), "paid": Number(paidAmount) },
             async: false,
             dataType: "JSON",
             crossDomain: true,

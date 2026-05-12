@@ -26,7 +26,7 @@ $(() => {
 
     const ADMIN_AUTH = localStorage.getItem("Admin_auth");
     const ADMIN_NAME = localStorage.getItem('Admin_Name');
-    if (ADMIN_NAME != "Admin" && ADMIN_NAME != "Manager") {
+    if (ADMIN_NAME != "Admin" && ADMIN_NAME != "Manager" && ADMIN_NAME !="CRM Executive") {
         $(".btn-primary").hide();
     };
     $(document).ready(function () {

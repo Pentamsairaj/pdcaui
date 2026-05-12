@@ -73,7 +73,8 @@ $(() => {
         </label>
     </span>
 </td>
-                                 
+                              <td ID=${value.ID} class="d-flex"><a href='productSheetAllocation.html?ID=${value.ID}'  class='btn edit'><i class='menu-icon flaticon2-edit text-info cursor-pointer'></i></a> </td>
+                                     
                                  
                                   </tr>`;
                     $("#table-id tbody").append(newRow);

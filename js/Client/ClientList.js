@@ -22,7 +22,7 @@ $(() => {
     const CONVERT_NUMBER_INTO_STRING = convertIntToEnglish;
     const CLIENT_AUTH = localStorage.getItem("Client_auth");
     const ADMIN_NAME = localStorage.getItem('Admin_Name');
-    if (ADMIN_NAME != "Admin" && ADMIN_NAME != "Manager") {
+    if (ADMIN_NAME != "Admin" && ADMIN_NAME != "Manager" && ADMIN_NAME != "CRM Executive") {
         $(".btn-primary").hide();
     };
     getlist();

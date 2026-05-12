@@ -38,8 +38,8 @@
 
     <style>
         .nameofdocument_styles {
-            width: 600px;
-            height: 70px !important;
+            width: 300px;
+           /* height: 70px !important;*/
         }
 
         .level_styles {
@@ -64,10 +64,10 @@
             }
         }
 
-        textarea.form-control {
+       /* textarea.form-control {
             height: calc(1.5em + 1.3rem + 2px);
         }
-
+*/
         h6.text-danger {
             animation: blink-animation 1s steps(6, start) infinite;
         }
@@ -91,6 +91,36 @@
             #kt_brand {
                 display: block;
             }
+        }
+
+        .table-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        /* TOP HORIZONTAL SCROLLBAR */
+        .top-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: 18px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* FAKE WIDTH HOLDER */
+        .top-scroll-inner {
+            height: 1px;
+        }
+
+        /* ACTUAL TABLE */
+        .table-responsive {
+            overflow-x: auto;
+            overflow-y: auto;
+            max-height: 500px; /* optional */
+            width: 100%;
         }
     </style>
 
@@ -228,33 +258,40 @@
                                             <div class="d-flex justify-content-between">
                                                 <h3>Quality Documentation and Control</h3>
                                                 <!--<div class="buttons-list d-flex justify-content-end">
-        <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
-    </div>-->
+            <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+        </div>-->
                                                 <div class="flex-wrap">
                                                     <button id="btnexportquailtydoc" class="btn btn-danger mx-3">Export<i class="note-icon-arrow-circle-down px-2 text-success" style="font-size:20px"></i></button>
                                                 </div>
                                             </div>
                                             <br>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6 " id="table-quality">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">New Record</th>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Document</th>
-                                                            <th scope="col">Type</th>
-                                                            <th scope="col">Doc ID</th>
-                                                            <th scope="col" class="editQualityHeading">Upload File</th>
-                                                            <th scope="col">Clause No.</th>
-                                                            <th scope="col" class="editQualityHeading">Approved View</th>
-                                                            <th scope="col">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+
+                                                <!-- TOP SCROLLBAR -->
+                                                <!--<div class="top-scroll">
+                                                    <div class="top-scroll-inner"></div>
+                                                </div>-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6 " id="table-quality">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">New Record</th>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Document</th>
+                                                                <th scope="col">Type</th>
+                                                                <th scope="col">Doc ID</th>
+                                                                <th scope="col" class="editQualityHeading">Upload File</th>
+                                                                <th scope="col">Clause No.</th>
+                                                                <th scope="col" class="editQualityHeading">Approved View</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     <div class="d-flex justify-content-end">
                                         <button type="submit" class="next-step btn btn-success mx-2" data-next="2">Save</button>
@@ -282,26 +319,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6 " id="table-quality1">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">New Record</th>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Document</th>
-                                                            <th scope="col">Type of Training</th>
-                                                            <th scope="col">Start Date</th>
-                                                            <th scope="col">End Date</th>
-                                                            <th scope="col">Upload file</th>
-                                                            <th scope="col">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6 " id="table-quality1">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">New Record</th>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Document</th>
+                                                                <th scope="col">Type of Training</th>
+                                                                <th scope="col">Start Date</th>
+                                                                <th scope="col">End Date</th>
+                                                                <th scope="col">Upload file</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     <div class="card mb-7">
                                         <div class="card-body">
@@ -318,25 +356,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6" id="table-quality1-main">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">New Record</th>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Employee</th>
-                                                            <th scope="col">Employee ID</th>
-                                                            <th scope="col">Designation</th>
-                                                            <th scope="col">Qualification/No of Years Experience</th>
-                                                            <th scope="col">Upload file</th>
-                                                            <th scope="col">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6" id="table-quality1-main">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">New Record</th>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Employee</th>
+                                                                <th scope="col">Employee ID</th>
+                                                                <th scope="col">Designation</th>
+                                                                <th scope="col">Qualification/No of Years Experience</th>
+                                                                <th scope="col">Upload file</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     <div class="d-flex justify-content-between m-5">
                                         <div>
@@ -358,27 +398,29 @@
                                             <div class="d-flex justify-content-between">
                                                 <h3>Quality System Execution</h3>
                                                 <!--<div class="buttons-list d-flex justify-content-end">
-                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
-                                                </div>-->
+            <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+        </div>-->
                                             </div>
                                             <br>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6 " id="table-quality2">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Document</th>
-                                                            <th scope="col">Level 4 -Doc ID</th>
-                                                            <th scope="col">Clause No.</th>
-                                                            <th scope="col">Approved View</th>
-                                                            <th scope="col">Upload Multi Doc(max 12)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6 " id="table-quality2">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Document</th>
+                                                                <th scope="col">Level 4 -Doc ID</th>
+                                                                <th scope="col">Clause No.</th>
+                                                                <th scope="col">Approved View</th>
+                                                                <th scope="col">Upload Multi Doc(max 12)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <!-- end:: tabe ends -->
                                     <div class="d-flex justify-content-between m-5">
                                         <div>
@@ -401,28 +443,30 @@
                                             <div class="d-flex justify-content-between">
                                                 <h3>Internal Audit and MRM</h3>
                                                 <!--<div class="buttons-list d-flex justify-content-end">
-                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
-                                                </div>-->
+            <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+        </div>-->
                                             </div>
                                             <br>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6 " id="table-quality3">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <!--<th scope="col">New Record</th>-->
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Document</th>
-                                                            <th scope="col">Level 4 -Doc ID</th>
-                                                            <th scope="col">Clause No.</th>
-                                                            <th scope="col">Approved View</th>
-                                                            <th scope="col">Upload Multi Doc(max 12)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6 " id="table-quality3">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <!--<th scope="col">New Record</th>-->
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Document</th>
+                                                                <th scope="col">Level 4 -Doc ID</th>
+                                                                <th scope="col">Clause No.</th>
+                                                                <th scope="col">Approved View</th>
+                                                                <th scope="col">Upload Multi Doc(max 12)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <!-- end:: tabe ends -->
 
                                     <div class="d-flex justify-content-between m-5">
@@ -445,27 +489,29 @@
                                             <div class="d-flex justify-content-between">
                                                 <h3>External Audit and MRM</h3>
                                                 <!--<div class="buttons-list d-flex justify-content-end">
-                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
-                                                </div>-->
+            <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+        </div>-->
                                             </div>
                                             <br>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6 " id="table-quality4">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Name of Document</th>
-                                                            <th scope="col">Level 4 -Doc ID</th>
-                                                            <th scope="col">Clause No.</th>
-                                                            <th scope="col">Approved View</th>
-                                                            <th scope="col">Upload Multi Doc(max 12)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6 " id="table-quality4">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Name of Document</th>
+                                                                <th scope="col">Level 4 -Doc ID</th>
+                                                                <th scope="col">Clause No.</th>
+                                                                <th scope="col">Approved View</th>
+                                                                <th scope="col">Upload Multi Doc(max 12)</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <!-- end:: tabe ends -->
                                     <div class="d-flex justify-content-between m-5">
                                         <div>
@@ -488,29 +534,31 @@
                                             <div class="d-flex justify-content-between">
                                                 <h3>Quality Certificate</h3>
                                                 <!--<div class="buttons-list d-flex justify-content-end">
-                                                    <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
-                                                </div>-->
+            <button id="printPageButton" onclick="printDiv('printableDiv')" class=" btn btn-primary">Print</button>
+        </div>-->
                                             </div>
                                             <br>
-                                            <div class="table-responsive">
-                                                <table class="table table-hover mb-6" id="table-quality5">
-                                                    <thead class="thead-dark">
-                                                        <tr>
-                                                            <th scope="col">New Record</th>
-                                                            <th scope="col">S.No</th>
-                                                            <th scope="col">Certificate (upload/view)</th>
-                                                            <th scope="col">Type of Certificate</th>
-                                                            <th scope="col">Issued on</th>
-                                                            <th scope="col">Next Due on</th>
-                                                            <th scope="col">Remarks</th>
-                                                            <th scope="col">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody></tbody>
-                                                </table>
+                                            <div class="table-wrapper">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover mb-6" id="table-quality5">
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th scope="col">New Record</th>
+                                                                <th scope="col">S.No</th>
+                                                                <th scope="col">Certificate (upload/view)</th>
+                                                                <th scope="col">Type of Certificate</th>
+                                                                <th scope="col">Issued on</th>
+                                                                <th scope="col">Next Due on</th>
+                                                                <th scope="col">Remarks</th>
+                                                                <th scope="col">Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody></tbody>
+                                                    </table>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                     <!-- end:: tabe ends -->
                                     <div class="d-flex justify-content-between m-5">
                                         <button type="button" class="prev-step btn btn-secondary" data-prev="5">Back</button>
@@ -583,6 +631,28 @@
                 allowClear: true,
                 width: '100%'
             });
+        });
+
+        const topScroll = document.querySelector('.top-scroll');
+        const tableResponsive = document.querySelector('.table-responsive');
+        const topScrollInner = document.querySelector('.top-scroll-inner');
+
+        function syncScrollWidth() {
+            topScrollInner.style.width =
+                tableResponsive.scrollWidth + 'px';
+        }
+
+        syncScrollWidth();
+
+        window.addEventListener('resize', syncScrollWidth);
+
+        // Sync scrolling
+        topScroll.addEventListener('scroll', () => {
+            tableResponsive.scrollLeft = topScroll.scrollLeft;
+        });
+
+        tableResponsive.addEventListener('scroll', () => {
+            topScroll.scrollLeft = tableResponsive.scrollLeft;
         });
     </script>
 </body>

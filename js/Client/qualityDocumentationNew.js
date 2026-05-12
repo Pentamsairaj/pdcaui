@@ -8,6 +8,7 @@ import reUsableFunctions from './reUsableFunctions.js';
 //import commonAjaxCalls from './commanAjaxCalls.js';
 $(() => {
     const CONVERT_TO_PDF = APIS.convertToPdf;
+    const QUALITYDOC_CSV_DOWNLOAD = APIS.clientqualityDocExport;
     const SUCCESS_MESSAGE = reUsableFunctions.SuccessMessage;
     const ERROR_MESSAGE = reUsableFunctions.ErrorMessage;
     //const CLIENT_AUTH = localStorage.getItem("CLIENT_AUTH");
@@ -53,7 +54,12 @@ $(() => {
         $('#ddjobid').val(job_ID);
         $("#company_data").hide();
         $("#template_div").hide();
+        $("#btnexportquailtydoc").show();
         getQualitySystemExecutionData()
+    } else {
+        $(document).ready(function () {
+            $("#btnexportquailtydoc").hide();
+        });
     }
     function getDocId() {
         debugger;
@@ -122,16 +128,16 @@ $(() => {
             if (value.Approveddocupload) {
                 var Approveddocupload = '<a class="alink2" target="_blank" href="' + value.Approveddocupload + '"><button class="btn btn-primary" type="button">View</button></a>';
             } else {
-                var Approveddocupload = '';
+                var Approveddocupload = '<button class="btn btn-primary" type="button" disabled>View</button>';
             }
             $(".editQualityHeading").show();
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}" ${value.level == item.id ? "selected" : ""}>Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr data-row-id=' + value.ID + '><td><input disabled disabled class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value="" edit_id=' + value.ID + '>' + value.NameoftheDoc + ' </textarea></div></td><td><div class="form-group"><select disabled class="form-control level level_styles" id="level" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input disabled disabled class="form-control DocId level_styles" id="DocId" name="" style="" placeholder="Doc ID." value="' + value.DocId + '"></div></td><td><div class=form-group id="draftdocview">' + draftview + '</div></td><td><div class="form-group"><input disabled class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No." value="' + value.clause + '"></div></td><td><div class=form-group>' + Approveddocupload + '</div></td><td>' + deleteIcon + '</td></tr > ';
+            var getrowcontent = '<tr data-row-id=' + value.ID + '><td><input disabled disabled class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value="" edit_id=' + value.ID + '>' + value.NameoftheDoc + ' </textarea></div></td><td><div class="form-group"><select disabled class="form-control level level_styles" id="level" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input disabled disabled class="form-control DocId level_styles" id="DocId" name="" style="" placeholder="Doc ID." value="' + value.DocId + '"></div></td><td><div class=form-group id="draftdocview">' + draftview + '</div></td><td><div class="form-group"><input disabled class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No." value="' + value.clause + '"></div></td><td><div class=form-group>' + Approveddocupload + '</div></td></tr > ';
             $("#table-quality tbody").append(getrowcontent);
         }
         else {
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}">Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr><td><input disabled class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value=""></textarea></div></td><td><div class="form-group"><select disabled class="form-control level level_styles" id="level" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled class="form-control DocId level_styles docId_duplicate" id="DocId" name="" style="" placeholder="Doc ID." value=""></div></td><td><div class="form-group"><input disabled class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No."></div></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input disabled class="add addrow border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document" value=""></textarea></div></td><td><div class="form-group"><select disabled class="form-control level level_styles" id="level" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled class="form-control DocId level_styles docId_duplicate" id="DocId" name="" style="" placeholder="Doc ID." value=""></div></td><td><div class="form-group"><input disabled class="form-control clause level_styles" id="clause" name="" style="" placeholder="Clause No."></div></td><td><button class="btn btn-primary" type="button" disabled>View</button></td></tr>';
             $("#table-quality tbody").append(getrowcontent);
         };
     }
@@ -139,28 +145,28 @@ $(() => {
         getQualityControl();
     });
 
-    $("#table-quality tbody").on("click", ".deleterow", function () {
-        debugger;
-        if ($(this).closest("tr").attr("data-row-id")) {
-            docIdData.push($(this).closest("tr").find(".DocId").val())
-            var id = $(this).closest("tr").attr("data-row-id")
-            $.ajax({
-                url: "https://api.pdca.in/ClientNewQualityManagement/DeleteQualityDoc?ClientID=" + CLIENT_AUTH + "&ID=" + id,
-                type: "POST",
-                contentType: false, // Not to set any content header
-                processData: false, // Not to process data
-                /*data: fileData,*/
-                success: function (data) {
-                    if (data.responsecode == 0) {
-                        $("tr[data-row-id='" + id + "']").remove();
-                        alert("Record Deleted Succesfuly")
-                    }
-                }
-            });
-        } else {
-            $(this).closest("tr").remove();
-        } updateSerialNumbers();
-    });
+    //$("#table-quality tbody").on("click", ".deleterow", function () {
+    //    debugger;
+    //    if ($(this).closest("tr").attr("data-row-id")) {
+    //        docIdData.push($(this).closest("tr").find(".DocId").val())
+    //        var id = $(this).closest("tr").attr("data-row-id")
+    //        $.ajax({
+    //            url: "https://api.pdca.in/ClientNewQualityManagement/DeleteQualityDoc?ClientID=" + CLIENT_AUTH + "&ID=" + id,
+    //            type: "POST",
+    //            contentType: false, // Not to set any content header
+    //            processData: false, // Not to process data
+    //            /*data: fileData,*/
+    //            success: function (data) {
+    //                if (data.responsecode == 0) {
+    //                    $("tr[data-row-id='" + id + "']").remove();
+    //                    alert("Record Deleted Succesfuly")
+    //                }
+    //            }
+    //        });
+    //    } else {
+    //        $(this).closest("tr").remove();
+    //    } updateSerialNumbers();
+    //});
 
     function updateSerialNumbers() {
         debugger;
@@ -378,12 +384,12 @@ $(() => {
             }
             const startDate = value.Dateoftrainingstart ? moment(value.Dateoftrainingstart).format("YYYYY-MM-DD") : "N/A";
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}" ${value.TypeOfTraining == item.id ? "selected" : ""}>Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr data-row-id="' + value.ID + '"><td><input disabled class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document" value="" edit_id=' + value.ID + '> ' + value.DocumentName + ' </textarea></div></td><td><div class="form-group"><select disabled class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"  value=' + startDate + '></div></td><td><div class="form-group"><input disabled type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd" value=' + value.topcoftrainingEnd + '></div></td><td><a href="' + value.DocUpload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr data-row-id="' + value.ID + '"><td><input disabled class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document" value="" edit_id=' + value.ID + '> ' + value.DocumentName + ' </textarea></div></td><td><div class="form-group"><select disabled class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"  value=' + startDate + '></div></td><td><div class="form-group"><input disabled type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd" value=' + value.topcoftrainingEnd + '></div></td><td><a href="' + value.DocUpload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td></tr>';
             $("#table-quality1 tbody").append(getrowcontent);
         }
         else {
             const options = `<option value="">Level</option>` + Level_data.map((item) => `<option value="${item.id}">Level ${item.name}</option>`).join("");
-            var getrowcontent = '<tr><td><input disabled class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document"></textarea></div></td><td><div class="form-group"><select disabled class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"></div></td><td><div class="form-group"><input disabled type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd"></div></td><td><a href="#" class="btn btn-primary viewButton disabled" >View</a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input disabled class="add addrow1 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="DocumentName" class="DocumentName form-control nameofdocument_styles" placeholder="Name of the Document"></textarea></div></td><td><div class="form-group"><select disabled class="form-control TypeOfTraining level_styles" id="TypeOfTraining" name="">' + options + '</select></div></td><td><div class="form-group"><input disabled type="date" name="" id="Dateoftrainingstart" class="nccaDetail form-control level_styles Dateoftrainingstart"></div></td><td><div class="form-group"><input disabled type="date" name="" id="topicoftrainingEnd" class="nccaDetail form-control level_styles topicoftrainingEnd"></div></td><td><a href="#" class="btn btn-primary viewButton disabled" >View</a></td></tr>';
             $("#table-quality1 tbody").append(getrowcontent);
         }
     }
@@ -422,31 +428,31 @@ $(() => {
 
     });
 
-    $("#table-quality1 tbody").on("click", ".deleterow1", function () {
-        debugger;
-        if ($(this).closest("tr").attr("data-row-id")) {
-            docIdData.push($(this).closest("tr").find(".DocumentName").val())
-            var id = $(this).closest("tr").attr("data-row-id")
-            $.ajax({
-                url: "https://api.pdca.in/ClientNewQualityManagement/DeleteTrainingDoc?ClientID=" + CLIENT_AUTH + "&trainingDocID=" + id,
-                type: "POST",
-                contentType: false, // Not to set any content header
-                processData: false, // Not to process data
-                /*data: fileData,*/
-                success: function (data) {
-                    if (data.responsecode == 0) {
-                        $("tr[data-row-id='" + id + "']").remove();
-                        alert("Record Deleted Succesfuly")
-                    }
-                }
-            });
-        } else {
-            $(this).closest("tr").remove();
-            setTimeout(() => {
-                updateSerialNumbers1()
-            }, 1000)
-        }
-    });
+    //$("#table-quality1 tbody").on("click", ".deleterow1", function () {
+    //    debugger;
+    //    if ($(this).closest("tr").attr("data-row-id")) {
+    //        docIdData.push($(this).closest("tr").find(".DocumentName").val())
+    //        var id = $(this).closest("tr").attr("data-row-id")
+    //        $.ajax({
+    //            url: "https://api.pdca.in/ClientNewQualityManagement/DeleteTrainingDoc?ClientID=" + CLIENT_AUTH + "&trainingDocID=" + id,
+    //            type: "POST",
+    //            contentType: false, // Not to set any content header
+    //            processData: false, // Not to process data
+    //            /*data: fileData,*/
+    //            success: function (data) {
+    //                if (data.responsecode == 0) {
+    //                    $("tr[data-row-id='" + id + "']").remove();
+    //                    alert("Record Deleted Succesfuly")
+    //                }
+    //            }
+    //        });
+    //    } else {
+    //        $(this).closest("tr").remove();
+    //        setTimeout(() => {
+    //            updateSerialNumbers1()
+    //        }, 1000)
+    //    }
+    //});
 
     function updateSerialNumbers1() {
         $("#table-quality1 tbody tr").each(function (index) {
@@ -467,11 +473,11 @@ $(() => {
             if ($("#ddclause2 option[value='" + value.ClauseNo + "']").length > 0) {
                 $("#ddclause2").val(value.ClauseNo);
             }
-            var getrowcontent = '<tr  data-row-id="' + value.ID + '"><td><input disabled class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name" value=' + value.EmployeeName + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID" value=' + value.EmployeeID + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation" value=' + value.Designation + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience" edit_id=' + value.ID + ' value=' + value.Qualification + '></div></td><td><a href="' + value.JDupload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr  data-row-id="' + value.ID + '"><td><input disabled class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name" value=' + value.EmployeeName + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID" value=' + value.EmployeeID + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation" value=' + value.Designation + '></div></td><td><div class="form-group"><input disabled type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience" edit_id=' + value.ID + ' value=' + value.Qualification + '></div></td><td><a href="' + value.JDupload + '" target="_blank" class="btn btn-link"><button class="btn btn-primary" type="button">View</button></a></td></tr>';
             $("#table-quality1-main tbody").append(getrowcontent);
         }
         else {
-            var getrowcontent = '<tr><td><input disabled class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name"></div></td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID"></div></td><td><div class="form-group"><input disabled type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation"></div></td><td><div class="form-group"><input disabled type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience"></div></td><td><a href="#" id="viewButton" class="btn btn-primary viewButton disabled">View</a></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input disabled class="add addrow1-main border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+"></td><td class="serial">' + (currentRowCount + 1) + '</td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeName" id="EmployeeName" style="width:270px" placeholder="Employee Name"></div></td><td><div class="form-group"><input disabled type="text" class="form-control EmployeeID" id="EmployeeID" style="width:270px" placeholder="Employee ID"></div></td><td><div class="form-group"><input disabled type="text" class="form-control Designation" id="Designation" style="width:270px" placeholder="Designation"></div></td><td><div class="form-group"><input disabled type="text" class="form-control Qualification" id="Qualification" style="width:270px" placeholder="Qualification/No of Years Experience"></div></td><td><a href="#" id="viewButton" class="btn btn-primary viewButton disabled">View</a></td></tr>';
             $("#table-quality1-main tbody").append(getrowcontent);
         }
 
@@ -509,30 +515,30 @@ $(() => {
         getQualityControl1main();
     });
 
-    $("#table-quality1-main tbody").on("click", ".deleterow1-main", function () {
-        if ($(this).closest("tr").attr("data-row-id")) {
-            // docIdData.push($(this).closest("tr").find(".DocumentName").val())
-            var id = $(this).closest("tr").attr("data-row-id")
-            $.ajax({
-                url: "https://api.pdca.in/ClientNewQualityManagement/DeleteSkillDoc?ClientID=" + CLIENT_AUTH + "&skillDocID=" + id,
-                type: "POST",
-                contentType: false, // Not to set any content header
-                processData: false, // Not to process data
-                /*data: fileData,*/
-                success: function (data) {
-                    if (data.responsecode == 0) {
-                        $("tr[data-row-id='" + id + "']").remove();
-                        alert("Record Deleted Succesfuly")
-                    }
-                }
-            });
-        } else {
-            $(this).closest("tr").remove();
-            setTimeout(() => {
-                updateSerialNumbers2()
-            }, 1000)
-        }
-    });
+    //$("#table-quality1-main tbody").on("click", ".deleterow1-main", function () {
+    //    if ($(this).closest("tr").attr("data-row-id")) {
+    //        // docIdData.push($(this).closest("tr").find(".DocumentName").val())
+    //        var id = $(this).closest("tr").attr("data-row-id")
+    //        $.ajax({
+    //            url: "https://api.pdca.in/ClientNewQualityManagement/DeleteSkillDoc?ClientID=" + CLIENT_AUTH + "&skillDocID=" + id,
+    //            type: "POST",
+    //            contentType: false, // Not to set any content header
+    //            processData: false, // Not to process data
+    //            /*data: fileData,*/
+    //            success: function (data) {
+    //                if (data.responsecode == 0) {
+    //                    $("tr[data-row-id='" + id + "']").remove();
+    //                    alert("Record Deleted Succesfuly")
+    //                }
+    //            }
+    //        });
+    //    } else {
+    //        $(this).closest("tr").remove();
+    //        setTimeout(() => {
+    //            updateSerialNumbers2()
+    //        }, 1000)
+    //    }
+    //});
 
     function updateSerialNumbers2() {
         $("#table-quality1-main tbody tr").each(function (index) {
@@ -548,6 +554,9 @@ $(() => {
         var getvalue = $(event.target).val();
         if (getvalue.trim() == "0") {
             $("#company_data").show();
+            $(document).ready(function () {
+                $("#btnexportquailtydoc").hide();
+            });
         }
         else {
             $("#jobid_data").hide();
@@ -561,6 +570,9 @@ $(() => {
         var getvalue = $(event.target).val();
         if (getvalue.trim() == "0") {
             $("#jobid_data").show();
+            $(document).ready(function () {
+                $("#btnexportquailtydoc").show();
+            });
         }
         else {
             $("#company_data").hide();
@@ -600,6 +612,7 @@ $(() => {
         var Id = ID
         $("#jobid_data").show();
         $("#ddjobid").val(Id)
+        $("#btnexportquailtydoc").show();
         $(".ddjobid").prop("disabled", true);
         getDocId();
     }
@@ -944,6 +957,8 @@ $(() => {
                 multidocUrls.forEach(function (url, i) {
                     multidocViewButtons += `<a href="${url.trim()}" target="_blank" class="btn btn-primary btn-sm my-1">View ${i + 1}</a><br>`;
                 });
+            } else {
+                multidocViewButtons += `<a href="#" class="btn btn-primary viewButton disabled" >View</a>`;
             }
             if (value.Approveduplpdf) {
                 var Approveduplpdf = '<a href=' + value.Approveduplpdf + ' target="_blank" class="btn btn-primary btn-sm" >View</a>';
@@ -1049,7 +1064,7 @@ $(() => {
                 const tableBody1 = $("#table-quality3 tbody");
                 const currentRowCount = tableBody1.children("tr").length;
                 const getIndex = currentRowCount + 1;
-                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="col-md-12"><div class="form-group"><select disabled id="ddclause3" class="form-control" required><option value="">Select DOC ID</option></select></div></div></td><td><div class="form-group"><input disabled class="form-control ClauseNo level_styles" id="ClauseNo1" style="" placeholder="Clause No."></div></td><td class="view4tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input disabled class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="input disabledGroupFileAddon01" type="file" accept="application/*" multiple></td><td><div class="deleterow2 my-2" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin text-danger"></i></div></td></tr>';
+                var getrowcontent = '<tr><td>' + getIndex + '</td><td><div class="form-group"><textarea disabled type="text" name="" id="NameoftheDoc1" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Name of Document"></textarea></div></td><td><div class="col-md-12"><div class="form-group"><select disabled id="ddclause3" class="form-control" required><option value="">Select DOC ID</option></select></div></div></td><td><div class="form-group"><input disabled class="form-control ClauseNo level_styles" id="ClauseNo1" style="" placeholder="Clause No."></div></td><td class="view4tabdoc"><div><a href="#" class="btn btn-primary viewButton disabled" >View</a></div></td><td><input disabled class="form-control Draftformatfile w-300px mb-2" id="certificateformatfile1" aria-describedby="input disabledGroupFileAddon01" type="file" accept="application/*" multiple></td></tr>';
                 $("#table-quality3 tbody").append(getrowcontent);
                 getDocIdlevel4()
                 $("#ddclause3").select2({
@@ -1268,12 +1283,12 @@ $(() => {
             const issuedOn = value.IssuedOn ? moment(value.IssuedOn).format("YYYYY-MM-DD") : "N/A";
             const nextDueOn = value.NextDueOn ? moment(value.NextDueOn).format("YYYYY-MM-DD") : "N/A";
             const options = `<option value="">Certificate Type</option>` + certificateType.map((item) => `<option value="${item.type}" ${item.type == value.TypeOfCertificate ? "selected" : ""}> ${item.type}</option>`).join("");
-            var getrowcontent = '<tr data-row-id="' + value.Id + '"><td><input disabled class="add addrow5 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><a href=' + value.CertificateDoc + ' class="btn btn-primary">View</a></td><td><div class="form-group"><select disabled class="form-control typepfDocument level_styles" id="typepfDocument3" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input disabled type="date" name="" id="issuedOn3" class="form-control level_styles" value=' + issuedOn + '></div></td><td><div class="form-group"><input disabled type="date" name="" id="nextDueOn3" class="form-control level_styles" value=' + nextDueOn + '></div></td><td><div class="form-group"><textarea disabled id="remarks3" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Remarks" edit_id=' + value.Id + '>' + value.Remarks + '</textarea></div></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr data-row-id="' + value.Id + '"><td><input disabled class="add addrow5 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><a href=' + value.CertificateDoc + ' class="btn btn-primary">View</a></td><td><div class="form-group"><select disabled class="form-control typepfDocument level_styles" id="typepfDocument3" name =""> ' + options + '</select ></div ></td><td><div class="form-group"><input disabled type="date" name="" id="issuedOn3" class="form-control level_styles" value=' + issuedOn + '></div></td><td><div class="form-group"><input disabled type="date" name="" id="nextDueOn3" class="form-control level_styles" value=' + nextDueOn + '></div></td><td><div class="form-group"><textarea disabled id="remarks3" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Remarks" edit_id=' + value.Id + '>' + value.Remarks + '</textarea></div></td></tr>';
             $("#table-quality5 tbody").append(getrowcontent);
         }
         else {
             const options = `<option value="">Certificate Type</option>` + certificateType.map((item) => `<option value="${item.type}"> ${item.type}</option>`).join("");
-            var getrowcontent = '<tr><td><input disabled class="add addrow5 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><a href="#" class="btn btn-primary viewButton disabled" >View</a></td><td><div class="form-group"><select disabled class="form-control typepfDocument level_styles" id="typepfDocument3" name ="" > ' + options + '</select ></div ></td><td><div class="form-group"><input disabled type="date" name="" id="issuedOn3" class="form-control level_styles"></div></td><td><div class="form-group"><input disabled type="date" name="" id="nextDueOn3" class="form-control level_styles"></div></td><td><div class="form-group"><textarea disabled id="remarks3" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Remarks"></textarea></div></td><td>' + deleteIcon + '</td></tr>';
+            var getrowcontent = '<tr><td><input disabled class="add addrow5 border-0 btn btn-icon btn-light btn-sm" name="&plus;" type="button" value="+" ></td><td class="serial">' + (currentRowCount + 1) + '</td><td><a href="#" class="btn btn-primary viewButton disabled" >View</a></td><td><div class="form-group"><select disabled class="form-control typepfDocument level_styles" id="typepfDocument3" name ="" > ' + options + '</select ></div ></td><td><div class="form-group"><input disabled type="date" name="" id="issuedOn3" class="form-control level_styles"></div></td><td><div class="form-group"><input disabled type="date" name="" id="nextDueOn3" class="form-control level_styles"></div></td><td><div class="form-group"><textarea disabled id="remarks3" class="NameoftheDoc form-control nameofdocument_styles" placeholder="Remarks"></textarea></div></td></tr>';
             $("#table-quality5 tbody").append(getrowcontent);
         }
 
@@ -1311,30 +1326,30 @@ $(() => {
         getQualityControl5();
     });
 
-    $("#table-quality5 tbody").on("click", ".deleterow5", function () {
-        if ($(this).closest("tr").attr("data-row-id")) {
-            // docIdData.push($(this).closest("tr").find(".DocumentName").val())
-            var id = $(this).closest("tr").attr("data-row-id")
-            $.ajax({
-                url: "https://api.pdca.in/ClientNewQualityManagement/DeleteQualityCertificate?ClientID=" + CLIENT_AUTH + "&docID=" + id,
-                type: "POST",
-                contentType: false, // Not to set any content header
-                processData: false, // Not to process data
-                /*data: fileData,*/
-                success: function (data) {
-                    if (data.responsecode == 0) {
-                        $("tr[data-row-id='" + id + "']").remove();
-                        alert("Record Deleted Succesfuly")
-                    }
-                }
-            });
-        } else {
-            $(this).closest("tr").remove();
-            setTimeout(() => {
-                updateSerialNumbers3()
-            }, 1000)
-        }
-    });
+    //$("#table-quality5 tbody").on("click", ".deleterow5", function () {
+    //    if ($(this).closest("tr").attr("data-row-id")) {
+    //        // docIdData.push($(this).closest("tr").find(".DocumentName").val())
+    //        var id = $(this).closest("tr").attr("data-row-id")
+    //        $.ajax({
+    //            url: "https://api.pdca.in/ClientNewQualityManagement/DeleteQualityCertificate?ClientID=" + CLIENT_AUTH + "&docID=" + id,
+    //            type: "POST",
+    //            contentType: false, // Not to set any content header
+    //            processData: false, // Not to process data
+    //            /*data: fileData,*/
+    //            success: function (data) {
+    //                if (data.responsecode == 0) {
+    //                    $("tr[data-row-id='" + id + "']").remove();
+    //                    alert("Record Deleted Succesfuly")
+    //                }
+    //            }
+    //        });
+    //    } else {
+    //        $(this).closest("tr").remove();
+    //        setTimeout(() => {
+    //            updateSerialNumbers3()
+    //        }, 1000)
+    //    }
+    //});
 
     function updateSerialNumbers3() {
         $("#table-quality5 tbody tr").each(function (index) {
@@ -1654,6 +1669,7 @@ $(() => {
         debugger;
         $(".spinner").show();
         var jobID = $("#ddjobid").val();
+        $("#btnexportquailtydoc").show();
         $.ajax({
             url: "https://api.pdca.in/ClientNewQualityManagement/ListAllQualityData?jobId=" + jobID,
             type: "GET",
@@ -1872,6 +1888,36 @@ $(() => {
         if (prevStep) {
             updateStep(prevStep);
         }
+    });
+
+
+
+    $(document).off("click", "#btnexportquailtydoc").on("click", "#btnexportquailtydoc", function () {
+
+        let btn = $(this);
+        btn.prop("disabled", true);
+
+            $.ajax({
+                url: `${QUALITYDOC_CSV_DOWNLOAD}?ClientID=${CLIENT_AUTH}&jobGuid=${job_ID}`,
+                type: "GET",
+                xhrFields: {
+                    responseType: 'blob'   // IMPORTANT
+                },
+                success: function (data) {
+
+                    let blob = new Blob([data], { type: 'text/csv' });
+                    let link = document.createElement('a');
+
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = "QualityDocsExport.csv";
+                    link.click();
+                },
+                error: function (err) {
+                    console.log("Error:", err);
+                }
+            });
+       
+        setTimeout(() => btn.prop("disabled", false), 3000);
     });
 
 });

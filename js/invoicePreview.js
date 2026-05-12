@@ -200,13 +200,17 @@ $(() => {
         var element = document.getElementById("download_section");
 
         html2canvas(element, {
-            scale: 3, // Higher scale for better quality
+            scale: 1.5, // Reduced from 3 to 1.5 (lower scale = smaller file size)
             useCORS: true,
             scrollY: -window.scrollY,
             backgroundColor: "#ffffff",
             logging: false,
             windowWidth: element.scrollWidth,
-            windowHeight: element.scrollHeight
+            windowHeight: element.scrollHeight,
+            // Additional optimizations
+            allowTaint: false,
+            imageTimeout: 0,
+            removeContainer: true
         }).then(function (canvas) {
 
             var pdf = new jsPDF("p", "mm", "a4");
@@ -215,51 +219,61 @@ $(() => {
             var pageWidth = pdf.internal.pageSize.width;  // 210mm
             var pageHeight = pdf.internal.pageSize.height; // 297mm
 
-            // Define margins (top, bottom, left, right) in mm
-            var marginTop = 15;    // Top margin
-            var marginBottom = 15; // Bottom margin
-            var marginLeft = 10;   // Left margin
-            var marginRight = 10;  // Right margin
+            // Define margins
+            var marginTop = 15;
+            var marginBottom = 15;
+            var marginLeft = 10;
+            var marginRight = 10;
 
-            // Available content area after margins
             var availableWidth = pageWidth - marginLeft - marginRight;
             var availableHeight = pageHeight - marginTop - marginBottom;
 
-            // Calculate canvas aspect ratio
             var canvasWidth = canvas.width;
             var canvasHeight = canvas.height;
             var canvasAspectRatio = canvasHeight / canvasWidth;
 
-            // Calculate image dimensions to fit within available area while maintaining aspect ratio
             var imgWidth = availableWidth;
             var imgHeight = availableWidth * canvasAspectRatio;
 
-            // If image height exceeds available height, scale down to fit
             if (imgHeight > availableHeight) {
                 imgHeight = availableHeight;
                 imgWidth = availableHeight / canvasAspectRatio;
             }
 
-            // Center the image within the available area (between margins)
             var xOffset = marginLeft + (availableWidth - imgWidth) / 2;
             var yOffset = marginTop + (availableHeight - imgHeight) / 2;
 
-            // Convert canvas to image
-            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+            // CRITICAL: Compress the image quality (0.1 to 0.5 for KB size)
+            // 0.1 = 10% quality (smallest file, may be blurry)
+            // 0.3 = 30% quality (good balance for text)
+            // 0.5 = 50% quality (better quality, larger file)
+            var imgData = canvas.toDataURL("image/jpeg", 0.3); // Reduced from 1.0 to 0.3
 
-            // Add image to PDF
-            pdf.addImage(imgData, "JPEG", xOffset, yOffset, imgWidth, imgHeight);
+            // OPTIONAL: Further compress by reducing canvas size before adding to PDF
+            // This creates a smaller image buffer
+            var compressedCanvas = document.createElement('canvas');
+            var compressionRatio = 0.7; // Reduce to 70% of original size
+            compressedCanvas.width = canvas.width * compressionRatio;
+            compressedCanvas.height = canvas.height * compressionRatio;
+            var ctx = compressedCanvas.getContext('2d');
+            ctx.drawImage(canvas, 0, 0, compressedCanvas.width, compressedCanvas.height);
+            var imgDataCompressed = compressedCanvas.toDataURL("image/jpeg", 0.3);
 
+            // Use compressed version
+            pdf.addImage(imgDataCompressed, "JPEG", xOffset, yOffset, imgWidth, imgHeight);
+
+            // Get PDF as blob with compression
             var pdfBlob = pdf.output("blob");
+
+            // Check file size (for debugging)
+            console.log("PDF Size: " + (pdfBlob.size / 1024).toFixed(2) + " KB");
 
             // Get WhatsApp number from the invoice data
             var whatsappNumber = $("#phone").text();
             var companyName = $("#company").text();
 
-            // Clean the phone number
             whatsappNumber = whatsappNumber.replace(/\s/g, '').replace(/[^0-9+]/g, '');
 
-            // Ensure number has country code
             if (whatsappNumber && !whatsappNumber.startsWith('+')) {
                 whatsappNumber = '+91' + whatsappNumber;
             }

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Template for Service offer</title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../../theme/favicon/logo.ico" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <style>
+        .process-box {
+            color: #000;
+            display: none;
+        }
+
+        .red {
+            background: #fff;
+        }
+
+        .green {
+            background: #fff;
+        }
+
+       
+
+        #spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input[type="radio"]').click(function () {
+                var inputValue = $(this).attr("value");
+                var targetBox = $("." + inputValue);
+                $(".process-box").not(targetBox).hide();
+                $(targetBox).show();
+            });
+        });
+    </script>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">SHEET ALLOCATION</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Process</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Service</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./serviceSheetAllocation.html  " class="text-muted">Sheet Allocation</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <form id="createTemplateSubmit" onsubmit="return false">
+                        <div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container">
+                                <!--begin:: FROM TO Details-->
+                                <!--  Service SHEET ALLOCATION module  -->
+
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <h3>Sheet Allocation</h3>
+                                        <!--<div class="row">
+                                            <div class="col-md-6">
+
+
+                                                <div class="form-group" id="sername">
+                                                    <label class="font-weight-bold">New Service Name</label>
+                                                    <input type="text" name="" id="service_name" placeholder="Enter Service Name" class="service_name form-control">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group" id="client">
+                                                    <label class="font-weight-bold">Client Company Name:</label>
+                                                    <select name="client" id="serviceClientCompName" class="serviceClientCompName form-control">
+                                                        <option value="">Select Client</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="jobnum">
+                                                    <label class="font-weight-bold">Registration No:</label>
+                                                    <select name="Registrationno" id="Registrationno" class="Registrationno form-control">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="Employee">
+                                                    <label class="font-weight-bold">Employee Name:</label>
+                                                    <select name="serviceCompName" id="serviceCompName" class="serviceCompName form-control">
+                                                        <option value="">Select Employee</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="from">
+                                                    <div class="form-group">
+                                                        <label for="fromDate" class="font-weight-bold">From Date</label>
+                                                        <input type="date" name="fromDate" id="fromDate" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="to">
+                                                    <div class="form-group">
+                                                        <label for="toDate" class="font-weight-bold">End Date</label>
+                                                        <input type="date" name="toDate" id="toDate" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="jobid">
+                                                    <label class="font-weight-bold">SERVICE ID:</label>
+                                                    <select name="ddjobid" id="ddjobid" class="ddjobid form-control">
+                                                        <option value="">Select Service ID</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Service Request Form -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <!-- Service Request Form table -->
+                                        <div class="table-responsive ">
+                                            <h3>1. Service Request Form</h3>
+
+                                            <table class="table table-hover mb-6 " id="table-iddoc11">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">SRF Draft format</th>
+                                                        <th scope="col">SRF FROM</th>
+                                                        <th scope="col">Filled SRF upload</th>
+                                                        <th scope="col">SRF No.</th>
+                                                        <th scope="col">SRF Received on</th>
+                                                        <th scope="col">Remarks</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="srfdraftFormatfile w-200px form-control"
+                                                                       id="srfdraftFormatfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="srfFrom" class="srfFrom form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="filledSRFfile w-200px form-control"
+                                                                       id="filledSRFfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="srfNo" class="srfNo form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="srfReceivedNum" class="srfReceivedNum form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="srfRemarks" class="srfRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive ">
+                                            <h4>Service Request Form review</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc22">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">SRF No.</th>
+                                                        <th scope="col">Reviewed by</th>
+                                                        <th scope="col">Reviewed on</th>
+                                                        <th scope="col">Approval (Accepted/Rejected)</th>
+                                                        <th scope="col">Remarks</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="srfnum" class="srfnum form-control w-200px">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="reviewedBy" class="reviewedBy form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="reviewedOn" class="reviewedOn form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="approval" class="approval form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="srfRemarks1" class="srfRemarks1 form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Service Request Form -->
+                                <!-- End of Service Request Form -->
+                                <!-- Registration  -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive col-md-12">
+                                            <h3>2. Registration </h3>
+                                            <table class="table table-hover mb-6 " id="table-iddoc33">
+                                                <thead class="thead-dark">
+                                                    <tr>
+
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Registration No.</th>
+                                                        <th scope="col">SRF No.</th>
+                                                        <th scope="col">Test parameters (Inhouse)</th>
+                                                        <th scope="col">Test parameters (out sourced)</th>
+                                                        <th scope="col">Outsourced (Final Test Report)</th>
+                                                        <th scope="col">Outsourced to</th>
+                                                        <th scope="col">Outsourced on</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="regdate" class="regdate form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="regNum" class="regNum form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="regsrfnum" class="regsrfnum form-control w-200px">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="testInhouse" class="testInhouse form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="testOuthouse" class="testOuthouse form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="Outsourcereport w-150px"
+                                                                   id="Outsourcereport"
+                                                                   aria-describedby="inputGroupFileAddon01">
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="Outsourcedto" class="Outsourcedto form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="Outsourcedon" class="Outsourcedon form-control">
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of Registration  -->
+                                <!-- Rawdata  -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>3. Rawdata </h4>
+
+                                            <table class="table table-hover mb-6 " id="table-iddoc44">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Registration No.</th>
+                                                        <th scope="col">Rawdata upload</th>
+                                                        <th scope="col">Verfied by</th>
+                                                        <th scope="col">Verified on</th>
+                                                        <th scope="col">Remarks</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="regdate" class="regdate1 form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="regNum" class="regNum1 form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="rawdatafile w-200px form-control"
+                                                                       id="rawdatafile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="verifiedBy" class="verifiedBy form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="verifiedOn" class="verifiedOn form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="regRemarks" class="regRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of Rawdata
+                                <input type="submit" value="Submit" class="form-control form-control-sm"> -->
+                                <!-- end of Service SHEET ALLOCATION module -->
+                                <!--<button id="btnformsubmit" type="submit" class="btn btn-success">Save</button>-->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--end::Container-->
+
+        </div>
+        <!--end::Entry-->
+    </div>
+    <!--end::Content-->
+    </div>
+    <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
+    </div>
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../../js/Imageupload.js"></script>
+    <script type="module" src="../../js/Client/client-navbar.js"></script>
+    <script type="module" src="../../js/Client/commonFunctinality.js"></script>
+    <script type="module" src="../../js/Client/serviceSheetAllocation.js"></script>
+    <!--end::Page Scripts-->
+
+
+</body>
+<!--end::Body-->
+
+</html>

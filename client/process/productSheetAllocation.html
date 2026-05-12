@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>PDCA4M | Product Sheet Allocation </title>
+    <meta name="description" content="Updates and statistics" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="../../theme/plugins/global/plugins.bundle1036.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/plugins/custom/prismjs/prismjs.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/style.bundle1036.css?v=2.1.1" rel="stylesheet" type="text/css" />
+
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+    <link href="../../theme/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+    <link href="../../theme/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+    <!--end::Layout Themes-->
+    <!--begin::Custom Styles-->
+    <link href="../../theme/css/customStyle.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <!--end::Custom Styles-->
+    <link rel="shortcut icon" href="../../theme/favicon/logo.ico" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <style>
+
+        #spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+
+<body id="kt_body"
+      class="quick-panel-right demo-panel-right offcanvas-right header-fixed header-mobile-fixed subheader-enabled aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <!--begin::Header Mobile-->
+    <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed"></div>
+    <!--end::Header Mobile-->
+
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!--begin::Aside-->
+            <div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside"></div>
+            <!--end::Aside-->
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!--begin::Header-->
+                <div id="kt_header" class="header header-fixed"> </div>
+                <!--end::Header-->
+                <!--begin::Content-->
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Subheader-->
+                    <div class="subheader py-6 py-lg-8 subheader-transparent" id="kt_subheader">
+                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+                            <!--begin::Info-->
+                            <div class="d-flex align-items-center flex-wrap mr-1">
+                                <!--begin::Page Heading-->
+                                <div class="d-flex align-items-baseline flex-column flex-wrap mr-5">
+                                    <!--begin::Page Title-->
+                                    <h3 class="text-dark font-weight-bold my-1 mr-5">Sheet Allocation</h3>
+                                    <!--end::Page Title-->
+                                    <!--begin::Breadcrumb-->
+                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Process</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="#" class="text-muted">Product</a>
+                                        </li>
+                                        <li class="breadcrumb-item text-muted">
+                                            <a href="./productSheetAllocation.html" class="text-muted">Sheet Allocation</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page Heading-->
+                            </div>
+                            <!--end::Info-->
+                        </div>
+                    </div>
+                    <!--end::Subheader-->
+                    <!--begin::Entry-->
+                    <form id="createTemplateSubmit" onsubmit="return false">
+                        <div class="d-flex flex-column-fluid">
+                            <!--begin::Container-->
+                            <div class="container">
+
+                                <!--begin:: FROM TO Details-->
+                                <!-- <div class="card mb-7">
+                                    <div class="card-body">
+
+                                                <div class="d-block">
+                                                    <h3>Select Process</h3>
+                                                    <div class="form-group mb-0">
+                                                        <label><input type="radio" name="colorRadio" value="red"> Product</label>
+                                                        <label><input type="radio" name="colorRadio" value="green"> Service</label>
+                                                    </div>
+                                                </div>
+
+                                    </div>
+                                </div> -->
+                                <!--end::FROM TO Details-->
+                                <!-- Product Module Starts -->
+                                <!--  PRODUCT SHEET ALLOCATION module  -->
+                                <div class="card mb-7 red process-box">
+                                    <div class="card-body">
+                                        <h3>PRODUCT SHEET ALLOCATION  </h3>
+                                        <br>
+                                        <!--<div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="prdname">
+                                                    <label class="font-weight-bold">Product Name</label>
+                                                    <input type="text" name="name" id="Product_name" placeholder="Enter Product Name" class="Productname form-control" onsubmit="return false">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+
+                                                <div class="form-group" id="client">
+                                                    <label class="font-weight-bold">Client Company Name:</label>
+                                                    <select id="CLientCompName" name="client" class="CLientCompName form-control">
+                                                        <option value="">Select Client</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6" id="jobnum">
+                                                <div class="form-group">
+                                                    <label class="font-weight-bold">Job Number</label>
+                                                    <select name="" id="jobNum" class="jobNum form-control">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="Employee">
+                                                    <label class="font-weight-bold">Employee Name:</label>
+                                                    <select id="ProductCompName" name="employee" class="ProductCompName form-control">
+                                                        <option value="">Select Employee</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="from">
+                                                    <div class="form-group">
+                                                        <label for="fromDate" class="font-weight-bold">From Date</label>
+                                                        <input type="date" name="fromDate" id="fromDate" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="to">
+                                                    <div class="form-group">
+                                                        <label for="toDate" class="font-weight-bold">End Date</label>
+                                                        <input type="date" name="toDate" id="toDate" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>-->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group" id="jobid">
+                                                    <label class="font-weight-bold">PRODUCT ID:<sup class="text-danger">*</sup></label>
+                                                    <select name="" id="ddjobid" class="ddjobid form-control">
+                                                        <option value="">Select Product ID</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Prototype module -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h3>1. PROTO TYPE</h3>
+
+                                            <table class="table table-hover mb-6 " id="table-iddoc1">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Name of the Product</th>
+                                                        <th scope="col">Ingredient Name</th>
+                                                        <th scope="col">Spec requirement</th>
+                                                        <th scope="col">Source details</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="name_of_product" class="name_of_product form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="ingredient_name" class="ingredient_name form-control">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" name="" id="spec_req" class="spec_req form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="source_details" class="source_details form-control"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Material Stock sub module -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>Material stock (RM/PM)</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc2">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Name of Material</th>
+                                                        <th scope="col">Opening stock (Kg)</th>
+                                                        <th scope="col">Dispensed for Batch No.</th>
+                                                        <th scope="col">Dispensed on</th>
+                                                        <th scope="col">Dispensed kgs</th>
+                                                        <th scope="col">Closing stock (Kg)</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="Name_of_Material" class="Name_of_Material form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="Opening_stock" class="Opening_stock form-control  w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="DispensedforBatchNo" class="DispensedforBatchNo form-control  w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="Dispensed_on" class="Dispensed_on form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="Dispensed_kgs" class="Dispensed_kgs form-control  w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="Closing_stock" class="Closing_stock form-control  w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End of Material Stock sub module -->
+                                <!-- Process flow sub module -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>
+                                                Process Flow
+                                            </h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc3">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Process flow format</th>
+                                                        <th scope="col">Trail(s)</th>
+                                                        <th scope="col">Sensory data</th>
+                                                        <th scope="col">Remarks</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="processflowfile w-200px form-control"
+                                                                       id="processflowfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="trail" class="trail form-control w-200px">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="sensoryDatafile w-200px form-control"
+                                                                       id="sensoryDatafile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="processFlowRemarks" class="processFlowRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End of Process flow sub module -->
+                                <!-- Product Finalized -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>Product Finalized</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc4">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Freezed Formula</th>
+                                                        <th scope="col">Finalized formula format</th>
+                                                        <th scope="col">Sensory data</th>
+                                                        <th scope="col">Remarks</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="freezed_formula" class="freezed_formula form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                            <input type="url" class="final_formula_Formatfile w-200px form-control"
+                                                                   id="final_formula_Formatfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                            <input type="url" class="productfinalsensoryDatafile w-200px form-control"
+                                                                   id="productfinalsensoryDatafile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="productfinalRemarks" class="productfinalRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Product Finalized -->
+                                <!-- Finalzed Packing -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>Finalzed Packing</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc5">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Finalzed Packing format</th>
+                                                        <th scope="col">Type of packing material</th>
+                                                        <th scope="col">Specification</th>
+                                                        <th scope="col">Remarks</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-group">
+                                                            <input type="url" class="finalpackingfile w-200px form-control"
+                                                                   id="finalpackingfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="finalpackingmaterial" class="finalpackingmaterial form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="finalpackingspecificationfile w-200px form-control"
+                                                                       id="finalpackingspecificationfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="finalpackingRemarks" class="finalpackingRemarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Finalzed Packing -->
+                                <!-- End Prototype module -->
+                                <!-- Shelf life study sub module -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h3>2. Shelf life study (Lab scale and Scaleup)</h3>
+                                            <table class="table table-hover mb-6 " id="table-iddoc6">
+                                                <thead class="thead-dark">
+                                                    <tr>
+
+                                                        <th scope="col"> Batch No</th>
+                                                        <th scope="col">Batch size</th>
+                                                        <th scope="col">Protocol and frequency of testing</th>
+                                                        <th scope="col">No of Packings</th>
+                                                        <th scope="col">Packing material </th>
+                                                        <th scope="col">Final Test Reports</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="batch_no" class="batch_no form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="batch_size" class="batch_size form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="protocolnfrequencyfile w-200px form-control"
+                                                                       id="protocolnfrequencyfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                            </div>
+                                                         
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="numofpackings" class="numofpackings form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="packing_material" class="packing_material form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+
+                                                            <input type="file" class="testreportsfile w-200px"
+                                                                   id="testreportsfile"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                        </td>
+                                                        <!--<td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>-->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Shelf life study sub module -->
+                                <!-- Manufacturing Module -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h3>3. Manufacturing (scale up)</h3>
+                                            <h4>Material stock (RM/PM)</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc7">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col">Name of Material</th>
+                                                        <th scope="col">Opening stock (Kg)</th>
+                                                        <th scope="col">Dispensed for Batch No.</th>
+                                                        <th scope="col">Dispensed on</th>
+                                                        <th scope="col">Dispensed kgs</th>
+                                                        <th scope="col">Closing stock (Kg)</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="MaterialName_of_Material" class="MaterialName_of_Material form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="MaterialOpening_stock" class="MaterialOpening_stock form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="MaterialDispensedforBatchNo" class="MaterialDispensedforBatchNo form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="MaterialDispensed_on" class="MaterialDispensed_on form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="MaterialDispensed_kgs" class="MaterialDispensed_kgs form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="MaterialClosing_stock" class="MaterialClosing_stock form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Batch sheet-->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h4>Batch Sheet</h4>
+                                            <table class="table table-hover mb-6 " id="table-iddoc8">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">New Record</th>
+                                                        <th scope="col">S.No</th>
+                                                        <th scope="col"> Batch No</th>
+                                                        <th scope="col">MPCR Foramat</th>
+                                                        <th scope="col">Flow chart</th>
+                                                        <th scope="col">Batch Process Record</th>
+                                                        <th scope="col">Test Reports</th>
+                                                        <th scope="col">Remarks</th>
+                                                        <!--<th scope="col">Action</th>-->
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="button" name="&plus" value="+" class="addrow1 border-0 add btn btn-icon btn-light btn-sm" />
+                                                        </td>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="sheet_batch_no" class="sheet_batch_no form-control w-200px">
+                                                            </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="mpcrformatfile w-200px form-control"
+                                                                       id="mpcrformatfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                            </div>
+                                                           
+
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="flowchatfile w-200px form-control"
+                                                                       id="flowchatfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="process_recordfile w-200px form-control"
+                                                                       id="process_recordfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="url" class="batchtestreportsfile w-200px form-control"
+                                                                       id="batchtestreportsfile"
+                                                                       aria-describedby="inputGroupFileAddon01">
+                                                                </div>
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <textarea type="text" name="" id="batchremarks" class="batchremarks form-control w-200px"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="deleteRow" style="cursor:pointer" id="delete"><i class="menu-icon flaticon2-rubbish-bin  text-danger"></i></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Batch sheet -->
+                                <!-- Manufacturing Module -->
+                                <!-- Dispatch details -->
+                                <div class="card mb-7">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <h3>4. Dispatch details</h3>
+                                            <table class="table table-hover mb-6 " id="table-iddoc9">
+                                                <thead class="thead-dark">
+                                                    <tr>
+
+                                                        <th scope="col">Batch No</th>
+                                                        <th scope="col">Opening stock (Kg)</th>
+                                                        <th scope="col">Dispatched to</th>
+                                                        <th scope="col">Dispatched qty </th>
+                                                        <th scope="col">Dispatched on</th>
+                                                        <th scope="col">Closing stock (Kg)</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="dispatchBatchNo" class="dispatchBatchNo form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="dispatchOpening_stock" class="dispatchOpening_stock form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="dispatchedto" class="dispatchedto form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="dispatchedQty" class="dispatchedQty form-control w-200px">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" name="" id="dispatchedOn" class="dispatchedOn form-control">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="text" name="" id="dispatchClosing_stock" class="dispatchClosing_stock form-control w-200px">
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--<div class="float-right">
+                                    <button type="button" class="btn btn-secondary mx-3" onclick="location.href='./listofProducts.html'">Cancel</button>
+                                    <button id="btnformsubmit" type="submit" class="btn btn-success">Save</button>
+
+                                </div>-->
+                                <!-- End of Dispatch details -->
+                            </div>
+
+                        </div>
+
+                        <!-- end of PRODUCT SHEET ALLOCATION module -->
+                        <!--end:: End of Product Starts  -->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--end::Container-->
+
+    </div>
+    <!--end::Entry-->
+    <!--end::Main-->
+    <!--begin::Scrolltop-->
+    <div id="kt_scrolltop" class="scrolltop"></div>
+    <!--end::Scrolltop-->
+    <!--begin::SPINNER-->
+    <div id="spinnerOverlay">
+        <div class="loaders"></div>
+    </div>
+    <!--end::SPINNER-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3E97FF", "secondary": "#E5EAEE", "success": "#08D1AD", "info": "#844AFF", "warning": "#F5CE01", "danger": "#FF3D60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#DEEDFF", "secondary": "#EBEDF3", "success": "#D6FBF4", "info": "#6125E1", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="../../theme/plugins/global/plugins.bundle1036.js?v=2.1.1"></script>
+    <script src="../../theme/plugins/custom/prismjs/prismjs.bundle1036.js?v=2.1.1"></script>
+    <script src="../../theme/js/scripts.bundle1036.js?v=2.1.1"></script>
+
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="../../js/Imageupload.js"></script>
+    <script type="module" src="../../js/Client/client-navbar.js"></script>
+    <script type="module" src="../../js/Client/commonFunctinality.js"></script>
+    <script type="module" src="../../js/Client/productSheetAllocation.js"></script>
+    <!--end::Page Scripts-->
+
+
+</body>
+<!--end::Body-->
+
+</html>

@@ -14,7 +14,7 @@ $(() => {
     const PAGE_REDIRECTION = reUsableFunctions.pageReDirection;
     const PAGE_RELOAD = reUsableFunctions.pageReload;
 
-    const AUTHOR_ID = localStorage.getItem("Admin_auth");
+    const CLIENT_AUTH = localStorage.getItem("Client_auth");
     const BASE_URL = "https://api.pdca.in/" /*BASEURL*/;
     // ----------------------------------- GLOBAL DECLARATIONS  END ---------------------------------------//
     $(".createStatus").show();
@@ -68,9 +68,9 @@ $(() => {
         if (file) {
             img = $("#fl_img").css("background-image").replace(/^url\(['"](.+)['"]\)/, '$1');
         }
-        let createticket = `${BASE_URL}ITSupport/Create`;
+        let createticket = `${BASE_URL}ClientITSupport/Create`;
         if (ticket_title && description) {
-            $.post(createticket, { "AdminId": AUTHOR_ID, "severity": severity, "description": description, "ticket_title": ticket_title, "SupportImage": img })
+            $.post(createticket, { "ClientID": CLIENT_AUTH, "severity": severity, "description": description, "ticket_title": ticket_title, "SupportImage": img })
                 .done((data) => {
                     if (data.responsecode) {
                         $("#addNewActivityModal").modal('toggle');
@@ -103,7 +103,7 @@ $(() => {
     // ----------------------------------- LIST OF ACTIVITIES START ---------------------------------------//
 
     const getActivities = () => {
-        let getActivitiesListUrl = `${BASE_URL}ITSupport/Index?AdminId=${AUTHOR_ID}`;
+        let getActivitiesListUrl = `${BASE_URL}ClientITSupport/Index?ClientID=${CLIENT_AUTH}`;
 
         $.ajax({
             url: getActivitiesListUrl,
@@ -124,7 +124,7 @@ $(() => {
                     $.each(data, (index, value) => {
                         let Actions = `<button class="btn activity_delete" id=${value.id} activityId=${value.id}><i class='menu-icon flaticon2-rubbish-bin text-danger'></i></button>`;
 
-                        if (AUTHOR_ID.toUpperCase() == "2D4AC65E-FF99-407A-A729-CCDE60C7D5F1") {
+                        if (CLIENT_AUTH.toUpperCase() == "2D4AC65E-FF99-407A-A729-CCDE60C7D5F1") {
                             Actions = `<button ID=${value.id} class="btn activity_edit"><i class='menu-icon flaticon2-edit text-info'></i></button>` + Actions;
                         } else {
                             Actions = `<button ID=${value.id} class="btn activity_edit"><i class='menu-icon flaticon2-edit text-info'></i></button>`;
@@ -183,7 +183,7 @@ $(() => {
 
 
         let ID = $(this).attr("ID");
-        let getActivityUrl = `${BASE_URL}ITSupport/Edit?AdminId=${AUTHOR_ID}&id=${ID}`;
+        let getActivityUrl = `${BASE_URL}ClientITSupport/Edit?ClientID=${CLIENT_AUTH}&id=${ID}`;
         $.get(getActivityUrl)
             .done(data => {
                 if (Object.keys(data).length > 0) {
@@ -212,9 +212,9 @@ $(() => {
         let severity = $("#severity").val();
         let status = $("#status").val();
         let activityId = $("#hiddenid").val();
-        let updateActivityUrl = `${BASE_URL}ITSupport/Edit`;
+        let updateActivityUrl = `${BASE_URL}ClientITSupport/Edit`;
         if (ticket_title && description) {
-            $.post(updateActivityUrl, { "AdminId": AUTHOR_ID, "id": activityId, "ticket_title": ticket_title, "description": description, "severity": severity, "status": status })
+            $.post(updateActivityUrl, { "ClientID": CLIENT_AUTH, "id": activityId, "ticket_title": ticket_title, "description": description, "severity": severity, "status": status })
                 .done(data => {
                     $('#addNewActivityModal').modal('toggle');
                     if (data.responsecode == 1) {
@@ -252,7 +252,7 @@ $(() => {
 
         let response = confirm("Are you sure do you want to Delete!");
         let activityId = $(this).attr("ID");
-        let activityDeleteUrl = `${BASE_URL}ITSupport/Delete?AdminId=${AUTHOR_ID}&id=${activityId}`
+        let activityDeleteUrl = `${BASE_URL}ClientITSupport/Delete?ClientID=${CLIENT_AUTH}&id=${activityId}`
 
         if (response == true) {
             $.post(activityDeleteUrl, { "id": activityId })

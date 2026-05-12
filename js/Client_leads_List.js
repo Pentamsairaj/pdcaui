@@ -46,7 +46,7 @@ $(() => {
     };
 
     // Hide add client button for non-admin users
-    if (ADMIN_NAME !== "Admin" && ADMIN_NAME !== "Manager") {
+    if (ADMIN_NAME !== "Admin" && ADMIN_NAME !== "Manager" && ADMIN_NAME != "CRM Executive") {
         $(".btn-primary").hide();
     }
 

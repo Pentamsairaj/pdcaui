@@ -86383,3 +86383,11 @@ body {
     left: 70px;
   }
 }
+/*textarea {
+    border: ridge 2px!important;
+    padding: 5px!important;
+    width: 20em!important;
+    min-height: 5em!important;
+    overflow: auto!important;
+}*/
+

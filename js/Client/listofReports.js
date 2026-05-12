@@ -85,7 +85,7 @@ $.ajax({
                                   <td>${startDate}</td>
                                   <td>${endDate}</td>
                                   <td>${value.Remarks}</td>
-                                 
+                                  <td class="d-flex" ID=${value.ID}><a href='serviceSheetAllocation.html?ID=${value.ID}' class='btn edit'><i class='menu-icon flaticon2-edit text-info cursor-pointer'></i></a></td>
                                   </tr>`;
                     $("#table-id tbody").append(newRow);
                 }
@@ -123,7 +123,8 @@ $.ajax({
                                   <td><input class="fromDate form-control"id=fromDate name=""type=date disabled></td>
                                   <td><input class="toDate form-control"id=toDate name=""type=date disabled></td>
                                   <td><textarea class="form-control Remarks" id=Remarks name="" disabled type=text></textarea></td>
-                                 
+                                     <td class="d-flex" ID=${value.ID}><a href='serviceSheetAllocation.html?ID=${value.ID}' class='btn edit'><i class='menu-icon flaticon2-edit text-info cursor-pointer'></i></a></td>
+                              
                                   </tr>`;
                     $("#table-id tbody").append(newRow);
                  

@@ -36,6 +36,7 @@ class APIS {
     testReportPreview = "https://api.pdca.in/ClientProcess/Testreportpreview";
     //APIS FOR PO
 
+    clientqualityDocExport = "https://api.pdca.in/ClientNewQualityManagement/ExportQualityDocsCsv";
     
    
 }

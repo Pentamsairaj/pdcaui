@@ -175,12 +175,30 @@
     }
 
 
-    $("#ClientCreate").submit(function () {
+    let isSubmitting = false;
+
+    $("#ClientCreate").submit(function (e) {
+        e.preventDefault();
+
+        // 🚫 Prevent multiple submissions
+        if (isSubmitting) return;
+
+        isSubmitting = true;
+
+        const submitButton = $("#createInvoiceSubmit button[type='submit']");
+        submitButton.prop("disabled", true);
+
+        $("#spinnerOverlay").css("display", "flex");
+        $("body").css("pointer-events", "none");
+
+        // ================= GET FORM VALUES =================
+
         const ComapnayName = $("#txtcompanyname").val();
         const CompanyAddress = $("#txtcompanyaddress").val();
         const Email = $("#txtemail").val();
         const Phone = $("#txtphone").val();
         const GST = $("#txtGST").val();
+
         var imagestr = $("#inputGroupFile01").val();
         var imagestr1 = $("#firmregistraionfile").val();
         var imagestr2 = $("#partnershipfirm").val();
@@ -188,29 +206,35 @@
         var imagestr4 = $("#MOA").val();
         var imagestr5 = $("#AOA").val();
         var imagestr6 = $("#IEC").val();
+
         var ddlbusinesstype = $("#ddlbusinesstype").val();
-        var clienttype = 0;
-        if (ddlbusinesstype == "Product") {
-            clienttype = 1;
-        }
+
+        var clienttype = ddlbusinesstype == "Product" ? 1 : 0;
+
         var servicename = $("#ddlServicename").val();
-        var getdetails = "";
+
         var str = "";
         $.each(servicename, function (item, val) {
-            getdetails += val + ",";
-
+            str += val + ",";
         });
-        str = getdetails.replace(/,\s*$/, "");
+
+        str = str.replace(/,\s*$/, "");
+
         var subscription = $("#ddlSubscritption").val();
+
         var pname = $("#pname").val();
         var pdesignation = $("#pdesignation").val();
         var pphone = $("#pphone").val();
         var pEmail = $("#pEmail").val();
+
         var tTechnocalWorksName = $("#tTechnocalWorksName").val();
         var tDesignation = $("#tDesignation").val();
         var temail = $("#temail").val();
         var tphone = $("#tphone").val();
+
         var drivelink = $("#drivelink").val();
+
+        // ================= FIRST API =================
 
         var postdata = {
             "AdminId": ADMIN_AUTH,
@@ -239,7 +263,8 @@
             "DesignationTW": tDesignation,
             "EmailidTW": temail,
             "clientype": clienttype
-        }
+        };
+
         $.ajax({
             url: "https://api.pdca.in/Client/Create",
             type: "POST",
@@ -247,70 +272,102 @@
             dataType: "json",
             traditional: true,
             crossDomain: true,
-            beforeSend: function () {
-                // Show the spinner before the AJAX call starts
-                $("#spinner").show();
-            },
-            complete: function () {
-                // Hide the spinner after the AJAX call completes (regardless of success or failure)
-                $("#spinner").hide();
-            },
+
             success: function (data) {
 
-                if (data.responsecode == 1) {
-                    var getid = data.responseObject;
-                    var PostDataClienttype = "";
-                    var PddlCategory = $("#PddlCategory").val();
-                    var PActivity = $("#PActivity").val();
-                    var ProductName = $("#PProductname").val();
-                    var Pcapacity = $("#Pcapacity").val();
-                    var pCustomerName = $("#pCustomerName").val();
-                    if (data.responsemessage == "1") {
-                        PostDataClienttype = {
-                            "AdminId": ADMIN_AUTH,
-                            "CLientId": getid,
-                            "ProductName": ProductName,
-                            "Activity": PActivity,
-                            "Customernames": pCustomerName,
-                            "Capacity": Pcapacity,
-                            "Categoryname": PddlCategory
-                        }
-                    }
-                    else {
-                        var sSelectCategory = $("#Scategoryddl").val();
-                        var sActivityDDl = $("#sActivityDDl").val();
-                        var txtsservice = $("#txtsservice").val();
-                        var txtscustomername = $("#txtscustomername").val();
+                // ❌ API failed
+                if (data.responsecode != 1) {
 
-                        PostDataClienttype = {
-                            "AdminId": ADMIN_AUTH,
-                            "CLientId": getid,
-                            "Services": txtsservice,
-                            "Activity": sActivityDDl,
-                            "Customernames": txtscustomername,
-                            "Categoryname": sSelectCategory
-                        }
-                    }
+                    alert(data.responsemessage || "Something went wrong");
 
-                    $.ajax({
-                        url: "https://api.pdca.in/Client/CreateClientType",
-                        type: "POST",
-                        data: PostDataClienttype,
-                        dataType: "json",
-                        traditional: true,
-                        crossDomain: true,
-                        success: function (data) {
-                            if (data.responsecode == 1) {
-                                alert("Client Created Successfully");
-                                window.location = "/leadManagement/clientsList.html";
-                            }
-                        }
-                    });
-                } else if (data.responsecode == 0) {
-                    alert(data.responsemessage);
-
+                    resetFormState();
+                    return;
                 }
+
+                var getid = data.responseObject;
+
+                // ================= SECOND API DATA =================
+
+                var PostDataClienttype = {};
+
+                if (data.responsemessage == "1") {
+
+                    PostDataClienttype = {
+                        "AdminId": ADMIN_AUTH,
+                        "CLientId": getid,
+                        "ProductName": $("#PProductname").val(),
+                        "Activity": $("#PActivity").val(),
+                        "Customernames": $("#pCustomerName").val(),
+                        "Capacity": $("#Pcapacity").val(),
+                        "Categoryname": $("#PddlCategory").val()
+                    };
+
+                } else {
+
+                    PostDataClienttype = {
+                        "AdminId": ADMIN_AUTH,
+                        "CLientId": getid,
+                        "Services": $("#txtsservice").val(),
+                        "Activity": $("#sActivityDDl").val(),
+                        "Customernames": $("#txtscustomername").val(),
+                        "Categoryname": $("#Scategoryddl").val()
+                    };
+                }
+
+                // ================= SECOND API =================
+
+                $.ajax({
+                    url: "https://api.pdca.in/Client/CreateClientType",
+                    type: "POST",
+                    data: PostDataClienttype,
+                    dataType: "json",
+                    traditional: true,
+                    crossDomain: true,
+
+                    success: function (response) {
+
+                        if (response.responsecode == 1) {
+
+                            alert("Client Created Successfully");
+
+                            window.location.href = "/leadManagement/clientsList.html";
+
+                        } else {
+
+                            alert("Unable to save client details right now. Please try again.");
+
+                            resetFormState();
+                        }
+                    },
+
+                    error: function () {
+
+                        alert("Something went wrong while creating the client. Please try again.");
+
+                        resetFormState();
+                    }
+                });
+            },
+
+            error: function () {
+
+                alert("Something went wrong while creating the client. Please try again.");
+
+                resetFormState();
             }
         });
+
+        // ================= RESET FUNCTION =================
+
+        function resetFormState() {
+
+            isSubmitting = false;
+
+            submitButton.prop("disabled", false);
+
+            $("#spinnerOverlay").hide();
+
+            $("body").css("pointer-events", "auto");
+        }
     });
 });

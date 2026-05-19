@@ -24,6 +24,14 @@ $(() => {
     const GET_PAGINATION = getPagination;
     const CONVERT_NUMBER_INTO_STRING = convertIntToEnglish;
 
+
+    CLEAR_STORAGE();
+
+    // ----------------------------------- APIs START ---------------------------------------//
+
+
+    const CLIENT_EXPORT_URL = APIS.clientListCsvDownload;
+
     const ADMIN_AUTH = localStorage.getItem("Admin_auth");
     const ADMIN_NAME = localStorage.getItem('Admin_Name');
     if (ADMIN_NAME != "Admin" && ADMIN_NAME != "Manager" && ADMIN_NAME !="CRM Executive") {
@@ -96,4 +104,75 @@ $(() => {
         })
 
     });
+
+     $("#btnexportService").click(() => {
+
+        $.ajax({
+            url: `${CLIENT_EXPORT_URL}?AdminID=${ADMIN_AUTH}&downloadCsv =${true}`,
+            type: "GET",
+            dataType: "JSON",
+            async: true,
+            crossDomain: true,
+
+            success: function (data) {
+                var jsonObject = JSON.stringify(data);
+                var ReportName = new Date().toString();
+                Export_JSON_to_CSV(jsonObject, ReportName, true);
+                /*  $('#csv').text(ConvertToCSV(jsonObject));*/
+            },
+        });
+        return false;
+     })
+    function Export_JSON_to_CSV(JSONString, ReportName, isShowHeader) {
+        // Show the spinner
+       // document.querySelector(".spinner").style.display = "block";
+
+        setTimeout(() => {
+            try {
+                var arrJsonData = typeof JSONString != 'object' ? JSON.parse(JSONString) : JSONString;
+                var CSV = '';
+                CSV += ReportName + '\r\n\n';
+
+                if (isShowHeader) {
+                    var row = "";
+                    for (var index in arrJsonData[0]) {
+                        row += index + ',';
+                    }
+                    row = row.slice(0, -1);
+                    CSV += row + '\r\n';
+                }
+
+                for (var i = 0; i < arrJsonData.length; i++) {
+                    var row = "";
+                    for (var index in arrJsonData[i]) {
+                        row += '"' + arrJsonData[i][index] + '",';
+                    }
+                    row = row.slice(0, -1); // Fix for trimming
+                    CSV += row + '\r\n';
+                }
+
+                if (CSV == '') {
+                    alert("Invalid JsonData");
+                    return;
+                }
+
+                var fileName = "CSV_";
+                fileName += ReportName.replace(/ /g, "_");
+                var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(CSV);
+                var link = document.createElement("a");
+                link.href = uri;
+                link.style = "visibility:hidden";
+                link.download = fileName + ".csv";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                alert("something went wrong please try again later ...")
+            } finally {
+                // Hide the spinner
+                //document.querySelector(".spinner").style.display = "none";
+            }
+        }, 100); // Give time for spinner to render
+    }
+
 })

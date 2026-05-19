@@ -15,7 +15,7 @@ class APIS {
     clientProfile = "https://api.pdca.in/Client/MyProfile";
     clientEditProfile = "https://api.pdca.in/Client/EditProfile";
     clientChangePassword = "https://api.pdca.in/Client/Changepassword";
-
+    clientListCsvDownload = "https://api.pdca.in/Client/ClientListexport";
 
     // APIS FOR TEMPLATE FOR SERVICE OFFER
     createTemplateForServiceOffer = "https://api.pdca.in/Admin/CreateTemplateModuleOne";
